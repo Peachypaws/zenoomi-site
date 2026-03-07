@@ -335,7 +335,7 @@
     .tool-card,
     .testimonial,
     .cta-box,
-    .gallery-card {
+    .product-card {
       background: var(--card);
       border: 1.5px solid var(--line);
       border-radius: 24px;
@@ -407,39 +407,40 @@
       font-size: 15px;
     }
 
-    .shots-grid {
+    .product-grid {
       display: grid;
-      grid-template-columns: 1.1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 16px;
       align-items: stretch;
     }
 
-    .gallery-card {
+    .product-card {
       padding: 14px;
     }
 
-    .gallery-card img {
+    .product-card img {
       border-radius: 18px;
       border: 1.5px solid var(--line);
       background: #fff;
       width: 100%;
       height: auto;
+      display: block;
     }
 
-    .gallery-meta {
-      padding: 14px 4px 4px;
+    .product-meta {
+      padding: 16px 6px 6px;
     }
 
-    .gallery-title {
-      font-size: 18px;
+    .product-title {
+      font-size: 20px;
       font-weight: 700;
       letter-spacing: -0.03em;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
 
-    .gallery-copy {
-      font-size: 14px;
-      line-height: 1.6;
+    .product-copy {
+      font-size: 15px;
+      line-height: 1.65;
       color: var(--muted);
     }
 
@@ -540,22 +541,19 @@
 
     @media (max-width: 1080px) {
       .hero-grid,
-      .shots-grid,
       .tools-grid,
       .features-grid,
       .system-grid,
+      .product-grid,
       .cta-box {
         grid-template-columns: 1fr;
       }
 
-      .hero-grid {
-        display: grid;
-      }
-
+      .hero-grid,
       .tools-grid,
       .features-grid,
       .system-grid,
-      .shots-grid {
+      .product-grid {
         display: grid;
       }
 
@@ -631,7 +629,7 @@
       <div class="nav-links">
         <a href="#system">How it works</a>
         <a href="#features">Features</a>
-        <a href="#screens">Screens</a>
+        <a href="#product">Product</a>
         <a href="#early-access" class="btn btn-primary">Get Early Access</a>
       </div>
     </div>
@@ -773,38 +771,34 @@
       </div>
     </section>
 
-    <section class="section" id="screens">
+    <section class="section" id="product">
       <div class="shell">
         <div class="section-head">
-          <div class="section-kicker">Real product screens</div>
-          <h2 class="section-title">Designed around the actual workflow of dog care</h2>
+          <div class="section-kicker">See Zenoomi in action</div>
+          <h2 class="section-title">A calmer way to manage daily dog care</h2>
           <p class="section-copy">
-            Use real screenshots here, not concept art. That makes the product feel credible, live, and ready for beta users.
+            One screen keeps today clear. Another helps you log what changed. That’s enough to show the product without overwhelming the page.
           </p>
         </div>
 
-        <div class="shots-grid">
-          <div class="gallery-card">
+        <div class="product-grid">
+          <div class="product-card">
             <img src="app-home.png" alt="Zenoomi home screen screenshot" />
-            <div class="gallery-meta">
-              <div class="gallery-title">Home</div>
-              <div class="gallery-copy">See wellness score, streaks, and today’s most important tasks in one place.</div>
+            <div class="product-meta">
+              <div class="product-title">Today at a glance</div>
+              <div class="product-copy">
+                See wellness score, today’s tasks, and what still needs attention without bouncing between notes, reminders, and memory.
+              </div>
             </div>
           </div>
 
-          <div class="gallery-card">
-            <img src="app-plan.png" alt="Zenoomi plan screen screenshot" />
-            <div class="gallery-meta">
-              <div class="gallery-title">Today’s Plan</div>
-              <div class="gallery-copy">Make routines visible so you can move through the day with less friction.</div>
-            </div>
-          </div>
-
-          <div class="gallery-card">
-            <img src="app-checkin.png" alt="Zenoomi wellness check-in screenshot" />
-            <div class="gallery-meta">
-              <div class="gallery-title">Quick Check-In</div>
-              <div class="gallery-copy">Log a quick wellness note, capture changes, and keep your records organized.</div>
+          <div class="product-card">
+            <img src="app-checkin.png" alt="Zenoomi quick check-in screenshot" />
+            <div class="product-meta">
+              <div class="product-title">Quick wellness logging</div>
+              <div class="product-copy">
+                Capture a quick wellness note, track symptoms or behavior changes, and keep your dog’s history organized in the same system.
+              </div>
             </div>
           </div>
         </div>

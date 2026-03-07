@@ -513,3 +513,380 @@
       color: var(--muted);
       font-size: 16px;
       line-height: 1.65;
+      max-width: 520px;
+    }
+
+    .footer {
+      padding: 18px 0 48px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      border-top: 1px solid rgba(44, 42, 38, 0.12);
+      padding-top: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .shots-grid,
+      .tools-grid,
+      .features-grid,
+      .system-grid,
+      .cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        display: grid;
+      }
+
+      .tools-grid,
+      .features-grid,
+      .system-grid,
+      .shots-grid {
+        display: grid;
+      }
+
+      .cta-box {
+        display: block;
+      }
+
+      .hero-visual {
+        min-height: auto;
+        padding-top: 8px;
+      }
+
+      .floating-card.top,
+      .floating-card.bottom {
+        position: static;
+        width: 100%;
+        margin-top: 14px;
+      }
+
+      .phone-shot {
+        width: min(100%, 360px);
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-links a:not(.btn) {
+        display: none;
+      }
+
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .hero {
+        padding-top: 30px;
+      }
+
+      .hero-sub,
+      .section-copy {
+        font-size: 16px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn,
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+      }
+
+      .cta-box {
+        padding: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="brand">
+        <span class="brand-mark">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M7 10.5C7 7.9 9.1 6 12 6s5 1.9 5 4.5c0 2-1.1 3.7-2.8 4.5V18a.8.8 0 0 1-1.4.5L12 17.4l-1 .1c-2.3 0-4-1.2-4-3.2 0-1.3.7-2.4 1.9-3.1" stroke="#4e7463" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        Zenoomi
+      </a>
+
+      <div class="nav-links">
+        <a href="#system">How it works</a>
+        <a href="#features">Features</a>
+        <a href="#screens">Screens</a>
+        <a href="#early-access" class="btn btn-primary">Get Early Access</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow">
+            <span class="eyebrow-dot"></span>
+            Private beta · Early access available
+          </div>
+
+          <h1>Stay on top of your dog’s daily care, routine, and wellness.</h1>
+
+          <p class="hero-sub">
+            Zenoomi brings daily plans, preventative care reminders, wellness tracking, and weekly insights into one calm, structured system for modern dog owners.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#early-access" class="btn btn-primary">Get Early Access</a>
+            <a href="#system" class="btn btn-secondary">See How It Works</a>
+          </div>
+
+          <div class="hero-proof">
+            <span>Daily plans</span>
+            <span>Preventative reminders</span>
+            <span>Wellness tracking</span>
+            <span>Weekly insights</span>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="phone-shot">
+            <img src="app-home.png" alt="Zenoomi app home screen" />
+          </div>
+
+          <div class="floating-card top">
+            <div class="floating-label">Wellness Score</div>
+            <div class="floating-value">50</div>
+            <div class="floating-sub">Watch this week · 3 tasks left today</div>
+          </div>
+
+          <div class="floating-card bottom">
+            <div class="floating-label">Today’s Plan</div>
+            <div class="floating-value" style="font-size:18px;">Bath · Training · Quick check-in</div>
+            <div class="floating-sub">A simple daily system that helps nothing important slip through the cracks.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="system">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-kicker">The Zenoomi system</div>
+          <h2 class="section-title">Plan → Do → Log → Learn → Next Plan</h2>
+          <p class="section-copy">
+            Zenoomi is built around one simple loop: create the plan, follow through, log what happened, learn from the pattern, and show up better tomorrow.
+          </p>
+        </div>
+
+        <div class="system-grid">
+          <div class="system-card">
+            <div class="system-num">01</div>
+            <div class="system-name">Plan</div>
+            <div class="system-desc">Build your dog’s day around walks, care tasks, routines, meds, and check-ins.</div>
+          </div>
+
+          <div class="system-card">
+            <div class="system-num">02</div>
+            <div class="system-name">Do</div>
+            <div class="system-desc">See the next best action clearly and stay on top of care without mental overload.</div>
+          </div>
+
+          <div class="system-card">
+            <div class="system-num">03</div>
+            <div class="system-name">Log</div>
+            <div class="system-desc">Capture health signals, completed tasks, and quick wellness notes in the moment.</div>
+          </div>
+
+          <div class="system-card">
+            <div class="system-num">04</div>
+            <div class="system-name">Learn</div>
+            <div class="system-desc">Get weekly insight into consistency, patterns, and what to improve next.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-kicker">Core features</div>
+          <h2 class="section-title">Built for how you actually care for your dog</h2>
+          <p class="section-copy">
+            Zenoomi is not just reminders. It is a practical daily operating system for staying consistent with the things that matter most.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">📅</div>
+            <div class="feature-title">Daily Plans</div>
+            <div class="feature-copy">See your dog’s full day at a glance, from care tasks and enrichment to quick check-ins and training.</div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <div class="feature-title">Preventative Care</div>
+            <div class="feature-copy">Stay ahead of baths, grooming, meds, recurring care, and other important routine tasks.</div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📈</div>
+            <div class="feature-title">Wellness Tracking</div>
+            <div class="feature-copy">Track wellness score, daily completion, and health signals so you notice changes earlier.</div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">✅</div>
+            <div class="feature-title">One Clear Next Step</div>
+            <div class="feature-copy">Zenoomi keeps the next action obvious so daily dog care feels lighter and easier to follow through on.</div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🔁</div>
+            <div class="feature-title">Habit Consistency</div>
+            <div class="feature-copy">Build repeatable routines around care, enrichment, and check-ins instead of relying on memory alone.</div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💡</div>
+            <div class="feature-title">Weekly Review</div>
+            <div class="feature-copy">Get a simple recap of what got done, what slipped, and what needs attention next.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="screens">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-kicker">Real product screens</div>
+          <h2 class="section-title">Designed around the actual workflow of dog care</h2>
+          <p class="section-copy">
+            Use real screenshots here, not concept art. That makes the product feel credible, live, and ready for beta users.
+          </p>
+        </div>
+
+        <div class="shots-grid">
+          <div class="gallery-card">
+            <img src="app-home.png" alt="Zenoomi home screen screenshot" />
+            <div class="gallery-meta">
+              <div class="gallery-title">Home</div>
+              <div class="gallery-copy">See wellness score, streaks, and today’s most important tasks in one place.</div>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <img src="app-plan.png" alt="Zenoomi plan screen screenshot" />
+            <div class="gallery-meta">
+              <div class="gallery-title">Today’s Plan</div>
+              <div class="gallery-copy">Make routines visible so you can move through the day with less friction.</div>
+            </div>
+          </div>
+
+          <div class="gallery-card">
+            <img src="app-checkin.png" alt="Zenoomi wellness check-in screenshot" />
+            <div class="gallery-meta">
+              <div class="gallery-title">Quick Check-In</div>
+              <div class="gallery-copy">Log a quick wellness note, capture changes, and keep your records organized.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="section-head">
+          <div class="section-kicker">Supporting tools</div>
+          <h2 class="section-title">More than reminders</h2>
+          <p class="section-copy">
+            Zenoomi leads with the daily OS, then supports it with activities, training support, AI guidance, and symptom logging.
+          </p>
+        </div>
+
+        <div class="tools-grid">
+          <div class="tool-card">
+            <div class="tool-title">Activities</div>
+            <div class="tool-copy">Add healthy routines and enrichment into the day so care is not just remembered, but actually done.</div>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-title">Training Guides</div>
+            <div class="tool-copy">Turn training into a repeatable daily habit instead of a disconnected one-off task.</div>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-title">AI Assistant</div>
+            <div class="tool-copy">Get quick answers and next-step guidance based on your dog’s plan, logs, and daily context.</div>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-title">Symptom Logging</div>
+            <div class="tool-copy">Track what you’re seeing and get calm guidance on what to monitor and when to escalate.</div>
+            <div class="tool-note">Not veterinary advice. If symptoms are severe or urgent, contact your vet or emergency clinic.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="testimonial">
+          <div class="quote">
+            “Before Zenoomi, I was keeping reminders in my head and notes in different places. Now I can actually stay on top of my dog’s routine.”
+          </div>
+          <div class="quote-meta">Beta user · Dog owner</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="early-access">
+      <div class="shell">
+        <div class="cta-box">
+          <div>
+            <div class="section-kicker">Get early access</div>
+            <div class="cta-title">A better daily system for caring for your dog starts here.</div>
+            <div class="cta-copy">
+              Join the beta and start building a simpler, more consistent routine for your dog.
+            </div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:12px; min-width:240px;">
+            <a href="#" class="btn btn-primary">Get Early Access</a>
+            <a href="#" class="btn btn-secondary">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <div>© 2026 Zenoomi</div>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

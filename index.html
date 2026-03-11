@@ -77,45 +77,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;padding:0 clamp(
 /* ── Hero Phone ── */
 .hero-visual{display:flex;justify-content:center;position:relative}
 .phone-wrap{position:relative}
-.phone{width:272px;height:560px;background:#111;border-radius:42px;padding:9px;box-shadow:var(--shadow-phone);position:relative;z-index:2}
-.phone-inner{width:100%;height:100%;border-radius:35px;overflow:hidden;background:#F7F5F0;position:relative}
-.phone-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:96px;height:24px;background:#111;border-radius:0 0 14px 14px;z-index:10}
-
-.ph-bar{padding:32px 18px 0;display:flex;justify-content:space-between;font-size:9.5px;font-weight:600;color:var(--text)}
-.ph-greeting{padding:14px 18px 2px;font-size:10.5px;color:var(--text-tertiary)}
-.ph-title{padding:0 18px 8px;font-family:var(--font-display);font-size:19px;font-weight:500;letter-spacing:-0.3px}
-
-.ph-card{margin:0 10px 7px;background:#fff;border-radius:13px;border:1px solid rgba(0,0,0,0.06);overflow:hidden}
-.ph-care{padding:12px 14px}
-.ph-care-label{font-size:8px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--olive);margin-bottom:5px}
-.ph-care-row{display:flex;align-items:flex-end;gap:6px;margin-bottom:3px}
-.ph-care-score{font-size:23px;font-weight:700;line-height:1;color:var(--text)}
-.ph-care-tier{font-size:11px;color:var(--text-tertiary);padding-bottom:2px}
-.ph-care-sub{font-size:8.5px;color:var(--forest);margin-bottom:7px}
-.ph-care-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
-.ph-care-tasks{font-size:9px;font-weight:500}
-.ph-care-streak{font-size:8px;font-weight:600;color:var(--forest);background:var(--forest-light);padding:2px 7px;border-radius:20px}
-.ph-care-bar{height:3px;background:var(--forest-light);border-radius:2px;overflow:hidden}
-.ph-care-fill{height:100%;width:91%;background:var(--forest);border-radius:2px}
-
-.ph-section{padding:10px 18px 5px;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--olive);display:flex;justify-content:space-between}
-.ph-link{font-size:8px;text-transform:none;letter-spacing:0;color:var(--forest);font-weight:500}
-.ph-week{display:flex;justify-content:space-between;padding:0 12px 5px}
-.ph-day{font-size:8px;color:var(--text-tertiary);padding:3px 5px;border-radius:8px;font-weight:500}
-.ph-day.active{background:var(--forest);color:#fff}
-.ph-row{display:flex;align-items:center;gap:9px;padding:9px 12px}
-.ph-row+.ph-row{border-top:1px solid rgba(0,0,0,0.04)}
-.ph-check{width:17px;height:17px;border-radius:50%;border:1.5px solid #D8D8D2;flex-shrink:0}
-.ph-check-done{width:17px;height:17px;border-radius:50%;background:var(--forest);flex-shrink:0;position:relative}
-.ph-check-done::after{content:'';position:absolute;top:4px;left:3.5px;width:8px;height:5px;border-left:1.5px solid #fff;border-bottom:1.5px solid #fff;transform:rotate(-45deg)}
-.ph-info{flex:1}.ph-name{font-size:11px;font-weight:500}.ph-meta{font-size:8px;color:var(--text-tertiary)}
-.ph-actions-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:0 10px}
-.ph-action{background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:10px;padding:8px;text-align:center;font-size:8.5px;font-weight:500}
-
-.ph-tab-bar{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-around;padding:6px 0 14px;background:rgba(247,245,240,0.95);border-top:1px solid rgba(0,0,0,0.05)}
-.ph-tab{text-align:center;font-size:7px;font-weight:600;color:var(--text-tertiary)}
-.ph-tab.active{color:var(--forest)}
-.ph-tab-icon{font-size:12px;display:block;margin-bottom:1px}
+.phone{width:272px;height:572px;background:#111;border-radius:42px;padding:9px;box-shadow:var(--shadow-phone);position:relative;z-index:2}
+.phone-inner{width:100%;height:100%;border-radius:35px;overflow:hidden;background:#F7F5F0}
+.phone-screenshot{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 
 .float-card{position:absolute;background:#fff;border-radius:var(--r-md);padding:13px 16px;box-shadow:var(--shadow-md);border:1px solid var(--border-light);z-index:3;white-space:nowrap}
 .fc-top{top:28px;right:-160px}.fc-bottom{bottom:100px;left:-164px}
@@ -241,7 +205,7 @@ footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
   .hero-sub,.hero-note{margin-left:auto;margin-right:auto}
   .hero-ctas,.hero-proof{justify-content:center}
   .hero-visual{order:2;margin-top:16px}
-  .phone{width:246px;height:508px;border-radius:38px}
+  .phone{width:246px;height:520px;border-radius:38px;padding:8px}
   .phone-inner{border-radius:31px}
   .fc-top,.fc-bottom{display:none}
   .value-divider,.proof-sep{display:none}
@@ -324,46 +288,8 @@ footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
 
         <div class="phone">
           <div class="phone-inner">
-            <div class="phone-notch"></div>
-            <div class="ph-bar"><span>9:20</span><span style="letter-spacing:3px">● ● ●</span></div>
-            <div class="ph-greeting">Good evening, Kaspir</div>
-            <div class="ph-title">Today's Plan</div>
-
-            <div class="ph-card ph-care">
-              <div class="ph-care-label">Care Score</div>
-              <div class="ph-care-row"><div class="ph-care-score">91</div><div class="ph-care-tier">Thriving</div></div>
-              <div class="ph-care-sub">+5 this week</div>
-              <div class="ph-care-meta">
-                <div class="ph-care-tasks">1 task left today</div>
-                <div class="ph-care-streak">12-day streak</div>
-              </div>
-              <div class="ph-care-bar"><div class="ph-care-fill"></div></div>
-            </div>
-
-            <div class="ph-section"><span>Today's Plan</span><span class="ph-link">View full plan</span></div>
-            <div class="ph-week">
-              <span class="ph-day">Sun</span><span class="ph-day">Mon</span><span class="ph-day active">Tue</span><span class="ph-day">Wed</span><span class="ph-day">Thu</span><span class="ph-day">Fri</span><span class="ph-day">Sat</span>
-            </div>
-            <div class="ph-card">
-              <div class="ph-row"><div class="ph-check-done"></div><div class="ph-info"><div class="ph-name">Decompression Walk</div><div class="ph-meta">10 min · Routine</div></div></div>
-              <div class="ph-row"><div class="ph-check-done"></div><div class="ph-info"><div class="ph-name">Flea &amp; tick reminder</div><div class="ph-meta">Due today · Preventative</div></div></div>
-              <div class="ph-row"><div class="ph-check"></div><div class="ph-info"><div class="ph-name">Quick check-in</div><div class="ph-meta">Any restlessness at night?</div></div></div>
-            </div>
-
-            <div class="ph-section"><span>Quick Actions</span></div>
-            <div class="ph-actions-grid">
-              <div class="ph-action">Ask Peach</div>
-              <div class="ph-action">Log symptom</div>
-              <div class="ph-action">Add reminder</div>
-              <div class="ph-action">5-min win</div>
-            </div>
-
-            <div class="ph-tab-bar">
-              <div class="ph-tab active"><span class="ph-tab-icon">⌂</span>Home</div>
-              <div class="ph-tab"><span class="ph-tab-icon">◎</span>Activities</div>
-              <div class="ph-tab"><span class="ph-tab-icon">❏</span>Memories</div>
-              <div class="ph-tab"><span class="ph-tab-icon">○</span>Profile</div>
-            </div>
+            <!-- Replace src with your actual screenshot path -->
+            <img src="home-screen.png" alt="Zenoomi home screen" class="phone-screenshot">
           </div>
         </div>
       </div>

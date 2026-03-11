@@ -3,1172 +3,260 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zenoomi — Stay Ahead of Your Dog's Care</title>
+<title>Zenoomi | Your Dog's Daily Care, Figured Out</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg: #FAF9F6;
-  --bg-warm: #F3F2ED;
-  --bg-card: #FFFFFF;
-  --bg-dark: #1D1D1B;
-  --text: #1D1D1B;
-  --text-secondary: #5A5A54;
-  --text-tertiary: #97978F;
-  --text-inverse: #FAF9F6;
-  --sage: #5C8A52;
-  --sage-hover: #4B7843;
-  --sage-light: #E6EEE4;
-  --sage-mid: #CEDDC9;
-  --border: rgba(0,0,0,0.07);
-  --border-light: rgba(0,0,0,0.04);
-  --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 20px rgba(0,0,0,0.06);
-  --shadow-lg: 0 12px 44px rgba(0,0,0,0.09);
-  --shadow-phone: 0 20px 56px rgba(0,0,0,0.14), 0 4px 12px rgba(0,0,0,0.06);
-  --r-md: 16px;
-  --r-lg: 24px;
-  --r-xl: 32px;
-  --r-full: 100px;
-  --font-display: 'Newsreader', Georgia, serif;
-  --font-body: 'Bricolage Grotesque', system-ui, sans-serif;
-  --ease: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-
-body {
-  font-family: var(--font-body);
-  background: var(--bg);
-  color: var(--text);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-  line-height: 1.55;
-}
-
-img { display: block; max-width: 100%; }
-a { color: inherit; }
-
-.container {
-  max-width: 1160px;
-  margin: 0 auto;
-  padding-left: clamp(20px, 4vw, 56px);
-  padding-right: clamp(20px, 4vw, 56px);
-}
-
-.section-eyebrow {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 2.2px;
-  text-transform: uppercase;
-  color: var(--sage);
-  margin-bottom: 14px;
-}
-
-.section-headline {
-  font-family: var(--font-display);
-  font-size: clamp(28px, 3.8vw, 40px);
-  font-weight: 400;
-  color: var(--text);
-  letter-spacing: -0.6px;
-  line-height: 1.15;
-}
-
-.section-sub {
-  font-size: 16px;
-  color: var(--text-secondary);
-  max-width: 500px;
-  line-height: 1.6;
-  font-weight: 400;
-}
-
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  height: 64px;
-  padding: 0 clamp(20px, 4vw, 56px);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(250,249,246,0.82);
-  backdrop-filter: blur(20px) saturate(1.3);
-  -webkit-backdrop-filter: blur(20px) saturate(1.3);
-  border-bottom: 1px solid var(--border-light);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  text-decoration: none;
-}
-
-.logo-mark {
-  width: 30px;
-  height: 30px;
-  background: var(--sage);
-  border-radius: 8px;
-  display: grid;
-  place-items: center;
-}
-
-.logo-mark svg { width: 16px; height: 16px; }
-
-.logo-name {
-  font-weight: 600;
-  font-size: 17px;
-  color: var(--text);
-  letter-spacing: -0.2px;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-}
-
-.nav-link {
-  font-size: 13.5px;
-  font-weight: 400;
-  color: var(--text-secondary);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.nav-link:hover { color: var(--text); }
-
-.nav-cta {
-  font-size: 13.5px;
-  font-weight: 500;
-  color: #fff;
-  background: var(--sage);
-  padding: 9px 20px;
-  border-radius: var(--r-full);
-  text-decoration: none;
-  transition: all 0.3s var(--ease);
-}
-
-.nav-cta:hover {
-  background: var(--sage-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(92,138,82,0.22);
-}
-
-.hero {
-  padding: clamp(100px, 13vh, 152px) 0 0;
-}
-
-.hero .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(32px, 5vw, 72px);
-  align-items: center;
-}
-
-.hero-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 5px 14px 5px 8px;
-  background: var(--sage-light);
-  border-radius: var(--r-full);
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--sage);
-  margin-bottom: 26px;
-}
-
-.hero-pill-dot {
-  width: 7px;
-  height: 7px;
-  background: var(--sage);
-  border-radius: 50%;
-}
-
-.hero-headline {
-  font-family: var(--font-display);
-  font-size: clamp(36px, 5vw, 54px);
-  font-weight: 400;
-  line-height: 1.1;
-  letter-spacing: -1.2px;
-  color: var(--text);
-  margin-bottom: 22px;
-}
-
-.headline-accent {
-  position: relative;
-  display: inline-block;
-  color: var(--sage);
-  text-shadow: 0 1px 0 rgba(255,255,255,0.5), 0 12px 28px rgba(92,138,82,0.12);
-}
-
-.headline-accent::after {
-  content: "";
-  position: absolute;
-  left: 2%;
-  right: 2%;
-  bottom: 0.08em;
-  height: 0.3em;
-  background: linear-gradient(180deg, rgba(92,138,82,0) 0%, rgba(92,138,82,0.18) 100%);
-  border-radius: 999px;
-  z-index: -1;
-}
-
-.hero-sub {
-  font-size: clamp(15px, 1.6vw, 17px);
-  line-height: 1.65;
-  color: var(--text-secondary);
-  max-width: 460px;
-  margin-bottom: 32px;
-  font-weight: 400;
-}
-
-.hero-ctas {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 15px 30px;
-  background: var(--sage);
-  color: #fff;
-  font-size: 15px;
-  font-weight: 500;
-  border: none;
-  border-radius: var(--r-full);
-  cursor: pointer;
-  transition: all 0.35s var(--ease);
-  text-decoration: none;
-}
-
-.btn-primary:hover {
-  background: var(--sage-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 26px rgba(92,138,82,0.28);
-}
-
-.btn-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 15px 20px;
-  background: transparent;
-  color: var(--text-secondary);
-  font-size: 15px;
-  font-weight: 500;
-  border: 1.5px solid var(--border);
-  border-radius: var(--r-full);
-  cursor: pointer;
-  transition: all 0.3s var(--ease);
-  text-decoration: none;
-}
-
-.hero-chips {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.hero-chip {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 12.5px;
-  color: var(--text-tertiary);
-}
-
-.hero-chip-icon {
-  width: 18px;
-  height: 18px;
-  background: var(--sage-light);
-  border-radius: 5px;
-  display: grid;
-  place-items: center;
-  font-size: 9px;
-}
-
-.chip-sep {
-  width: 1px;
-  height: 14px;
-  background: var(--border);
-}
-
-.hero-visual {
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
-.phone-wrap { position: relative; }
-
-.phone {
-  width: 270px;
-  height: 558px;
-  background: #111;
-  border-radius: 42px;
-  padding: 9px;
-  box-shadow: var(--shadow-phone);
-  position: relative;
-  z-index: 2;
-}
-
-.phone-inner {
-  width: 100%;
-  height: 100%;
-  border-radius: 35px;
-  overflow: hidden;
-  background: var(--bg);
-  position: relative;
-}
-
-.phone-notch {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 96px;
-  height: 24px;
-  background: #111;
-  border-radius: 0 0 14px 14px;
-  z-index: 10;
-}
-
-.sc-bar {
-  padding: 32px 18px 0;
-  display: flex;
-  justify-content: space-between;
-  font-size: 9.5px;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.sc-head { padding: 16px 18px 2px; }
-.sc-greeting { font-size: 10.5px; color: var(--text-tertiary); }
-
-.sc-title-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 2px;
-}
-
-.sc-title {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--text);
-  letter-spacing: -0.3px;
-}
-
-.sc-ring {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: conic-gradient(var(--sage) 0deg, var(--sage) 306deg, #E5E5E0 306deg);
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-}
-
-.sc-ring-num {
-  width: 30px;
-  height: 30px;
-  background: var(--bg);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-size: 10.5px;
-  font-weight: 600;
-  color: var(--sage);
-}
-
-.sc-label {
-  padding: 10px 18px 5px;
-  font-size: 8.5px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.4px;
-  color: var(--text-tertiary);
-}
-
-.sc-card {
-  margin: 0 10px 7px;
-  background: #fff;
-  border-radius: 13px;
-  overflow: hidden;
-  box-shadow: var(--shadow-xs);
-}
-
-.sc-row {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  padding: 9px 12px;
-}
-
-.sc-row + .sc-row { border-top: 1px solid rgba(0,0,0,0.04); }
-
-.sc-chk {
-  width: 17px;
-  height: 17px;
-  border-radius: 5px;
-  flex-shrink: 0;
-}
-
-.sc-chk.done {
-  background: var(--sage);
-  position: relative;
-}
-
-.sc-chk.done::after {
-  content: '';
-  position: absolute;
-  top: 4px;
-  left: 3.5px;
-  width: 8.5px;
-  height: 5px;
-  border-left: 1.5px solid #fff;
-  border-bottom: 1.5px solid #fff;
-  transform: rotate(-45deg);
-}
-
-.sc-chk.open { border: 1.5px solid #D8D8D2; }
-
-.sc-row-info { flex: 1; min-width: 0; }
-
-.sc-row-name {
-  font-size: 11.5px;
-  font-weight: 500;
-  color: var(--text);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.sc-row-meta {
-  font-size: 9px;
-  color: var(--text-tertiary);
-}
-
-.sc-row-time {
-  font-size: 9px;
-  color: var(--text-tertiary);
-  flex-shrink: 0;
-}
-
-.sc-insight {
-  margin: 3px 10px 7px;
-  padding: 11px 12px;
-  background: var(--sage-light);
-  border-radius: 11px;
-  border: 1px solid var(--sage-mid);
-}
-
-.sc-insight-tag {
-  font-size: 8px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--sage);
-  margin-bottom: 2px;
-}
-
-.sc-insight-text {
-  font-size: 10.5px;
-  color: var(--text-secondary);
-  line-height: 1.4;
-}
-
-.sc-streaks {
-  margin: 5px 18px;
-  display: flex;
-  align-items: center;
-  gap: 3px;
-}
-
-.sc-sdot {
-  width: 20px;
-  height: 4.5px;
-  border-radius: 3px;
-}
-
-.sc-sdot.on { background: var(--sage); }
-.sc-sdot.off { background: #E5E5E0; }
-
-.sc-streak-text {
-  font-size: 9px;
-  color: var(--text-tertiary);
-  margin-left: 6px;
-  white-space: nowrap;
-}
-
-.fl {
-  position: absolute;
-  background: #fff;
-  border-radius: var(--r-md);
-  padding: 13px 16px;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-light);
-  z-index: 3;
-  white-space: nowrap;
-}
-
-.fl-top { top: 36px; right: -52px; }
-.fl-bot { bottom: 96px; left: -58px; }
-
-.fl-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.fl-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 9px;
-  background: var(--sage-light);
-  display: grid;
-  place-items: center;
-  font-size: 14px;
-}
-
-.fl-label {
-  font-size: 11.5px;
-  font-weight: 500;
-  color: var(--text);
-}
-
-.fl-val {
-  font-size: 10px;
-  color: var(--text-tertiary);
-  margin-top: 1px;
-}
-
-.fl-bars {
-  display: flex;
-  gap: 2.5px;
-  margin-top: 8px;
-}
-
-.fl-bar {
-  width: 16px;
-  height: 4.5px;
-  border-radius: 3px;
-}
-
-.fl-bar.on { background: var(--sage); }
-.fl-bar.off { background: #E8E8E2; }
-
-.proof-strip-section {
-  padding: 48px 0;
-}
-
-.proof-strip {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 36px;
-  padding: 18px 28px;
-  background: var(--bg-warm);
-  border-radius: var(--r-lg);
-  border: 1px solid var(--border-light);
-  flex-wrap: wrap;
-}
-
-.value-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--text-secondary);
-}
-
-.value-icon {
-  font-size: 14px;
-  opacity: 0.7;
-}
-
-.proof-div {
-  width: 1px;
-  height: 28px;
-  background: var(--border);
-}
-
-.who-section {
-  padding: 96px 0;
-}
-
-.who-header {
-  text-align: center;
-  margin-bottom: 56px;
-}
-
-.who-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.who-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--r-lg);
-  overflow: hidden;
-  transition: all 0.4s var(--ease);
-}
-
-.who-photo {
-  width: 100%;
-  height: 200px;
-  background: var(--bg-warm);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  border-bottom: 1px solid var(--border-light);
-  overflow: hidden;
-}
-
-.who-photo-icon {
-  font-size: 32px;
-  opacity: 0.5;
-}
-
-.who-body {
-  padding: 24px 24px 28px;
-}
-
-.who-badge {
-  display: inline-flex;
-  padding: 4px 11px;
-  background: var(--sage-light);
-  border-radius: var(--r-full);
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--sage);
-  margin-bottom: 14px;
-}
-
-.who-quote {
-  font-family: var(--font-display);
-  font-size: 17px;
-  font-weight: 400;
-  font-style: italic;
-  color: var(--text);
-  line-height: 1.4;
-  margin-bottom: 14px;
-  letter-spacing: -0.15px;
-}
-
-.who-response {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-.how-section {
-  padding: 96px 0;
-}
-
-.how-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.how-header .section-sub {
-  margin: 14px auto 0;
-}
-
-.how-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
-  position: relative;
-}
-
-.how-steps::before {
-  content: '';
-  position: absolute;
-  top: 30px;
-  left: calc(12.5% + 8px);
-  right: calc(12.5% + 8px);
-  height: 2px;
-  background: linear-gradient(90deg, var(--sage-mid), var(--sage), var(--sage), var(--sage-mid));
-  border-radius: 1px;
-  z-index: 0;
-}
-
-.how-step {
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-
-.how-num {
-  width: 52px;
-  height: 52px;
-  margin: 0 auto 18px;
-  background: var(--bg-card);
-  border: 2px solid var(--sage-mid);
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 500;
-  color: var(--sage);
-}
-
-.how-name {
-  font-family: var(--font-display);
-  font-size: 21px;
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: 8px;
-}
-
-.how-desc {
-  font-size: 13.5px;
-  color: var(--text-secondary);
-  line-height: 1.55;
-  max-width: 210px;
-  margin: 0 auto;
-}
-
-.how-tag {
-  display: inline-flex;
-  margin-top: 12px;
-  padding: 4px 10px;
-  background: var(--bg-warm);
-  border-radius: var(--r-full);
-  font-size: 11px;
-  color: var(--text-tertiary);
-}
-
-.features-section {
-  padding: 56px 0 96px;
-}
-
-.features-header {
-  text-align: center;
-  margin-bottom: 56px;
-}
-
-.pf-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-bottom: 18px;
-}
-
-.pf-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--r-lg);
-  padding: 36px 28px;
-}
-
-.pf-badge {
-  display: inline-flex;
-  padding: 3px 10px;
-  background: var(--sage-light);
-  border-radius: var(--r-full);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.6px;
-  text-transform: uppercase;
-  color: var(--sage);
-  margin-bottom: 18px;
-}
-
-.pf-icon {
-  width: 44px;
-  height: 44px;
-  background: var(--sage-light);
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  font-size: 20px;
-  margin-bottom: 18px;
-}
-
-.pf-name {
-  font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: 8px;
-}
-
-.pf-desc {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--text-secondary);
-}
-
-.sf-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.sf-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  background: var(--bg-warm);
-  border-radius: var(--r-md);
-  padding: 22px;
-}
-
-.sf-icon {
-  width: 38px;
-  height: 38px;
-  background: var(--bg-card);
-  border-radius: 10px;
-  display: grid;
-  place-items: center;
-  font-size: 17px;
-  flex-shrink: 0;
-  border: 1px solid var(--border-light);
-}
-
-.sf-name {
-  font-weight: 500;
-  font-size: 14.5px;
-  color: var(--text);
-  margin-bottom: 3px;
-}
-
-.sf-desc {
-  font-size: 13px;
-  color: var(--text-secondary);
-  line-height: 1.5;
-}
-
-.showcase-section {
-  padding: 72px 0 96px;
-}
-
-.showcase-header {
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.showcase-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-}
-
-.showcase-item { text-align: center; }
-
-.showcase-phone {
-  width: 200px;
-  height: 400px;
-  margin: 0 auto 18px;
-  background: #111;
-  border-radius: 30px;
-  padding: 7px;
-  box-shadow: var(--shadow-lg);
-}
-
-.showcase-screen {
-  width: 100%;
-  height: 100%;
-  border-radius: 24px;
-  overflow: hidden;
-  background: var(--bg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 2px dashed var(--sage-mid);
-}
-
-.showcase-ph-icon { font-size: 26px; margin-bottom: 6px; }
-
-.showcase-ph-text {
-  font-size: 11px;
-  font-weight: 500;
-  color: var(--sage);
-  line-height: 1.4;
-  text-align: center;
-}
-
-.showcase-ph-size {
-  font-size: 9px;
-  color: var(--text-tertiary);
-  margin-top: 4px;
-}
-
-.showcase-label {
-  font-family: var(--font-display);
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: 3px;
-}
-
-.showcase-desc {
-  font-size: 13px;
-  color: var(--text-secondary);
-}
-
-.first-week-section {
-  padding: 72px 0 96px;
-}
-
-.fw-header {
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.fw-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.fw-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--r-lg);
-  padding: 32px 28px;
-  text-align: center;
-}
-
-.fw-day {
-  display: inline-flex;
-  padding: 4px 12px;
-  background: var(--sage-light);
-  border-radius: var(--r-full);
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  color: var(--sage);
-  margin-bottom: 18px;
-}
-
-.fw-icon {
-  font-size: 28px;
-  margin-bottom: 14px;
-}
-
-.fw-name {
-  font-family: var(--font-display);
-  font-size: 19px;
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: 8px;
-}
-
-.fw-desc {
-  font-size: 14px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-.trust-section {
-  padding: 24px 0 72px;
-}
-
-.trust-box {
-  max-width: 740px;
-  margin: 0 auto;
-  background: var(--bg-warm);
-  border-radius: var(--r-lg);
-  padding: 32px 36px;
-  display: flex;
-  align-items: flex-start;
-  gap: 18px;
-  border: 1px solid var(--border-light);
-}
-
-.trust-icon {
-  width: 42px;
-  height: 42px;
-  background: var(--bg-card);
-  border-radius: 11px;
-  display: grid;
-  place-items: center;
-  font-size: 19px;
-  flex-shrink: 0;
-  border: 1px solid var(--border-light);
-}
-
-.trust-title {
-  font-family: var(--font-display);
-  font-size: 17px;
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: 5px;
-}
-
-.trust-text {
-  font-size: 13.5px;
-  color: var(--text-secondary);
-  line-height: 1.6;
-}
-
-.final-section {
-  padding: 24px 0 100px;
-}
-
-.final-box {
-  text-align: center;
-  padding: 72px 48px;
-  background: var(--bg-dark);
-  border-radius: var(--r-xl);
-  position: relative;
-  overflow: hidden;
-}
-
-.final-box::before {
-  content: '';
-  position: absolute;
-  top: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 440px;
-  height: 440px;
-  background: radial-gradient(circle, rgba(92,138,82,0.1) 0%, transparent 60%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.final-eyebrow {
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 2.2px;
-  text-transform: uppercase;
-  color: var(--sage);
-  margin-bottom: 18px;
-  position: relative;
-  z-index: 1;
-}
-
-.final-headline {
-  font-family: var(--font-display);
-  font-size: clamp(26px, 3.6vw, 38px);
-  font-weight: 400;
-  color: var(--text-inverse);
-  margin-bottom: 14px;
-  letter-spacing: -0.5px;
-  line-height: 1.15;
-  position: relative;
-  z-index: 1;
-}
-
-.final-sub {
-  font-size: 15px;
-  color: rgba(250,249,246,0.5);
-  margin-bottom: 32px;
-  max-width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.6;
-  font-weight: 300;
-  position: relative;
-  z-index: 1;
-}
-
-.final-box .btn-primary {
-  background: var(--bg);
-  color: var(--bg-dark);
-  position: relative;
-  z-index: 1;
-}
-
-.final-note {
-  font-size: 12px;
-  color: rgba(250,249,246,0.3);
-  margin-top: 14px;
-  position: relative;
-  z-index: 1;
-}
-
-footer {
-  padding: 28px 0 36px;
-  border-top: 1px solid var(--border-light);
-}
-
-footer .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.footer-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.footer-name {
-  font-weight: 500;
-  font-size: 14px;
-  color: var(--text-tertiary);
-}
-
-.footer-copy {
-  font-size: 12px;
-  color: var(--text-tertiary);
-  opacity: 0.55;
-}
-
-.footer-links {
-  display: flex;
-  gap: 24px;
-}
-
-.footer-links a {
-  font-size: 12px;
-  color: var(--text-tertiary);
-  text-decoration: none;
-}
-
-@media (max-width: 960px) {
-  .nav-link { display: none; }
-  .hero .container { grid-template-columns: 1fr; text-align: center; }
-  .hero-sub { margin-left: auto; margin-right: auto; }
-  .hero-ctas, .hero-chips { justify-content: center; }
-  .hero-visual { order: 2; margin-top: 16px; }
-  .phone { width: 245px; height: 506px; border-radius: 38px; }
-  .phone-inner { border-radius: 31px; }
-  .fl-top { right: -28px; top: 20px; }
-  .fl-bot { left: -28px; bottom: 72px; }
-  .proof-div { display: none; }
-  .who-grid, .pf-grid, .sf-grid, .fw-grid { grid-template-columns: 1fr; }
-  .how-steps { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .how-steps::before { display: none; }
-  .showcase-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .showcase-phone { width: 160px; height: 320px; border-radius: 24px; }
-  .trust-box { flex-direction: column; }
-  .final-box { padding: 52px 24px; }
-  footer .container { flex-direction: column; gap: 14px; }
-}
-
-@media (max-width: 600px) {
-  .how-steps { grid-template-columns: 1fr; }
-  .showcase-grid { grid-template-columns: 1fr; }
-  .showcase-phone { width: 180px; height: 360px; }
+  --bg:#FAF9F6;--bg-warm:#F3F2ED;--bg-card:#FFFFFF;--bg-dark:#1D1D1B;
+  --text:#1D1D1B;--text-secondary:#5A5A54;--text-tertiary:#97978F;--text-inverse:#FAF9F6;
+  --forest:#2D5A3D;--forest-hover:#244B32;--forest-light:#E4EDE7;--forest-mid:#C2D7C8;
+  --olive:#8B7D3C;--tan-light:#F0E9DD;
+  --border:rgba(0,0,0,0.07);--border-light:rgba(0,0,0,0.04);
+  --shadow-xs:0 1px 2px rgba(0,0,0,0.04);--shadow-sm:0 2px 8px rgba(0,0,0,0.05);
+  --shadow-md:0 4px 20px rgba(0,0,0,0.06);--shadow-lg:0 12px 44px rgba(0,0,0,0.09);
+  --shadow-phone:0 20px 56px rgba(0,0,0,0.14),0 4px 12px rgba(0,0,0,0.06);
+  --r-md:16px;--r-lg:24px;--r-xl:32px;--r-full:100px;
+  --font-display:'Newsreader',Georgia,serif;
+  --font-body:'Bricolage Grotesque',system-ui,sans-serif;
+  --ease:cubic-bezier(0.16,1,0.3,1);
+}
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.55}
+a{color:inherit;text-decoration:none}
+.container{max-width:1160px;margin:0 auto;padding-left:clamp(20px,4vw,56px);padding-right:clamp(20px,4vw,56px)}
+
+/* ── Animations ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.08s}
+.reveal-delay-2{transition-delay:0.16s}
+.reveal-delay-3{transition-delay:0.24s}
+
+/* ── Typography ── */
+.section-eyebrow{font-size:11px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;color:var(--forest);margin-bottom:14px}
+.section-headline{font-family:var(--font-display);font-size:clamp(28px,3.8vw,40px);font-weight:400;color:var(--text);letter-spacing:-0.6px;line-height:1.15}
+.section-sub{font-size:16px;color:var(--text-secondary);max-width:560px;line-height:1.65;font-weight:400;margin:14px auto 0}
+
+/* ── Nav ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;padding:0 clamp(20px,4vw,56px);display:flex;align-items:center;justify-content:space-between;background:rgba(250,249,246,0.82);backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);border-bottom:1px solid var(--border-light)}
+.logo{display:flex;align-items:center;gap:9px}
+.logo-mark{width:30px;height:30px;background:var(--forest);border-radius:8px;display:grid;place-items:center}
+.logo-mark svg{width:16px;height:16px}
+.logo-name{font-weight:600;font-size:17px;letter-spacing:-0.2px}
+.nav-right{display:flex;align-items:center;gap:28px}
+.nav-link{font-size:13.5px;color:var(--text-secondary);transition:color .2s}
+.nav-link:hover{color:var(--text)}
+.nav-cta{font-size:13.5px;font-weight:500;color:#fff;background:var(--forest);padding:9px 20px;border-radius:var(--r-full);transition:all .3s var(--ease)}
+.nav-cta:hover{background:var(--forest-hover);transform:translateY(-1px);box-shadow:0 4px 14px rgba(45,90,61,0.22)}
+
+/* ── Hero ── */
+.hero{padding:clamp(100px,13vh,152px) 0 0}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:center;min-height:86vh}
+.hero-pill{display:inline-flex;align-items:center;gap:7px;padding:5px 14px 5px 8px;background:var(--forest-light);border-radius:var(--r-full);font-size:12.5px;font-weight:500;color:var(--forest);margin-bottom:24px}
+.hero-pill-dot{width:7px;height:7px;background:var(--forest);border-radius:50%}
+.hero-headline{font-family:var(--font-display);font-size:clamp(38px,5vw,56px);font-weight:400;line-height:1.06;letter-spacing:-1.2px;margin-bottom:18px}
+.hero-headline .accent{color:var(--forest);font-style:italic}
+.hero-sub{font-size:clamp(16px,1.7vw,18px);line-height:1.68;color:var(--text-secondary);max-width:520px;margin-bottom:30px}
+.hero-sub strong{color:var(--text)}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:24px}
+.btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;border-radius:var(--r-full);font-size:15px;font-weight:500;transition:all .3s var(--ease);cursor:pointer}
+.btn-primary{padding:15px 30px;background:var(--forest);color:#fff;border:none}
+.btn-primary:hover{background:var(--forest-hover);transform:translateY(-2px);box-shadow:0 8px 26px rgba(45,90,61,0.26)}
+.btn-secondary{padding:15px 22px;border:1.5px solid var(--border);color:var(--text-secondary);background:transparent}
+.btn-secondary:hover{border-color:var(--text-tertiary);color:var(--text)}
+.hero-note{font-size:13.5px;color:var(--text-tertiary);max-width:500px;line-height:1.6}
+.hero-proof{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.proof-chip{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--text-tertiary)}
+.proof-chip-icon{width:18px;height:18px;background:var(--forest-light);border-radius:5px;display:grid;place-items:center;font-size:9px}
+.proof-sep{width:1px;height:14px;background:var(--border)}
+
+/* ── Hero Phone ── */
+.hero-visual{display:flex;justify-content:center;position:relative}
+.phone-wrap{position:relative}
+.phone{width:272px;height:560px;background:#111;border-radius:42px;padding:9px;box-shadow:var(--shadow-phone);position:relative;z-index:2}
+.phone-inner{width:100%;height:100%;border-radius:35px;overflow:hidden;background:#F7F5F0;position:relative}
+.phone-notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:96px;height:24px;background:#111;border-radius:0 0 14px 14px;z-index:10}
+
+.ph-bar{padding:32px 18px 0;display:flex;justify-content:space-between;font-size:9.5px;font-weight:600;color:var(--text)}
+.ph-greeting{padding:14px 18px 2px;font-size:10.5px;color:var(--text-tertiary)}
+.ph-title{padding:0 18px 8px;font-family:var(--font-display);font-size:19px;font-weight:500;letter-spacing:-0.3px}
+
+.ph-card{margin:0 10px 7px;background:#fff;border-radius:13px;border:1px solid rgba(0,0,0,0.06);overflow:hidden}
+.ph-care{padding:12px 14px}
+.ph-care-label{font-size:8px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--olive);margin-bottom:5px}
+.ph-care-row{display:flex;align-items:flex-end;gap:6px;margin-bottom:3px}
+.ph-care-score{font-size:23px;font-weight:700;line-height:1;color:var(--text)}
+.ph-care-tier{font-size:11px;color:var(--text-tertiary);padding-bottom:2px}
+.ph-care-sub{font-size:8.5px;color:var(--forest);margin-bottom:7px}
+.ph-care-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.ph-care-tasks{font-size:9px;font-weight:500}
+.ph-care-streak{font-size:8px;font-weight:600;color:var(--forest);background:var(--forest-light);padding:2px 7px;border-radius:20px}
+.ph-care-bar{height:3px;background:var(--forest-light);border-radius:2px;overflow:hidden}
+.ph-care-fill{height:100%;width:91%;background:var(--forest);border-radius:2px}
+
+.ph-section{padding:10px 18px 5px;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:1.2px;color:var(--olive);display:flex;justify-content:space-between}
+.ph-link{font-size:8px;text-transform:none;letter-spacing:0;color:var(--forest);font-weight:500}
+.ph-week{display:flex;justify-content:space-between;padding:0 12px 5px}
+.ph-day{font-size:8px;color:var(--text-tertiary);padding:3px 5px;border-radius:8px;font-weight:500}
+.ph-day.active{background:var(--forest);color:#fff}
+.ph-row{display:flex;align-items:center;gap:9px;padding:9px 12px}
+.ph-row+.ph-row{border-top:1px solid rgba(0,0,0,0.04)}
+.ph-check{width:17px;height:17px;border-radius:50%;border:1.5px solid #D8D8D2;flex-shrink:0}
+.ph-check-done{width:17px;height:17px;border-radius:50%;background:var(--forest);flex-shrink:0;position:relative}
+.ph-check-done::after{content:'';position:absolute;top:4px;left:3.5px;width:8px;height:5px;border-left:1.5px solid #fff;border-bottom:1.5px solid #fff;transform:rotate(-45deg)}
+.ph-info{flex:1}.ph-name{font-size:11px;font-weight:500}.ph-meta{font-size:8px;color:var(--text-tertiary)}
+.ph-actions-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:0 10px}
+.ph-action{background:#fff;border:1px solid rgba(0,0,0,0.06);border-radius:10px;padding:8px;text-align:center;font-size:8.5px;font-weight:500}
+
+.ph-tab-bar{position:absolute;bottom:0;left:0;right:0;display:flex;justify-content:space-around;padding:6px 0 14px;background:rgba(247,245,240,0.95);border-top:1px solid rgba(0,0,0,0.05)}
+.ph-tab{text-align:center;font-size:7px;font-weight:600;color:var(--text-tertiary)}
+.ph-tab.active{color:var(--forest)}
+.ph-tab-icon{font-size:12px;display:block;margin-bottom:1px}
+
+.float-card{position:absolute;background:#fff;border-radius:var(--r-md);padding:13px 16px;box-shadow:var(--shadow-md);border:1px solid var(--border-light);z-index:3;white-space:nowrap}
+.fc-top{top:28px;right:-160px}.fc-bottom{bottom:100px;left:-164px}
+.fc-row{display:flex;align-items:center;gap:10px}
+.fc-icon{width:32px;height:32px;border-radius:9px;background:var(--forest-light);display:grid;place-items:center;font-size:14px}
+.fc-title{font-size:11.5px;font-weight:500}.fc-sub{font-size:10px;color:var(--text-tertiary);margin-top:1px}
+
+/* ── Value Strip ── */
+.value-strip{padding:42px 0}
+.value-box{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;padding:18px 24px;background:var(--bg-warm);border:1px solid var(--border-light);border-radius:var(--r-lg)}
+.value-item{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-secondary)}
+.value-divider{width:1px;height:24px;background:var(--border)}
+
+/* ── Problem ── */
+.problem{padding:18px 0 72px}
+.problem-header{text-align:center;margin-bottom:46px}
+.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.problem-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:30px 24px}
+.problem-icon{font-size:26px;margin-bottom:14px}
+.problem-title{font-family:var(--font-display);font-size:21px;margin-bottom:8px}
+.problem-desc{font-size:14px;color:var(--text-secondary);line-height:1.62}
+.problem-transition{text-align:center;padding-top:42px;font-family:var(--font-display);font-size:clamp(20px,2.4vw,28px);color:var(--text-secondary)}
+.problem-transition em{color:var(--forest);font-style:italic}
+
+/* ── System ── */
+.system{padding:92px 0}
+.system-header{text-align:center;margin-bottom:60px}
+.system-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
+.system-steps::before{content:'';position:absolute;top:30px;left:calc(12.5% + 8px);right:calc(12.5% + 8px);height:2px;background:linear-gradient(90deg,var(--forest-mid),var(--forest),var(--forest),var(--forest-mid));z-index:0;border-radius:1px}
+.system-step{text-align:center;position:relative;z-index:1}
+.system-num{width:52px;height:52px;margin:0 auto 18px;background:var(--bg-card);border:2px solid var(--forest-mid);border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--forest)}
+.system-name{font-family:var(--font-display);font-size:21px;margin-bottom:8px}
+.system-desc{font-size:13.5px;color:var(--text-secondary);line-height:1.58;max-width:210px;margin:0 auto}
+.system-tag{display:inline-flex;margin-top:12px;padding:4px 10px;background:var(--bg-warm);border-radius:var(--r-full);font-size:11px;color:var(--text-tertiary)}
+
+/* ── Peach ── */
+.peach{padding:0 0 92px}
+.peach-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+.peach-copy .section-sub{margin:0;max-width:480px}
+.peach-copy .peach-detail{font-size:15px;color:var(--text-secondary);line-height:1.68;margin-top:18px;max-width:470px}
+.chat{max-width:360px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-md)}
+.chat-head{padding:16px 20px;border-bottom:1px solid var(--border-light);display:flex;gap:10px;align-items:center}
+.chat-avatar{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--forest-light);font-size:16px}
+.chat-name{font-weight:500;font-size:14px}.chat-sub{font-size:11px;color:var(--text-tertiary)}
+.chat-body{padding:16px 20px}
+.chat-q{background:var(--bg-warm);border-radius:14px 14px 4px 14px;padding:12px 16px;font-size:13.5px;line-height:1.5;max-width:85%;margin-left:auto;margin-bottom:12px}
+.chat-a{background:var(--forest-light);border-radius:14px 14px 14px 4px;padding:12px 16px;font-size:13.5px;line-height:1.55;max-width:92%}
+.chat-tag{display:inline-flex;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:600;color:var(--forest);background:#E8F5E9;margin-bottom:6px}
+
+/* ── Features ── */
+.features{padding:0 0 92px}
+.features-header{text-align:center;margin-bottom:56px}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
+.feature-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:34px 28px}
+.feature-badge{display:inline-flex;padding:4px 10px;background:var(--forest-light);border-radius:var(--r-full);font-size:10px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;color:var(--forest);margin-bottom:18px}
+.feature-icon{width:46px;height:46px;background:var(--forest-light);border-radius:14px;display:grid;place-items:center;font-size:21px;margin-bottom:18px}
+.feature-name{font-family:var(--font-display);font-size:22px;margin-bottom:8px}
+.feature-desc{font-size:14px;line-height:1.62;color:var(--text-secondary)}
+.sub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.sub-card{display:flex;gap:14px;align-items:flex-start;background:var(--bg-warm);border-radius:var(--r-md);padding:22px}
+.sub-icon{width:38px;height:38px;background:#fff;border:1px solid var(--border-light);border-radius:10px;display:grid;place-items:center;font-size:17px;flex-shrink:0}
+.sub-name{font-size:15px;font-weight:500;margin-bottom:4px}
+.sub-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
+
+/* ── Who It's For ── */
+.for-you{padding:0 0 92px}
+.for-you-header{text-align:center;margin-bottom:50px}
+.for-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.for-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px 24px}
+.for-badge{display:inline-flex;padding:4px 11px;background:var(--forest-light);border-radius:var(--r-full);font-size:11px;font-weight:500;color:var(--forest);margin-bottom:16px}
+.for-pain{font-family:var(--font-display);font-size:18px;font-style:italic;line-height:1.42;margin-bottom:14px}
+.for-solve{font-size:14px;color:var(--text-secondary);line-height:1.62}
+
+/* ── First Week ── */
+.first-week{padding:0 0 92px}
+.fw-header{text-align:center;margin-bottom:48px}
+.fw-timeline{max-width:680px;margin:0 auto}
+.fw-row{display:flex;align-items:flex-start;gap:20px;padding:16px 0;border-bottom:1px solid var(--border-light)}
+.fw-row:last-child{border-bottom:none}
+.fw-day{flex-shrink:0;width:52px;padding:5px 0;text-align:center;background:var(--forest-light);border-radius:8px;font-size:11px;font-weight:600;color:var(--forest)}
+.fw-content{flex:1}
+.fw-activities{font-size:15px;font-weight:500;color:var(--text);margin-bottom:3px}
+.fw-note{font-size:13px;color:var(--text-tertiary)}
+
+/* ── Trust ── */
+.trust{padding:0 0 72px}
+.trust-box{max-width:760px;margin:0 auto;background:var(--bg-warm);border:1px solid var(--border-light);border-radius:var(--r-lg);padding:32px 36px;display:flex;gap:18px;align-items:flex-start}
+.trust-icon{width:42px;height:42px;background:#fff;border:1px solid var(--border-light);border-radius:11px;display:grid;place-items:center;font-size:19px;flex-shrink:0}
+.trust-title{font-family:var(--font-display);font-size:18px;margin-bottom:6px}
+.trust-text{font-size:14px;color:var(--text-secondary);line-height:1.62}
+
+/* ── Final CTA ── */
+.final{padding:0 0 100px}
+.final-box{text-align:center;padding:70px 48px;background:var(--bg-dark);border-radius:var(--r-xl);position:relative;overflow:hidden}
+.final-box::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:440px;height:440px;background:radial-gradient(circle,rgba(45,90,61,0.12) 0%,transparent 60%);border-radius:50%}
+.final-eyebrow{font-size:11px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;color:var(--forest);margin-bottom:18px;position:relative;z-index:1}
+.final-headline{font-family:var(--font-display);font-size:clamp(26px,3.6vw,38px);font-weight:400;color:var(--text-inverse);line-height:1.15;letter-spacing:-.5px;margin-bottom:14px;position:relative;z-index:1}
+.final-sub{font-size:15px;color:rgba(250,249,246,.55);max-width:430px;line-height:1.65;margin:0 auto 30px;position:relative;z-index:1}
+
+.email-form{display:flex;gap:10px;max-width:420px;margin:0 auto 16px;position:relative;z-index:1}
+.email-input{flex:1;padding:14px 20px;border-radius:var(--r-full);border:1.5px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:var(--text-inverse);font-size:15px;font-family:var(--font-body);outline:none;transition:border-color 0.3s}
+.email-input::placeholder{color:rgba(250,249,246,0.3)}
+.email-input:focus{border-color:rgba(45,90,61,0.6)}
+.email-form .btn-primary{background:var(--bg);color:var(--bg-dark);flex-shrink:0}
+.email-form .btn-primary:hover{background:#fff}
+
+.final-note{font-size:12px;color:rgba(250,249,246,.35);margin-top:0;position:relative;z-index:1}
+
+/* ── Footer ── */
+footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
+.footer-row{display:flex;align-items:center;justify-content:space-between}
+.footer-left{display:flex;gap:10px;align-items:center}
+.footer-name{font-weight:500;font-size:14px;color:var(--text-tertiary)}
+.footer-copy{font-size:12px;color:var(--text-tertiary);opacity:.55}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:12px;color:var(--text-tertiary)}
+.footer-links a:hover{color:var(--text)}
+
+/* ── Responsive ── */
+@media(max-width:960px){
+  .nav-link{display:none}
+  .hero-grid,.peach-grid{grid-template-columns:1fr;text-align:center}
+  .hero-sub,.hero-note{margin-left:auto;margin-right:auto}
+  .hero-ctas,.hero-proof{justify-content:center}
+  .hero-visual{order:2;margin-top:16px}
+  .phone{width:246px;height:508px;border-radius:38px}
+  .phone-inner{border-radius:31px}
+  .fc-top,.fc-bottom{display:none}
+  .value-divider,.proof-sep{display:none}
+  .problem-grid,.feature-grid,.sub-grid,.for-grid{grid-template-columns:1fr}
+  .system-steps{grid-template-columns:repeat(2,1fr);gap:24px}
+  .system-steps::before{display:none}
+  .peach-grid{text-align:left}
+  .peach-copy .section-sub,.peach-copy .peach-detail{margin-left:0;margin-right:0}
+  .chat{margin:0 auto}
+  .trust-box,.footer-row{flex-direction:column;gap:14px}
+  .final-box{padding:54px 26px}
+  .email-form{flex-direction:column}
+}
+@media(max-width:600px){
+  .system-steps{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -1176,120 +264,105 @@ footer .container {
 
 <nav>
   <a href="#" class="logo">
-    <div class="logo-mark">
-      <svg viewBox="0 0 16 16" fill="none">
-        <circle cx="8" cy="7.5" r="3" stroke="#fff" stroke-width="1.4" fill="none"/>
-        <path d="M5 5C5 5 6 2.8 8 2.8C10 2.8 11 5 11 5" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/>
-        <circle cx="8" cy="13" r="1" fill="#fff"/>
-      </svg>
-    </div>
+    <div class="logo-mark"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="7.5" r="3" stroke="#fff" stroke-width="1.4"/><path d="M5 5C5 5 6 2.8 8 2.8C10 2.8 11 5 11 5" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="13" r="1" fill="#fff"/></svg></div>
     <span class="logo-name">Zenoomi</span>
   </a>
   <div class="nav-right">
-    <a href="#how" class="nav-link">How It Works</a>
+    <a href="#system" class="nav-link">How It Works</a>
     <a href="#features" class="nav-link">Features</a>
-    <a href="#who" class="nav-link">Who It's For</a>
-    <a href="#" class="nav-cta">Get Today's Plan</a>
+    <a href="#for-you" class="nav-link">Who It's For</a>
+    <a href="#final" class="nav-cta">Get Early Access</a>
   </div>
 </nav>
 
+<!-- ═══ HERO ═══
+  Source: GPT's "is this normal?" hook (acquisition message)
+  + My accurate phone mockup (matches real screenshots)
+  + GPT's "Get Early Access" CTA (honest for pre-launch)
+-->
 <section class="hero">
-  <div class="container">
+  <div class="container hero-grid">
     <div class="hero-content">
-      <div class="hero-pill">
-        <span class="hero-pill-dot"></span>
-        Free during early access
-      </div>
+      <div class="hero-pill"><span class="hero-pill-dot"></span>Early access opening soon</div>
 
       <h1 class="hero-headline">
-        Stay ahead of your dog's care
-        <span class="headline-accent">without the guesswork.</span>
+        You're Googling<br><span class="accent">"is this normal?"</span><br>at midnight.
       </h1>
 
       <p class="hero-sub">
-        Raising a puppy, managing extra care, or just trying to stay ahead? Zenoomi gives you a clear daily plan, tracks what matters, and helps you know what to do next.
+        <strong>You need a plan, not more answers.</strong> Zenoomi gives your dog a clear daily routine, guidance when you're unsure, and a calmer way to stay on top of care.
       </p>
 
       <div class="hero-ctas">
-        <a href="#" class="btn-primary">Get Today's Plan</a>
-        <a href="#how" class="btn-secondary">How it works <span class="arr">→</span></a>
+        <a href="#final" class="btn-primary">Get Early Access</a>
+        <a href="#system" class="btn-secondary">See how it works</a>
       </div>
 
-      <div class="hero-chips">
-        <div class="hero-chip"><div class="hero-chip-icon">✓</div>Free to start</div>
-        <div class="chip-sep"></div>
-        <div class="hero-chip"><div class="hero-chip-icon">🐕</div>Dogs only</div>
-        <div class="chip-sep"></div>
-        <div class="hero-chip"><div class="hero-chip-icon">🛡</div>Not a vet replacement</div>
+      <p class="hero-note">Built for dog owners who want to feel more organized, more confident, and less like they're missing something important.</p>
+
+      <div class="hero-proof">
+        <div class="proof-chip"><div class="proof-chip-icon">✓</div>Free to start</div>
+        <div class="proof-sep"></div>
+        <div class="proof-chip"><div class="proof-chip-icon">⏱</div>Set up in 2 minutes</div>
+        <div class="proof-sep"></div>
+        <div class="proof-chip"><div class="proof-chip-icon">🩺</div>Not a vet replacement</div>
       </div>
     </div>
 
     <div class="hero-visual">
       <div class="phone-wrap">
-        <div class="fl fl-top">
-          <div class="fl-row">
-            <div class="fl-icon">🎯</div>
-            <div>
-              <div class="fl-label">Wellness Score</div>
-              <div class="fl-val">87, On Track</div>
-            </div>
+        <div class="float-card fc-top">
+          <div class="fc-row">
+            <div class="fc-icon">🎯</div>
+            <div><div class="fc-title">Care Score</div><div class="fc-sub">91 · Thriving</div></div>
           </div>
         </div>
-
-        <div class="fl fl-bot">
-          <div class="fl-label">Walk Streak</div>
-          <div class="fl-val">5 days in a row</div>
-          <div class="fl-bars">
-            <div class="fl-bar on"></div><div class="fl-bar on"></div><div class="fl-bar on"></div><div class="fl-bar on"></div><div class="fl-bar on"></div><div class="fl-bar off"></div><div class="fl-bar off"></div>
-          </div>
+        <div class="float-card fc-bottom">
+          <div class="fc-title">12-day streak</div>
+          <div class="fc-sub">Amazing consistency. Keep it going.</div>
         </div>
 
         <div class="phone">
           <div class="phone-inner">
             <div class="phone-notch"></div>
-            <div class="sc-bar"><span>9:41</span><span style="letter-spacing:3px">● ● ●</span></div>
-            <div class="sc-head">
-              <div class="sc-greeting">Good morning ☀️</div>
-              <div class="sc-title-row">
-                <div class="sc-title">Today's Plan</div>
-                <div class="sc-ring"><div class="sc-ring-num">87</div></div>
+            <div class="ph-bar"><span>9:20</span><span style="letter-spacing:3px">● ● ●</span></div>
+            <div class="ph-greeting">Good evening, Kaspir</div>
+            <div class="ph-title">Today's Plan</div>
+
+            <div class="ph-card ph-care">
+              <div class="ph-care-label">Care Score</div>
+              <div class="ph-care-row"><div class="ph-care-score">91</div><div class="ph-care-tier">Thriving</div></div>
+              <div class="ph-care-sub">+5 this week</div>
+              <div class="ph-care-meta">
+                <div class="ph-care-tasks">1 task left today</div>
+                <div class="ph-care-streak">12-day streak</div>
               </div>
+              <div class="ph-care-bar"><div class="ph-care-fill"></div></div>
             </div>
-            <div class="sc-label">Your Next Move</div>
-            <div class="sc-card">
-              <div class="sc-row">
-                <div class="sc-chk done"></div>
-                <div class="sc-row-info">
-                  <div class="sc-row-name">Morning Walk</div>
-                  <div class="sc-row-meta">30 min · Riverside Park</div>
-                </div>
-                <div class="sc-row-time">7:15</div>
-              </div>
-              <div class="sc-row">
-                <div class="sc-chk done"></div>
-                <div class="sc-row-info">
-                  <div class="sc-row-name">Breakfast + Supplement</div>
-                  <div class="sc-row-meta">Fish oil · Joint support</div>
-                </div>
-                <div class="sc-row-time">8:00</div>
-              </div>
-              <div class="sc-row">
-                <div class="sc-chk open"></div>
-                <div class="sc-row-info">
-                  <div class="sc-row-name">Teeth Brushing</div>
-                  <div class="sc-row-meta">Dental · Every other day</div>
-                </div>
-                <div class="sc-row-time">8:30</div>
-              </div>
+
+            <div class="ph-section"><span>Today's Plan</span><span class="ph-link">View full plan</span></div>
+            <div class="ph-week">
+              <span class="ph-day">Sun</span><span class="ph-day">Mon</span><span class="ph-day active">Tue</span><span class="ph-day">Wed</span><span class="ph-day">Thu</span><span class="ph-day">Fri</span><span class="ph-day">Sat</span>
             </div>
-            <div class="sc-insight">
-              <div class="sc-insight-tag">💡 Insight</div>
-              <div class="sc-insight-text">Luna's activity is up 12% this week. Great consistency.</div>
+            <div class="ph-card">
+              <div class="ph-row"><div class="ph-check-done"></div><div class="ph-info"><div class="ph-name">Decompression Walk</div><div class="ph-meta">10 min · Routine</div></div></div>
+              <div class="ph-row"><div class="ph-check-done"></div><div class="ph-info"><div class="ph-name">Flea &amp; tick reminder</div><div class="ph-meta">Due today · Preventative</div></div></div>
+              <div class="ph-row"><div class="ph-check"></div><div class="ph-info"><div class="ph-name">Quick check-in</div><div class="ph-meta">Any restlessness at night?</div></div></div>
             </div>
-            <div class="sc-label">Streaks</div>
-            <div class="sc-streaks">
-              <div class="sc-sdot on"></div><div class="sc-sdot on"></div><div class="sc-sdot on"></div><div class="sc-sdot on"></div><div class="sc-sdot on"></div><div class="sc-sdot off"></div><div class="sc-sdot off"></div>
-              <span class="sc-streak-text">5-day walk streak</span>
+
+            <div class="ph-section"><span>Quick Actions</span></div>
+            <div class="ph-actions-grid">
+              <div class="ph-action">Ask Peach</div>
+              <div class="ph-action">Log symptom</div>
+              <div class="ph-action">Add reminder</div>
+              <div class="ph-action">5-min win</div>
+            </div>
+
+            <div class="ph-tab-bar">
+              <div class="ph-tab active"><span class="ph-tab-icon">⌂</span>Home</div>
+              <div class="ph-tab"><span class="ph-tab-icon">◎</span>Activities</div>
+              <div class="ph-tab"><span class="ph-tab-icon">❏</span>Memories</div>
+              <div class="ph-tab"><span class="ph-tab-icon">○</span>Profile</div>
             </div>
           </div>
         </div>
@@ -1298,260 +371,264 @@ footer .container {
   </div>
 </section>
 
-<section class="proof-strip-section">
+<!-- ═══ VALUE STRIP ═══
+  Source: GPT's benefit-oriented copy (not feature claims)
+  Change: Removed "Dogs only." Replaced "45 evidence-based" with benefit language.
+-->
+<section class="value-strip reveal">
   <div class="container">
-    <div class="proof-strip">
-      <div class="value-item"><span class="value-icon">✦</span>Free during early access</div>
-      <div class="proof-div"></div>
-      <div class="value-item"><span class="value-icon">⏱</span>Set up in 2 minutes</div>
-      <div class="proof-div"></div>
-      <div class="value-item"><span class="value-icon">🐕</span>Built for dogs only</div>
+    <div class="value-box">
+      <div class="value-item"><span>✦</span>One daily plan, ready each morning</div>
+      <div class="value-divider"></div>
+      <div class="value-item"><span>🍑</span>Guidance when you're unsure</div>
+      <div class="value-divider"></div>
+      <div class="value-item"><span>📋</span>Care that actually gets followed through</div>
     </div>
   </div>
 </section>
 
-<section class="who-section" id="who">
+<!-- ═══ PROBLEM ═══
+  Source: My version's structure + GPT's tighter copy
+  Combined: Kept three-card format, used GPT's "Care lives in your head" (better than "Reminders you forget to set")
+-->
+<section class="problem">
   <div class="container">
-    <div class="who-header">
-      <div class="section-eyebrow">Built for dog owners who don't want to miss what matters</div>
-      <h2 class="section-headline">A daily system for the moments when dog care feels the most important</h2>
+    <div class="problem-header reveal">
+      <div class="section-eyebrow">Sound familiar?</div>
+      <h2 class="section-headline">The internet has a thousand answers.<br>You need one plan.</h2>
     </div>
-
-    <div class="who-grid">
-      <article class="who-card">
-        <div class="who-photo"><div class="who-photo-icon">🐶</div></div>
-        <div class="who-body">
-          <div class="who-badge">New puppy owners</div>
-          <p class="who-quote">"Am I feeding him the right amount? Is that normal? What am I supposed to be doing this week?"</p>
-          <p class="who-response">For the people figuring it out in real time. Zenoomi gives new dog owners a clear daily plan and calm guidance when everything still feels new.</p>
-        </div>
-      </article>
-
-      <article class="who-card">
-        <div class="who-photo"><div class="who-photo-icon">💊</div></div>
-        <div class="who-body">
-          <div class="who-badge">Dogs with extra care needs</div>
-          <p class="who-quote">"He's on meds, his routine keeps changing, and I can't afford to miss something important."</p>
-          <p class="who-response">For dogs who need more attention and owners who need better visibility. Zenoomi helps you stay on top of meds, symptoms, appointments, and recurring care.</p>
-        </div>
-      </article>
-
-      <article class="who-card">
-        <div class="who-photo"><div class="who-photo-icon">🌿</div></div>
-        <div class="who-body">
-          <div class="who-badge">Owners who care deeply</div>
-          <p class="who-quote">"I know I could be more consistent. I just need a system that helps me actually follow through."</p>
-          <p class="who-response">For the owners who want to stay ahead, not just react. Zenoomi turns good intentions into daily follow-through with a calmer, smarter routine.</p>
-        </div>
-      </article>
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="problem-icon">🔎</div>
+        <div class="problem-title">Too many answers, no system</div>
+        <div class="problem-desc">You've read the threads, saved the posts, asked the question three different ways. Tomorrow morning still feels unclear.</div>
+      </div>
+      <div class="problem-card reveal reveal-delay-1">
+        <div class="problem-icon">⏰</div>
+        <div class="problem-title">Care lives in your head</div>
+        <div class="problem-desc">Meds, flea treatment, dental, next checkup. It works until it doesn't, and then you realize something slipped.</div>
+      </div>
+      <div class="problem-card reveal reveal-delay-2">
+        <div class="problem-icon">📈</div>
+        <div class="problem-title">No signal that you're on track</div>
+        <div class="problem-desc">You're doing a lot for your dog, but there's no way to know whether you're being consistent enough or missing something.</div>
+      </div>
     </div>
+    <div class="problem-transition reveal">Zenoomi replaces all of that with <em>one daily system.</em></div>
   </div>
 </section>
 
-<section class="how-section" id="how">
+<!-- ═══ SYSTEM (How It Works) ═══
+  Source: Both versions aligned here. Kept the 4-step loop.
+  Refinement: Tightened copy, removed em-dashes.
+-->
+<section class="system" id="system">
   <div class="container">
-    <div class="how-header">
+    <div class="system-header reveal">
       <div class="section-eyebrow">How Zenoomi works</div>
       <h2 class="section-headline">One system. Every day.</h2>
-      <p class="section-sub">Every morning, your plan is ready. Check things off. Log what matters. On Sunday, see what's working.</p>
+      <p class="section-sub">Every morning, your plan is ready. Follow through, log what you notice, and see what's working over time.</p>
     </div>
+    <div class="system-steps">
+      <div class="system-step reveal"><div class="system-num">1</div><div class="system-name">Plan</div><div class="system-desc">Tell us about your dog. Zenoomi builds a daily routine matched to age, energy, and care needs.</div><div class="system-tag">Takes 2 min</div></div>
+      <div class="system-step reveal reveal-delay-1"><div class="system-num">2</div><div class="system-name">Do</div><div class="system-desc">Follow today's plan. Activities, reminders, and quick care tasks are ready when you are.</div><div class="system-tag">Every morning</div></div>
+      <div class="system-step reveal reveal-delay-2"><div class="system-num">3</div><div class="system-name">Log</div><div class="system-desc">Notice something? Log mood, energy, or a symptom in seconds so you can spot patterns earlier.</div><div class="system-tag">10 seconds</div></div>
+      <div class="system-step reveal reveal-delay-3"><div class="system-num">4</div><div class="system-name">Learn</div><div class="system-desc">Your Care Score shows follow-through. Weekly reviews show what's working and what needs attention.</div><div class="system-tag">Every Sunday</div></div>
+    </div>
+  </div>
+</section>
 
-    <div class="how-steps">
-      <div class="how-step">
-        <div class="how-num">1</div>
-        <div class="how-name">Plan</div>
-        <div class="how-desc">Tell us about your dog. We build a daily care plan personalized to their age, routine, and care needs.</div>
-        <div class="how-tag">Takes 2 min</div>
-      </div>
-      <div class="how-step">
-        <div class="how-num">2</div>
-        <div class="how-name">Do</div>
-        <div class="how-desc">Follow your daily plan. Walks, meals, meds, grooming. One tap to complete each task.</div>
-        <div class="how-tag">Every morning</div>
-      </div>
-      <div class="how-step">
-        <div class="how-num">3</div>
-        <div class="how-name">Log</div>
-        <div class="how-desc">Log symptoms, weight, mood, or anything you notice. Quick entries that build a health timeline.</div>
-        <div class="how-tag">30 seconds</div>
-      </div>
-      <div class="how-step">
-        <div class="how-num">4</div>
-        <div class="how-name">Learn</div>
-        <div class="how-desc">Weekly insights show what's working, what to adjust, and what's coming up next.</div>
-        <div class="how-tag">Every Sunday</div>
+<!-- ═══ PEACH ═══
+  Source: GPT's framing ("support layer, not the whole product")
+  + My chat mockup accuracy (matching Peach's real personality from brand voice guide)
+  Kill: GPT had "Wedge feature" badge visible to users. Removed. That's internal language.
+-->
+<section class="peach">
+  <div class="container peach-grid">
+    <div class="peach-copy reveal">
+      <div class="section-eyebrow">Guidance when you're unsure</div>
+      <h2 class="section-headline">Calm answers, not more Googling.</h2>
+      <p class="section-sub">When something feels off, Peach gives you personalized next-step guidance based on your dog's age, routine, and recent history.</p>
+      <p class="peach-detail">Less late-night spiraling. A better sense of what's normal, what to watch, and when it's time to call your vet.</p>
+    </div>
+    <div class="reveal reveal-delay-1">
+      <div class="chat">
+        <div class="chat-head"><div class="chat-avatar">🍑</div><div><div class="chat-name">Peach</div><div class="chat-sub">Knows Kaspir · Puppy · Low energy</div></div></div>
+        <div class="chat-body">
+          <div class="chat-q">Kaspir keeps biting my hands when I try to pet him. Is this normal?</div>
+          <div class="chat-a"><div class="chat-tag">✓ Normal for age</div>Really common at this stage. Puppies explore everything with their mouths, and biting usually peaks around 4-5 months. Try redirecting to a tug toy and reward the moment he lets go. It gets better.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="features-section" id="features">
+<!-- ═══ FEATURES ═══
+  Source: GPT's headline ("A daily care system, not a feature pile") is stronger.
+  + My Care Score description (honest framing from brand voice guide).
+  + GPT's "Curated Activities" sub-card (avoids "evidence-based" and "45" claims).
+-->
+<section class="features" id="features">
   <div class="container">
-    <div class="features-header">
+    <div class="features-header reveal">
       <div class="section-eyebrow">What you get</div>
-      <h2 class="section-headline">Everything that matters. Nothing that doesn't.</h2>
+      <h2 class="section-headline">A daily care system, not a feature pile.</h2>
     </div>
-
-    <div class="pf-grid">
-      <div class="pf-card">
-        <div class="pf-badge">Core</div>
-        <div class="pf-icon">📋</div>
-        <div class="pf-name">Personalized Daily Plan</div>
-        <div class="pf-desc">A care checklist built around your dog's age, routine, and health needs. Updated every day. One tap to complete.</div>
+    <div class="feature-grid">
+      <div class="feature-card reveal">
+        <div class="feature-badge">Core</div>
+        <div class="feature-icon">📋</div>
+        <div class="feature-name">Personalized Daily Plan</div>
+        <div class="feature-desc">A clear plan built around your dog's life stage, routine, and care needs. Updated daily so you always know what to do next.</div>
       </div>
-      <div class="pf-card">
-        <div class="pf-badge">Most loved</div>
-        <div class="pf-icon">🤔</div>
-        <div class="pf-name">"Is This Normal?"</div>
-        <div class="pf-desc">Describe what you're seeing. Zenoomi's AI gives you calm, clear guidance and tells you when it's time to call your vet.</div>
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-badge">Support</div>
+        <div class="feature-icon">🍑</div>
+        <div class="feature-name">Calm Guidance</div>
+        <div class="feature-desc">Ask what's normal, what to try, and what to watch. Peach helps you respond with more confidence, not more guessing.</div>
       </div>
-      <div class="pf-card">
-        <div class="pf-badge">Set &amp; forget</div>
-        <div class="pf-icon">🛡️</div>
-        <div class="pf-name">Preventative Care Calendar</div>
-        <div class="pf-desc">Vaccines, flea and tick, dental, vet checkups. Zenoomi tracks it all and reminds you before anything is overdue.</div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-badge">Follow-through</div>
+        <div class="feature-icon">🎯</div>
+        <div class="feature-name">Care Score</div>
+        <div class="feature-desc">Tracks what you're doing, not what's wrong. Log a symptom and your score holds steady, because paying attention is the point.</div>
       </div>
     </div>
+    <div class="sub-grid">
+      <div class="sub-card reveal"><div class="sub-icon">🛡️</div><div><div class="sub-name">Preventative Care</div><div class="sub-desc">Vaccines, flea and tick, dental, and checkups. Reminders before anything gets overdue.</div></div></div>
+      <div class="sub-card reveal reveal-delay-1"><div class="sub-icon">📅</div><div><div class="sub-name">Weekly Review</div><div class="sub-desc">A calmer Sunday view of what went well, what changed, and what needs attention next.</div></div></div>
+      <div class="sub-card reveal reveal-delay-2"><div class="sub-icon">🧩</div><div><div class="sub-name">Structured Activities</div><div class="sub-desc">Practical routines, confidence builders, and skills that fit real life. Not a noisy content library.</div></div></div>
+    </div>
+  </div>
+</section>
 
-    <div class="sf-grid">
-      <div class="sf-card">
-        <div class="sf-icon">📊</div>
-        <div>
-          <div class="sf-name">Wellness Score</div>
-          <div class="sf-desc">A simple number that shows how your dog's doing across routines, care, and activity.</div>
-        </div>
+<!-- ═══ WHO IT'S FOR ═══
+  Source: Both versions, combined. GPT had better photo placeholders with labels.
+  Kill: Photo areas entirely. You don't have real photos yet, and emoji placeholders undermine trust.
+  Keep: My version's specific feature mentions in each solve.
+-->
+<section class="for-you" id="for-you">
+  <div class="container">
+    <div class="for-you-header reveal">
+      <div class="section-eyebrow">Who it's for</div>
+      <h2 class="section-headline">A daily system for the moments that matter most</h2>
+    </div>
+    <div class="for-grid">
+      <div class="for-card reveal">
+        <div class="for-badge">New puppy or new dog</div>
+        <div class="for-pain">"Am I doing this right? What should I be working on this week? Is that behavior normal?"</div>
+        <div class="for-solve">A daily plan with Morning Settle, handling practice, and calm-building activities. Plus Peach for the questions nobody else can answer at 2am.</div>
       </div>
-      <div class="sf-card">
-        <div class="sf-icon">🔥</div>
-        <div>
-          <div class="sf-name">Habit Streaks</div>
-          <div class="sf-desc">Visual streaks for walks, meds, grooming. Consistency made visible and motivating.</div>
-        </div>
+      <div class="for-card reveal reveal-delay-1">
+        <div class="for-badge">Dogs with extra care needs</div>
+        <div class="for-pain">"He's on meds, his routine keeps changing, and I can't afford to miss something."</div>
+        <div class="for-solve">Medication reminders, Weekly Body Scan, comfort check-ins, and a care log that catches patterns before they become problems.</div>
       </div>
-      <div class="sf-card">
-        <div class="sf-icon">📅</div>
-        <div>
-          <div class="sf-name">Weekly Review</div>
-          <div class="sf-desc">Every Sunday, what went well, what to adjust, what's coming up next week.</div>
-        </div>
+      <div class="for-card reveal reveal-delay-2">
+        <div class="for-badge">Owners who want a system</div>
+        <div class="for-pain">"I know I could be more consistent. I just need something that helps me follow through."</div>
+        <div class="for-solve">Care Score, habit streaks, and a preventative calendar that turns good intentions into daily follow-through.</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="showcase-section">
+<!-- ═══ FIRST WEEK ═══
+  Source: My version only. GPT dropped this section entirely.
+  Why it stays: Real activity names from the shipped library create specificity
+  that makes someone think "this app already knows what I need."
+-->
+<section class="first-week">
   <div class="container">
-    <div class="showcase-header">
-      <div class="section-eyebrow">Inside the app</div>
-      <h2 class="section-headline">See what your day looks like</h2>
-    </div>
-
-    <div class="showcase-grid">
-      <div class="showcase-item">
-        <div class="showcase-phone">
-          <div class="showcase-screen">
-            <div class="showcase-ph-icon">📋</div>
-            <div class="showcase-ph-text">Daily Plan<br>Screenshot</div>
-            <div class="showcase-ph-size">186 × 386px @3x</div>
-          </div>
-        </div>
-        <div class="showcase-label">Daily Plan</div>
-        <div class="showcase-desc">Your morning starts here</div>
-      </div>
-      <div class="showcase-item">
-        <div class="showcase-phone">
-          <div class="showcase-screen">
-            <div class="showcase-ph-icon">🤔</div>
-            <div class="showcase-ph-text">AI Guidance<br>Screenshot</div>
-            <div class="showcase-ph-size">186 × 386px @3x</div>
-          </div>
-        </div>
-        <div class="showcase-label">AI Guidance</div>
-        <div class="showcase-desc">Answers when you need them</div>
-      </div>
-      <div class="showcase-item">
-        <div class="showcase-phone">
-          <div class="showcase-screen">
-            <div class="showcase-ph-icon">📊</div>
-            <div class="showcase-ph-text">Weekly Insights<br>Screenshot</div>
-            <div class="showcase-ph-size">186 × 386px @3x</div>
-          </div>
-        </div>
-        <div class="showcase-label">Weekly Insights</div>
-        <div class="showcase-desc">See what's working</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="first-week-section">
-  <div class="container">
-    <div class="fw-header">
+    <div class="fw-header reveal">
       <div class="section-eyebrow">What to expect</div>
       <h2 class="section-headline">Your first week with Zenoomi</h2>
     </div>
-
-    <div class="fw-grid">
-      <div class="fw-card">
+    <div class="fw-timeline">
+      <div class="fw-row reveal">
         <div class="fw-day">Day 1</div>
-        <div class="fw-icon">📋</div>
-        <div class="fw-name">Your plan is ready</div>
-        <div class="fw-desc">Tell us about your dog. In under 2 minutes, your first personalized daily plan is built and waiting.</div>
+        <div class="fw-content"><div class="fw-activities">Morning Settle + Quick check-in</div><div class="fw-note">Set up your dog's profile in 2 minutes. Your first plan is waiting.</div></div>
       </div>
-      <div class="fw-card">
+      <div class="fw-row reveal">
+        <div class="fw-day">Day 2</div>
+        <div class="fw-content"><div class="fw-activities">Decompression Walk + Handling Practice</div><div class="fw-note">Two activities, both under 15 minutes. Your streak starts.</div></div>
+      </div>
+      <div class="fw-row reveal">
         <div class="fw-day">Day 3</div>
-        <div class="fw-icon">🔥</div>
-        <div class="fw-name">Streaks start building</div>
-        <div class="fw-desc">You've completed a few days of tasks. Habits are forming. Your streak counter lights up for the first time.</div>
+        <div class="fw-content"><div class="fw-activities">Place Training + Mealtime Enrichment</div><div class="fw-note">The two activities with the highest repeat value in the library.</div></div>
       </div>
-      <div class="fw-card">
+      <div class="fw-row reveal">
+        <div class="fw-day">Day 4</div>
+        <div class="fw-content"><div class="fw-activities">Rest Day Plan</div><div class="fw-note">Yes, rest is part of the plan. Low-key enrichment, no pressure.</div></div>
+      </div>
+      <div class="fw-row reveal">
+        <div class="fw-day">Day 5</div>
+        <div class="fw-content"><div class="fw-activities">Alone Time Practice + Indoor Scent Trail</div><div class="fw-note">Building independence and mental stimulation.</div></div>
+      </div>
+      <div class="fw-row reveal">
+        <div class="fw-day">Day 6</div>
+        <div class="fw-content"><div class="fw-activities">Loose-Leash Practice + Weekly Body Scan</div><div class="fw-note">Real-world skills plus your first cooperative care check.</div></div>
+      </div>
+      <div class="fw-row reveal">
         <div class="fw-day">Day 7</div>
-        <div class="fw-icon">📊</div>
-        <div class="fw-name">Your first weekly review</div>
-        <div class="fw-desc">Sunday morning: a summary of what you completed, what's coming up, and how your dog's wellness is trending.</div>
+        <div class="fw-content"><div class="fw-activities">Your first Weekly Review</div><div class="fw-note">See what you completed, what's trending, and what's coming next week.</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="trust-section">
+<!-- ═══ TRUST ═══ -->
+<section class="trust">
   <div class="container">
-    <div class="trust-box">
+    <div class="trust-box reveal">
       <div class="trust-icon">🩺</div>
       <div>
         <div class="trust-title">Zenoomi is not a veterinarian</div>
-        <p class="trust-text">We help you stay organized and catch things early, but we'll always tell you when it's time to call your vet. When in doubt, contact your veterinarian or emergency clinic.</p>
+        <div class="trust-text">Zenoomi helps you stay organized, notice patterns earlier, and know what to do next. When it looks like it's time to call your vet, we will tell you clearly.</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="final-section">
+<!-- ═══ FINAL CTA ═══
+  Source: GPT's "Get Early Access" framing
+  + New: Email capture field (not just a button linking to #)
+  Kill: Fake "Get Today's Plan" CTA that links nowhere
+-->
+<section class="final" id="final">
   <div class="container">
-    <div class="final-box">
-      <div class="final-eyebrow">Start today</div>
-      <h2 class="final-headline">Your dog's care,<br>figured out</h2>
-      <p class="final-sub">Set up your dog's profile in 2 minutes. Get a personalized daily plan immediately. Free during early access.</p>
-      <a href="#" class="btn-primary">Get Today's Plan</a>
-      <p class="final-note">Free to start · No credit card required</p>
+    <div class="final-box reveal">
+      <div class="final-eyebrow">Join early access</div>
+      <div class="final-headline">Your dog's daily care,<br>finally organized</div>
+      <div class="final-sub">Be first to try Zenoomi when beta opens. Free to join, no credit card required.</div>
+      <div class="email-form">
+        <input type="email" class="email-input" placeholder="Your email address" aria-label="Email address">
+        <button class="btn-primary">Get Early Access</button>
+      </div>
+      <div class="final-note">Free to start. We'll email you when beta opens.</div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="container">
-    <div class="footer-left">
-      <span class="footer-name">Zenoomi</span>
-      <span class="footer-copy">© 2026</span>
-    </div>
-    <div class="footer-links">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">Contact</a>
-      <a href="#">Instagram</a>
-    </div>
+  <div class="container footer-row">
+    <div class="footer-left"><span class="footer-name">Zenoomi</span><span class="footer-copy">© 2026</span></div>
+    <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a><a href="#">Instagram</a></div>
   </div>
 </footer>
+
+<script>
+// Scroll-triggered reveal animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>

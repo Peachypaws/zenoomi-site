@@ -81,12 +81,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;padding:0 clamp(
 .phone-inner{width:100%;height:100%;border-radius:35px;overflow:hidden;background:#F7F5F0}
 .phone-screenshot{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 
-.float-card{position:absolute;background:#fff;border-radius:var(--r-md);padding:13px 16px;box-shadow:var(--shadow-md);border:1px solid var(--border-light);z-index:3;white-space:nowrap}
-.fc-top{top:28px;right:-160px}.fc-bottom{bottom:100px;left:-164px}
-.fc-row{display:flex;align-items:center;gap:10px}
-.fc-icon{width:32px;height:32px;border-radius:9px;background:var(--forest-light);display:grid;place-items:center;font-size:14px}
-.fc-title{font-size:11.5px;font-weight:500}.fc-sub{font-size:10px;color:var(--text-tertiary);margin-top:1px}
-
 /* ── Value Strip ── */
 .value-strip{padding:42px 0}
 .value-box{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;padding:18px 24px;background:var(--bg-warm);border:1px solid var(--border-light);border-radius:var(--r-lg)}
@@ -207,7 +201,6 @@ footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
   .hero-visual{order:2;margin-top:16px}
   .phone{width:246px;height:520px;border-radius:38px;padding:8px}
   .phone-inner{border-radius:31px}
-  .fc-top,.fc-bottom{display:none}
   .value-divider,.proof-sep{display:none}
   .problem-grid,.feature-grid,.sub-grid,.for-grid{grid-template-columns:1fr}
   .system-steps{grid-template-columns:repeat(2,1fr);gap:24px}
@@ -239,11 +232,6 @@ footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
   </div>
 </nav>
 
-<!-- ═══ HERO ═══
-  Source: GPT's "is this normal?" hook (acquisition message)
-  + My accurate phone mockup (matches real screenshots)
-  + GPT's "Get Early Access" CTA (honest for pre-launch)
--->
 <section class="hero">
   <div class="container hero-grid">
     <div class="hero-content">
@@ -275,17 +263,7 @@ footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
 
     <div class="hero-visual">
       <div class="phone-wrap">
-        <div class="float-card fc-top">
-          <div class="fc-row">
-            <div class="fc-icon">🎯</div>
-            <div><div class="fc-title">Care Score</div><div class="fc-sub">91 · Thriving</div></div>
-          </div>
-        </div>
-        <div class="float-card fc-bottom">
-          <div class="fc-title">12-day streak</div>
-          <div class="fc-sub">Amazing consistency. Keep it going.</div>
-        </div>
-
+        <!-- Phone uses real screenshot -->
         <div class="phone">
           <div class="phone-inner">
             <!-- Replace src with your actual screenshot path -->
@@ -297,10 +275,6 @@ footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
   </div>
 </section>
 
-<!-- ═══ VALUE STRIP ═══
-  Source: GPT's benefit-oriented copy (not feature claims)
-  Change: Removed "Dogs only." Replaced "45 evidence-based" with benefit language.
--->
 <section class="value-strip reveal">
   <div class="container">
     <div class="value-box">
@@ -313,10 +287,6 @@ footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
   </div>
 </section>
 
-<!-- ═══ PROBLEM ═══
-  Source: My version's structure + GPT's tighter copy
-  Combined: Kept three-card format, used GPT's "Care lives in your head" (better than "Reminders you forget to set")
--->
 <section class="problem">
   <div class="container">
     <div class="problem-header reveal">
@@ -344,10 +314,6 @@ footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
   </div>
 </section>
 
-<!-- ═══ SYSTEM (How It Works) ═══
-  Source: Both versions aligned here. Kept the 4-step loop.
-  Refinement: Tightened copy, removed em-dashes.
--->
 <section class="system" id="system">
   <div class="container">
     <div class="system-header reveal">
@@ -364,11 +330,6 @@ footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
   </div>
 </section>
 
-<!-- ═══ PEACH ═══
-  Source: GPT's framing ("support layer, not the whole product")
-  + My chat mockup accuracy (matching Peach's real personality from brand voice guide)
-  Kill: GPT had "Wedge feature" badge visible to users. Removed. That's internal language.
--->
 <section class="peach">
   <div class="container peach-grid">
     <div class="peach-copy reveal">
@@ -389,11 +350,6 @@ footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
   </div>
 </section>
 
-<!-- ═══ FEATURES ═══
-  Source: GPT's headline ("A daily care system, not a feature pile") is stronger.
-  + My Care Score description (honest framing from brand voice guide).
-  + GPT's "Curated Activities" sub-card (avoids "evidence-based" and "45" claims).
--->
 <section class="features" id="features">
   <div class="container">
     <div class="features-header reveal">
@@ -428,11 +384,6 @@ footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
   </div>
 </section>
 
-<!-- ═══ WHO IT'S FOR ═══
-  Source: Both versions, combined. GPT had better photo placeholders with labels.
-  Kill: Photo areas entirely. You don't have real photos yet, and emoji placeholders undermine trust.
-  Keep: My version's specific feature mentions in each solve.
--->
 <section class="for-you" id="for-you">
   <div class="container">
     <div class="for-you-header reveal">
@@ -459,11 +410,6 @@ footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
   </div>
 </section>
 
-<!-- ═══ FIRST WEEK ═══
-  Source: My version only. GPT dropped this section entirely.
-  Why it stays: Real activity names from the shipped library create specificity
-  that makes someone think "this app already knows what I need."
--->
 <section class="first-week">
   <div class="container">
     <div class="fw-header reveal">
@@ -503,7 +449,6 @@ footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
   </div>
 </section>
 
-<!-- ═══ TRUST ═══ -->
 <section class="trust">
   <div class="container">
     <div class="trust-box reveal">
@@ -516,22 +461,20 @@ footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
   </div>
 </section>
 
-<!-- ═══ FINAL CTA ═══
-  Source: GPT's "Get Early Access" framing
-  + New: Email capture field (not just a button linking to #)
-  Kill: Fake "Get Today's Plan" CTA that links nowhere
--->
 <section class="final" id="final">
   <div class="container">
     <div class="final-box reveal">
       <div class="final-eyebrow">Join early access</div>
       <div class="final-headline">Your dog's daily care,<br>finally organized</div>
       <div class="final-sub">Be first to try Zenoomi when beta opens. Free to join, no credit card required.</div>
-      <div class="email-form">
-        <input type="email" class="email-input" placeholder="Your email address" aria-label="Email address">
-        <button class="btn-primary">Get Early Access</button>
-      </div>
-      <div class="final-note">Free to start. We'll email you when beta opens.</div>
+      <form class="email-form" id="waitlist-form" action="https://formspree.io/f/mpqydloe" method="POST">
+        <input type="email" name="email" class="email-input" placeholder="Your email address" aria-label="Email address" required>
+        <input type="hidden" name="_subject" value="Zenoomi Waitlist Signup">
+        <input type="hidden" name="_next" value="https://zenoomi.com#thanks">
+        <button type="submit" class="btn-primary">Get Early Access</button>
+      </form>
+      <div class="final-note" id="form-note">Free to start. We'll email you when beta opens.</div>
+      <div class="final-note" id="form-success" style="display:none;color:var(--forest)">You're on the list. We'll be in touch soon.</div>
     </div>
   </div>
 </section>
@@ -554,6 +497,35 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Waitlist form submission
+const form = document.getElementById('waitlist-form');
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = form.querySelector('button');
+  const note = document.getElementById('form-note');
+  const success = document.getElementById('form-success');
+  btn.textContent = 'Joining...';
+  btn.disabled = true;
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      form.style.display = 'none';
+      note.style.display = 'none';
+      success.style.display = 'block';
+    } else {
+      btn.textContent = 'Try again';
+      btn.disabled = false;
+    }
+  } catch {
+    btn.textContent = 'Try again';
+    btn.disabled = false;
+  }
+});
 </script>
 
 </body>

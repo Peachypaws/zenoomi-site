@@ -3,271 +3,253 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zenoomi | Your Dog's Daily Care, Figured Out</title>
+<title>Zenoomi — Never Miss What Matters for Your Dog</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg:#FAF9F6;--bg-warm:#F3F2ED;--bg-card:#FFFFFF;--bg-dark:#1D1D1B;
-  --text:#1D1D1B;--text-secondary:#5A5A54;--text-tertiary:#97978F;--text-inverse:#FAF9F6;
-  --forest:#2D5A3D;--forest-hover:#244B32;--forest-light:#E4EDE7;--forest-mid:#C2D7C8;
-  --olive:#8B7D3C;--tan-light:#F0E9DD;
-  --border:rgba(0,0,0,0.07);--border-light:rgba(0,0,0,0.04);
-  --shadow-xs:0 1px 2px rgba(0,0,0,0.04);--shadow-sm:0 2px 8px rgba(0,0,0,0.05);
-  --shadow-md:0 4px 20px rgba(0,0,0,0.06);--shadow-lg:0 12px 44px rgba(0,0,0,0.09);
-  --shadow-phone:0 20px 56px rgba(0,0,0,0.14),0 4px 12px rgba(0,0,0,0.06);
-  --r-md:16px;--r-lg:24px;--r-xl:32px;--r-full:100px;
-  --font-display:'Newsreader',Georgia,serif;
-  --font-body:'Bricolage Grotesque',system-ui,sans-serif;
-  --ease:cubic-bezier(0.16,1,0.3,1);
+:root{
+  --cream:#F5F0E8;--cream-dark:#EDE7DB;--cream-light:#FAF8F4;
+  --teal:#4A7C6F;--teal-dark:#3A6358;--teal-light:#5A9484;--teal-pale:#E8F0ED;
+  --terracotta:#C4785B;--terracotta-light:#D4956E;
+  --olive:#8B7E56;
+  --text-primary:#2C2C2C;--text-secondary:#5A5A5A;--text-muted:#8A8577;
+  --border:#D8D0C4;--white:#FFFFFF;
+  --serif:'Newsreader',Georgia,serif;--sans:'Bricolage Grotesque',system-ui,sans-serif;
 }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--text-primary);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--font-body);background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.55}
-a{color:inherit;text-decoration:none}
-.container{max-width:1160px;margin:0 auto;padding-left:clamp(20px,4vw,56px);padding-right:clamp(20px,4vw,56px)}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,240,232,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-weight:700;font-size:22px;letter-spacing:-0.5px;color:var(--teal-dark)}
+.nav-logo span{color:var(--terracotta)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:14px;font-weight:500;color:var(--text-secondary);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--teal)}
+.nav-cta{background:var(--teal);color:var(--cream-light)!important;padding:10px 20px;border-radius:8px;font-weight:600!important;transition:background 0.2s!important}
+.nav-cta:hover{background:var(--teal-dark)!important}
 
-/* ── Animations ── */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s var(--ease),transform 0.7s var(--ease)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:0.08s}
-.reveal-delay-2{transition-delay:0.16s}
-.reveal-delay-3{transition-delay:0.24s}
+/* HERO */
+.hero{padding:140px 40px 60px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;min-height:85vh}
+.hero-content{max-width:520px}
+.hero h1{font-family:var(--serif);font-size:46px;font-weight:500;line-height:1.15;letter-spacing:-1px;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero-sub{font-size:17px;line-height:1.65;color:var(--text-secondary);margin-bottom:32px;max-width:440px}
+.hero-cta-row{display:flex;gap:16px;align-items:center;margin-bottom:36px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:var(--cream-light);padding:16px 28px;border-radius:10px;font-family:var(--sans);font-size:16px;font-weight:600;text-decoration:none;transition:all 0.25s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(--teal-dark);transform:translateY(-1px)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--text-secondary);padding:16px 20px;font-size:15px;font-weight:500;text-decoration:none;transition:color 0.2s}
+.btn-secondary:hover{color:var(--teal)}
+.hero-proof{display:flex;gap:24px;padding-top:20px;border-top:1px solid var(--border)}
+.hero-proof-item{font-size:13px;color:var(--text-muted);display:flex;align-items:center;gap:6px}
+.hero-proof-item .check{width:18px;height:18px;background:var(--teal);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:10px}
 
-/* ── Typography ── */
-.section-eyebrow{font-size:11px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;color:var(--forest);margin-bottom:14px}
-.section-headline{font-family:var(--font-display);font-size:clamp(28px,3.8vw,40px);font-weight:400;color:var(--text);letter-spacing:-0.6px;line-height:1.15}
-.section-sub{font-size:16px;color:var(--text-secondary);max-width:560px;line-height:1.65;font-weight:400;margin:14px auto 0}
+/* Phone */
+.hero-visual{display:flex;justify-content:center;align-items:center}
+.phone-frame{width:290px;height:600px;background:var(--cream-light);border-radius:36px;border:2px solid var(--border);padding:12px;box-shadow:0 40px 80px rgba(0,0,0,0.08),0 8px 24px rgba(0,0,0,0.04);overflow:hidden}
+.phone-screen{width:100%;height:100%;border-radius:28px;overflow:hidden}
+.phone-screen img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 
-/* ── Nav ── */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;padding:0 clamp(20px,4vw,56px);display:flex;align-items:center;justify-content:space-between;background:rgba(250,249,246,0.82);backdrop-filter:blur(20px) saturate(1.3);-webkit-backdrop-filter:blur(20px) saturate(1.3);border-bottom:1px solid var(--border-light)}
-.logo{display:flex;align-items:center;gap:9px}
-.logo-mark{width:30px;height:30px;background:var(--forest);border-radius:8px;display:grid;place-items:center}
-.logo-mark svg{width:16px;height:16px}
-.logo-name{font-weight:600;font-size:17px;letter-spacing:-0.2px}
-.nav-right{display:flex;align-items:center;gap:28px}
-.nav-link{font-size:13.5px;color:var(--text-secondary);transition:color .2s}
-.nav-link:hover{color:var(--text)}
-.nav-cta{font-size:13.5px;font-weight:500;color:#fff;background:var(--forest);padding:9px 20px;border-radius:var(--r-full);transition:all .3s var(--ease)}
-.nav-cta:hover{background:var(--forest-hover);transform:translateY(-1px);box-shadow:0 4px 14px rgba(45,90,61,0.22)}
+/* ── WHAT IT DOES (compact) ── */
+.what-section{padding:60px 40px 80px;max-width:1200px;margin:0 auto;border-top:1px solid var(--border)}
+.what-section h2{font-family:var(--serif);font-size:34px;font-weight:500;line-height:1.2;letter-spacing:-0.5px;margin-bottom:12px;text-align:center}
+.what-section h2 em{font-style:italic;color:var(--teal)}
+.what-sub{font-size:16px;color:var(--text-secondary);text-align:center;max-width:520px;margin:0 auto 40px;line-height:1.6}
+.what-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.what-card{background:var(--cream-light);border:1px solid var(--border);border-radius:14px;padding:24px 20px;text-align:center;transition:transform 0.2s}
+.what-card:hover{transform:translateY(-3px)}
+.what-icon{margin-bottom:12px;display:flex;justify-content:center}
+.what-card h3{font-family:var(--serif);font-size:17px;font-weight:500;margin-bottom:6px}
+.what-card p{font-size:13px;line-height:1.5;color:var(--text-secondary)}
 
-/* ── Hero ── */
-.hero{padding:clamp(100px,13vh,152px) 0 0}
-.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,72px);align-items:center;min-height:86vh}
-.hero-pill{display:inline-flex;align-items:center;gap:7px;padding:5px 14px 5px 8px;background:var(--forest-light);border-radius:var(--r-full);font-size:12.5px;font-weight:500;color:var(--forest);margin-bottom:24px}
-.hero-pill-dot{width:7px;height:7px;background:var(--forest);border-radius:50%}
-.hero-headline{font-family:var(--font-display);font-size:clamp(38px,5vw,56px);font-weight:400;line-height:1.06;letter-spacing:-1.2px;margin-bottom:18px}
-.hero-headline .accent{color:var(--forest);font-style:italic}
-.hero-sub{font-size:clamp(16px,1.7vw,18px);line-height:1.68;color:var(--text-secondary);max-width:520px;margin-bottom:30px}
-.hero-sub strong{color:var(--text)}
-.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:24px}
-.btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;border-radius:var(--r-full);font-size:15px;font-weight:500;transition:all .3s var(--ease);cursor:pointer}
-.btn-primary{padding:15px 30px;background:var(--forest);color:#fff;border:none}
-.btn-primary:hover{background:var(--forest-hover);transform:translateY(-2px);box-shadow:0 8px 26px rgba(45,90,61,0.26)}
-.btn-secondary{padding:15px 22px;border:1.5px solid var(--border);color:var(--text-secondary);background:transparent}
-.btn-secondary:hover{border-color:var(--text-tertiary);color:var(--text)}
-.hero-note{font-size:13.5px;color:var(--text-tertiary);max-width:500px;line-height:1.6}
-.hero-proof{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:28px}
-.proof-chip{display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--text-tertiary)}
-.proof-chip-icon{width:18px;height:18px;background:var(--forest-light);border-radius:5px;display:grid;place-items:center;font-size:9px}
-.proof-sep{width:1px;height:14px;background:var(--border)}
+/* ── GUIDED CARE ── */
+.guided-section{background:var(--teal-dark);color:var(--cream-light);padding:80px 40px}
+.guided-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.guided-inner h2{font-family:var(--serif);font-size:34px;font-weight:500;line-height:1.2;margin-bottom:16px;color:var(--cream-light)}
+.guided-inner h2 em{font-style:italic;color:var(--terracotta-light)}
+.guided-sub{font-size:16px;line-height:1.6;color:rgba(245,240,232,0.75);margin-bottom:16px}
+.guided-outcome{font-size:14px;line-height:1.6;color:var(--cream-light);font-weight:500;margin-bottom:28px;padding-left:14px;border-left:3px solid var(--terracotta-light)}
+.guided-activities{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.guided-activity{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 14px;transition:background 0.2s}
+.guided-activity:hover{background:rgba(255,255,255,0.12)}
+.guided-activity-name{font-size:13px;font-weight:600;color:var(--cream-light);margin-bottom:2px}
+.guided-activity-desc{font-size:11px;color:rgba(245,240,232,0.55);line-height:1.4}
 
-/* ── Hero Phone ── */
-.hero-visual{display:flex;justify-content:center;position:relative}
-.phone-wrap{position:relative}
-.phone{width:272px;height:572px;background:#111;border-radius:42px;padding:9px;box-shadow:var(--shadow-phone);position:relative;z-index:2}
-.phone-inner{width:100%;height:100%;border-radius:35px;overflow:hidden;background:#F7F5F0}
-.phone-screenshot{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+/* Guided phone */
+.guided-phone{display:flex;justify-content:center}
+.guided-phone-frame{width:260px;height:500px;background:var(--cream);border-radius:30px;padding:12px;box-shadow:0 40px 80px rgba(0,0,0,0.3)}
+.guided-phone-screen{width:100%;height:100%;border-radius:22px;overflow:hidden;background:var(--cream-light);padding:18px 12px}
+.gp-header{font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--olive);margin-bottom:6px}
+.gp-guide{font-family:var(--serif);font-size:15px;font-weight:500;color:var(--text-primary);margin-bottom:10px}
+.gp-phases{display:flex;gap:5px;margin-bottom:14px}
+.gp-phase{padding:5px 10px;font-size:10px;font-weight:600;border-radius:6px}
+.gp-phase.active{background:var(--teal);color:white}
+.gp-phase.inactive{background:var(--cream-dark);color:var(--text-muted)}
+.gp-step{background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:12px;margin-bottom:8px}
+.gp-step h4{font-family:var(--serif);font-size:14px;font-weight:500;margin-bottom:4px}
+.gp-step p{font-size:10px;color:var(--text-secondary);line-height:1.45}
+.gp-timer{background:#FDF6ED;border:1px solid #E8DCC8;border-radius:10px;padding:14px;text-align:center;margin-bottom:8px}
+.gp-timer-num{font-family:var(--serif);font-size:28px;font-weight:500;margin-bottom:4px}
+.gp-timer-btn{display:inline-block;background:var(--teal);color:white;padding:5px 18px;border-radius:7px;font-size:12px;font-weight:600;margin-bottom:3px}
+.gp-timer-phase{font-size:10px;color:var(--text-muted)}
+.gp-tip{background:#FDF6ED;border:1px solid #E8DCC8;border-radius:8px;padding:10px}
+.gp-tip-label{font-size:8px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--olive);margin-bottom:3px}
+.gp-tip p{font-size:10px;color:var(--text-secondary);line-height:1.4}
 
-/* ── Value Strip ── */
-.value-strip{padding:42px 0}
-.value-box{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;padding:18px 24px;background:var(--bg-warm);border:1px solid var(--border-light);border-radius:var(--r-lg)}
-.value-item{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--text-secondary)}
-.value-divider{width:1px;height:24px;background:var(--border)}
+/* ── BOTTOM STRIP (score + life stages + vet) ── */
+.bottom-strip{padding:60px 40px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.strip-card{text-align:center;padding:28px 20px}
+.strip-icon{margin-bottom:12px;display:flex;justify-content:center}
+.strip-card h3{font-family:var(--serif);font-size:18px;font-weight:500;margin-bottom:8px}
+.strip-card p{font-size:13px;line-height:1.55;color:var(--text-secondary)}
 
-/* ── Problem ── */
-.problem{padding:18px 0 72px}
-.problem-header{text-align:center;margin-bottom:46px}
-.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.problem-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:30px 24px}
-.problem-icon{font-size:26px;margin-bottom:14px}
-.problem-title{font-family:var(--font-display);font-size:21px;margin-bottom:8px}
-.problem-desc{font-size:14px;color:var(--text-secondary);line-height:1.62}
-.problem-transition{text-align:center;padding-top:42px;font-family:var(--font-display);font-size:clamp(20px,2.4vw,28px);color:var(--text-secondary)}
-.problem-transition em{color:var(--forest);font-style:italic}
+/* ── FINAL CTA ── */
+.final-cta{text-align:center;padding:60px 40px;max-width:600px;margin:0 auto}
+.final-cta h2{font-family:var(--serif);font-size:36px;font-weight:500;line-height:1.15;letter-spacing:-0.5px;margin-bottom:14px}
+.final-cta h2 em{font-style:italic;color:var(--teal)}
+.final-cta p{font-size:16px;color:var(--text-secondary);margin-bottom:32px;line-height:1.6}
+.email-form{display:flex;gap:12px;max-width:440px;margin:0 auto 16px}
+.email-input{flex:1;padding:14px 18px;border:1px solid var(--border);border-radius:10px;font-family:var(--sans);font-size:15px;background:var(--cream-light);color:var(--text-primary);outline:none;transition:border-color 0.2s}
+.email-input:focus{border-color:var(--teal)}
+.email-input::placeholder{color:var(--text-muted)}
+.form-note{font-size:13px;color:var(--text-muted)}
 
-/* ── System ── */
-.system{padding:92px 0}
-.system-header{text-align:center;margin-bottom:60px}
-.system-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
-.system-steps::before{content:'';position:absolute;top:30px;left:calc(12.5% + 8px);right:calc(12.5% + 8px);height:2px;background:linear-gradient(90deg,var(--forest-mid),var(--forest),var(--forest),var(--forest-mid));z-index:0;border-radius:1px}
-.system-step{text-align:center;position:relative;z-index:1}
-.system-num{width:52px;height:52px;margin:0 auto 18px;background:var(--bg-card);border:2px solid var(--forest-mid);border-radius:50%;display:grid;place-items:center;font-family:var(--font-display);font-size:18px;font-weight:500;color:var(--forest)}
-.system-name{font-family:var(--font-display);font-size:21px;margin-bottom:8px}
-.system-desc{font-size:13.5px;color:var(--text-secondary);line-height:1.58;max-width:210px;margin:0 auto}
-.system-tag{display:inline-flex;margin-top:12px;padding:4px 10px;background:var(--bg-warm);border-radius:var(--r-full);font-size:11px;color:var(--text-tertiary)}
-
-/* ── Peach ── */
-.peach{padding:0 0 92px}
-.peach-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
-.peach-copy .section-sub{margin:0;max-width:480px}
-.peach-copy .peach-detail{font-size:15px;color:var(--text-secondary);line-height:1.68;margin-top:18px;max-width:470px}
-.chat{max-width:360px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-md)}
-.chat-head{padding:16px 20px;border-bottom:1px solid var(--border-light);display:flex;gap:10px;align-items:center}
-.chat-avatar{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:var(--forest-light);font-size:16px}
-.chat-name{font-weight:500;font-size:14px}.chat-sub{font-size:11px;color:var(--text-tertiary)}
-.chat-body{padding:16px 20px}
-.chat-q{background:var(--bg-warm);border-radius:14px 14px 4px 14px;padding:12px 16px;font-size:13.5px;line-height:1.5;max-width:85%;margin-left:auto;margin-bottom:12px}
-.chat-a{background:var(--forest-light);border-radius:14px 14px 14px 4px;padding:12px 16px;font-size:13.5px;line-height:1.55;max-width:92%}
-.chat-tag{display:inline-flex;padding:2px 8px;border-radius:6px;font-size:10px;font-weight:600;color:var(--forest);background:#E8F5E9;margin-bottom:6px}
-
-/* ── Features ── */
-.features{padding:0 0 92px}
-.features-header{text-align:center;margin-bottom:56px}
-.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:18px}
-.feature-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:34px 28px}
-.feature-badge{display:inline-flex;padding:4px 10px;background:var(--forest-light);border-radius:var(--r-full);font-size:10px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;color:var(--forest);margin-bottom:18px}
-.feature-icon{width:46px;height:46px;background:var(--forest-light);border-radius:14px;display:grid;place-items:center;font-size:21px;margin-bottom:18px}
-.feature-name{font-family:var(--font-display);font-size:22px;margin-bottom:8px}
-.feature-desc{font-size:14px;line-height:1.62;color:var(--text-secondary)}
-.sub-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.sub-card{display:flex;gap:14px;align-items:flex-start;background:var(--bg-warm);border-radius:var(--r-md);padding:22px}
-.sub-icon{width:38px;height:38px;background:#fff;border:1px solid var(--border-light);border-radius:10px;display:grid;place-items:center;font-size:17px;flex-shrink:0}
-.sub-name{font-size:15px;font-weight:500;margin-bottom:4px}
-.sub-desc{font-size:13px;color:var(--text-secondary);line-height:1.55}
-
-/* ── Who It's For ── */
-.for-you{padding:0 0 92px}
-.for-you-header{text-align:center;margin-bottom:50px}
-.for-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.for-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r-lg);padding:32px 24px}
-.for-badge{display:inline-flex;padding:4px 11px;background:var(--forest-light);border-radius:var(--r-full);font-size:11px;font-weight:500;color:var(--forest);margin-bottom:16px}
-.for-pain{font-family:var(--font-display);font-size:18px;font-style:italic;line-height:1.42;margin-bottom:14px}
-.for-solve{font-size:14px;color:var(--text-secondary);line-height:1.62}
-
-/* ── First Week ── */
-.first-week{padding:0 0 92px}
-.fw-header{text-align:center;margin-bottom:48px}
-.fw-timeline{max-width:680px;margin:0 auto}
-.fw-row{display:flex;align-items:flex-start;gap:20px;padding:16px 0;border-bottom:1px solid var(--border-light)}
-.fw-row:last-child{border-bottom:none}
-.fw-day{flex-shrink:0;width:52px;padding:5px 0;text-align:center;background:var(--forest-light);border-radius:8px;font-size:11px;font-weight:600;color:var(--forest)}
-.fw-content{flex:1}
-.fw-activities{font-size:15px;font-weight:500;color:var(--text);margin-bottom:3px}
-.fw-note{font-size:13px;color:var(--text-tertiary)}
-
-/* ── Trust ── */
-.trust{padding:0 0 72px}
-.trust-box{max-width:760px;margin:0 auto;background:var(--bg-warm);border:1px solid var(--border-light);border-radius:var(--r-lg);padding:32px 36px;display:flex;gap:18px;align-items:flex-start}
-.trust-icon{width:42px;height:42px;background:#fff;border:1px solid var(--border-light);border-radius:11px;display:grid;place-items:center;font-size:19px;flex-shrink:0}
-.trust-title{font-family:var(--font-display);font-size:18px;margin-bottom:6px}
-.trust-text{font-size:14px;color:var(--text-secondary);line-height:1.62}
-
-/* ── Final CTA ── */
-.final{padding:0 0 100px}
-.final-box{text-align:center;padding:70px 48px;background:var(--bg-dark);border-radius:var(--r-xl);position:relative;overflow:hidden}
-.final-box::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:440px;height:440px;background:radial-gradient(circle,rgba(45,90,61,0.12) 0%,transparent 60%);border-radius:50%}
-.final-eyebrow{font-size:11px;font-weight:600;letter-spacing:2.2px;text-transform:uppercase;color:var(--forest);margin-bottom:18px;position:relative;z-index:1}
-.final-headline{font-family:var(--font-display);font-size:clamp(26px,3.6vw,38px);font-weight:400;color:var(--text-inverse);line-height:1.15;letter-spacing:-.5px;margin-bottom:14px;position:relative;z-index:1}
-.final-sub{font-size:15px;color:rgba(250,249,246,.55);max-width:430px;line-height:1.65;margin:0 auto 30px;position:relative;z-index:1}
-
-.email-form{display:flex;gap:10px;max-width:420px;margin:0 auto 16px;position:relative;z-index:1}
-.email-input{flex:1;padding:14px 20px;border-radius:var(--r-full);border:1.5px solid rgba(255,255,255,0.12);background:rgba(255,255,255,0.06);color:var(--text-inverse);font-size:15px;font-family:var(--font-body);outline:none;transition:border-color 0.3s}
-.email-input::placeholder{color:rgba(250,249,246,0.3)}
-.email-input:focus{border-color:rgba(45,90,61,0.6)}
-.email-form .btn-primary{background:var(--bg);color:var(--bg-dark);flex-shrink:0}
-.email-form .btn-primary:hover{background:#fff}
-
-.final-note{font-size:12px;color:rgba(250,249,246,.35);margin-top:0;position:relative;z-index:1}
-
-/* ── Footer ── */
-footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
-.footer-row{display:flex;align-items:center;justify-content:space-between}
-.footer-left{display:flex;gap:10px;align-items:center}
-.footer-name{font-weight:500;font-size:14px;color:var(--text-tertiary)}
-.footer-copy{font-size:12px;color:var(--text-tertiary);opacity:.55}
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto}
+.footer-left{font-size:13px;color:var(--text-muted)}
 .footer-links{display:flex;gap:24px}
-.footer-links a{font-size:12px;color:var(--text-tertiary)}
-.footer-links a:hover{color:var(--text)}
+.footer-links a{font-size:13px;color:var(--text-muted);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--teal)}
 
-/* ── Responsive ── */
-@media(max-width:960px){
-  .nav-link{display:none}
-  .hero-grid,.peach-grid{grid-template-columns:1fr;text-align:center}
-  .hero-sub,.hero-note{margin-left:auto;margin-right:auto}
-  .hero-ctas,.hero-proof{justify-content:center}
-  .hero-visual{order:2;margin-top:16px}
-  .phone{width:246px;height:520px;border-radius:38px;padding:8px}
-  .phone-inner{border-radius:31px}
-  .value-divider,.proof-sep{display:none}
-  .problem-grid,.feature-grid,.sub-grid,.for-grid{grid-template-columns:1fr}
-  .system-steps{grid-template-columns:repeat(2,1fr);gap:24px}
-  .system-steps::before{display:none}
-  .peach-grid{text-align:left}
-  .peach-copy .section-sub,.peach-copy .peach-detail{margin-left:0;margin-right:0}
-  .chat{margin:0 auto}
-  .trust-box,.footer-row{flex-direction:column;gap:14px}
-  .final-box{padding:54px 26px}
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;padding:120px 24px 40px;gap:32px;min-height:auto}
+  .hero h1{font-size:32px}
+  .hero-visual{order:-1}
+  .phone-frame{width:240px;height:500px}
+  .what-grid{grid-template-columns:repeat(2,1fr)}
+  .guided-inner{grid-template-columns:1fr}
+  .guided-phone{display:none}
+  .guided-section{padding:60px 24px}
+  .bottom-strip{grid-template-columns:1fr;padding:40px 24px}
+  .what-section{padding:40px 24px 60px}
+  nav{padding:0 20px}
+  .nav-links a:not(.nav-cta){display:none}
+  .what-section h2,.guided-inner h2{font-size:28px}
+  .final-cta{padding:40px 24px}
+  .final-cta h2{font-size:30px}
   .email-form{flex-direction:column}
-}
-@media(max-width:600px){
-  .system-steps{grid-template-columns:1fr}
+  footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
+  .hero-proof{flex-direction:column;align-items:flex-start;gap:8px}
 }
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
-  <a href="/" class="logo">
-    <div class="logo-mark"><svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="7.5" r="3" stroke="#fff" stroke-width="1.4"/><path d="M5 5C5 5 6 2.8 8 2.8C10 2.8 11 5 11 5" stroke="#fff" stroke-width="1.4" stroke-linecap="round"/><circle cx="8" cy="13" r="1" fill="#fff"/></svg></div>
-    <span class="logo-name">Zenoomi</span>
-  </a>
-  <div class="nav-right">
-    <a href="#system" class="nav-link">How It Works</a>
-    <a href="#features" class="nav-link">Features</a>
-    <a href="#for-you" class="nav-link">Who It's For</a>
-    <a href="#final" class="nav-cta">Get Early Access</a>
+  <div class="nav-logo">zen<span>oo</span>mi</div>
+  <div class="nav-links">
+    <a href="#what">What It Does</a>
+    <a href="#guided">Guided Care</a>
+    <a href="#join" class="nav-cta">Join the Beta</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-content">
-      <div class="hero-pill"><span class="hero-pill-dot"></span>Early access opening soon</div>
-
-      <h1 class="hero-headline">
-        You're Googling<br><span class="accent">"is this normal?"</span><br>at midnight.
-      </h1>
-
-      <p class="hero-sub">
-        <strong>You need a plan, not more answers.</strong> Zenoomi gives your dog a clear daily routine, guidance when you're unsure, and a calmer way to stay on top of care.
-      </p>
-
-      <div class="hero-ctas">
-        <a href="#final" class="btn-primary">Get Early Access</a>
-        <a href="#system" class="btn-secondary">See how it works</a>
-      </div>
-
-      <p class="hero-note">Built for dog owners who want to feel more organized, more confident, and less like they're missing something important.</p>
-
-      <div class="hero-proof">
-        <div class="proof-chip"><div class="proof-chip-icon">✓</div>Free to start</div>
-        <div class="proof-sep"></div>
-        <div class="proof-chip"><div class="proof-chip-icon">⏱</div>Set up in 2 minutes</div>
-        <div class="proof-sep"></div>
-        <div class="proof-chip"><div class="proof-chip-icon">🩺</div>Not a vet replacement</div>
+  <div class="hero-content">
+    <h1>You already do a lot for your dog. We help you <em>never miss what matters.</em></h1>
+    <p class="hero-sub">Teeth, flea meds, body scans, enrichment, vet prep. Zenoomi plans it, reminds you, and walks you through it, from puppyhood through the senior years.</p>
+    <div class="hero-cta-row">
+      <a href="#join" class="btn-primary">Join the beta &#8594;</a>
+      <a href="#what" class="btn-secondary">See how it works &#8595;</a>
+    </div>
+    <div class="hero-proof">
+      <div class="hero-proof-item"><div class="check">&#10003;</div>Free during beta</div>
+      <div class="hero-proof-item"><div class="check">&#10003;</div>Set up in 2 minutes</div>
+      <div class="hero-proof-item"><div class="check">&#10003;</div>Not a vet replacement</div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <img src="app-home.png" alt="Zenoomi home screen showing Care Score, daily plan, and today's activities">
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="hero-visual">
-      <div class="phone-wrap">
-        <!-- Phone uses real screenshot -->
-        <div class="phone">
-          <div class="phone-inner">
-            <!-- Replace src with your actual screenshot path -->
-            <img src="home-screen.png" alt="Zenoomi home screen" class="phone-screenshot">
+<!-- WHAT IT DOES -->
+<section class="what-section" id="what">
+  <h2>One app. Everything your dog needs, <em>managed.</em></h2>
+  <p class="what-sub">Zenoomi builds a daily plan based on your dog's age, energy, and care needs. Then it helps you actually follow through.</p>
+  <div class="what-grid">
+    <div class="what-card">
+      <div class="what-icon"><svg width="44" height="44" viewBox="28 22 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="38" y="28" width="44" height="52" rx="4" fill="none" stroke="#4A7C6F" stroke-width="2.5"/><rect x="38" y="28" width="44" height="14" rx="4" fill="#4A7C6F"/><line x1="48" y1="52" x2="72" y2="52" stroke="#4A7C6F" stroke-width="2" stroke-linecap="round"/><line x1="48" y1="62" x2="72" y2="62" stroke="#4A7C6F" stroke-width="2" stroke-linecap="round"/><line x1="48" y1="72" x2="64" y2="72" stroke="#4A7C6F" stroke-width="2" stroke-linecap="round"/><circle cx="46" cy="52" r="2" fill="#C4785B"/><circle cx="46" cy="62" r="2" fill="#C4785B"/><circle cx="46" cy="72" r="2" fill="#C4785B"/></svg></div>
+      <h3>Daily Plan</h3>
+      <p>A personalized plan each day with activities, care tasks, and reminders. Every item tells you why it's there.</p>
+    </div>
+    <div class="what-card">
+      <div class="what-icon"><svg width="44" height="44" viewBox="30 26 60 70" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="56" r="24" fill="none" stroke="#4A7C6F" stroke-width="2.5"/><line x1="60" y1="56" x2="60" y2="42" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round"/><line x1="60" y1="56" x2="72" y2="56" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round"/><circle cx="60" cy="56" r="3" fill="#C4785B"/><line x1="50" y1="84" x2="70" y2="84" stroke="#C4785B" stroke-width="2" stroke-linecap="round"/><line x1="54" y1="90" x2="66" y2="90" stroke="#C4785B" stroke-width="2" stroke-linecap="round"/></svg></div>
+      <h3>Care Reminders</h3>
+      <p>Flea meds, vet visits, grooming, dental. Schedule it once, never forget it again.</p>
+    </div>
+    <div class="what-card">
+      <div class="what-icon"><svg width="44" height="44" viewBox="18 28 84 58" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="24,60 40,60 46,44 54,76 60,38 68,72 74,52 80,60 96,60" fill="none" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="60" cy="38" r="3.5" fill="#C4785B"/></svg></div>
+      <h3>Guided Activities</h3>
+      <p>Step-by-step flows with timers and tips. Tooth checks, body scans, enrichment games. You do it with your dog, not watch a video.</p>
+    </div>
+    <div class="what-card">
+      <div class="what-icon"><svg width="44" height="44" viewBox="28 24 62 72" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="34" y="30" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="30" width="36" height="10" rx="3" fill="#4A7C6F"/><rect x="34" y="46" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="46" width="52" height="10" rx="3" fill="#4A7C6F"/><rect x="34" y="62" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="62" width="44" height="10" rx="3" fill="#4A7C6F"/><rect x="34" y="78" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="78" width="20" height="10" rx="3" fill="#C4785B"/></svg></div>
+      <h3>Weekly Check-in</h3>
+      <p>A personalized look at your dog's week, what to keep doing, and what to try next.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDED CARE -->
+<section id="guided">
+  <div class="guided-section">
+    <div class="guided-inner">
+      <div>
+        <h2>The app walks you through it, <em>step by step</em></h2>
+        <p class="guided-sub">Each activity is a guided flow with phased timers, clear directions, and tips for reading your dog's signals. You don't need to know what to do ahead of time.</p>
+        <div class="guided-outcome">Tooth brushing your dog accepts. Nail trims without the struggle. Vet visits where everyone stays calm. These build through gentle, consistent practice.</div>
+        <div class="guided-activities">
+          <div class="guided-activity"><div class="guided-activity-name">Tooth Check</div><div class="guided-activity-desc">90-second dental routine</div></div>
+          <div class="guided-activity"><div class="guided-activity-name">Weekly Body Scan</div><div class="guided-activity-desc">Catch changes early</div></div>
+          <div class="guided-activity"><div class="guided-activity-name">Nail & Paw Care</div><div class="guided-activity-desc">Stress-free nail trims</div></div>
+          <div class="guided-activity"><div class="guided-activity-name">Vet Visit Prep</div><div class="guided-activity-desc">Practice the exam at home</div></div>
+          <div class="guided-activity"><div class="guided-activity-name">Handling & Touch</div><div class="guided-activity-desc">Comfort with being held</div></div>
+          <div class="guided-activity"><div class="guided-activity-name">Enrichment Games</div><div class="guided-activity-desc">Scent trails, puzzles, tug</div></div>
+        </div>
+      </div>
+      <div class="guided-phone">
+        <div class="guided-phone-frame">
+          <div class="guided-phone-screen">
+            <div class="gp-header">Guide & Practice</div>
+            <div class="gp-guide">Stay gentle and let your dog lead</div>
+            <div class="gp-phases">
+              <div class="gp-phase active">Start</div>
+              <div class="gp-phase inactive">Paws</div>
+              <div class="gp-phase inactive">Head</div>
+              <div class="gp-phase inactive">Scan</div>
+            </div>
+            <div class="gp-step">
+              <h4>Shoulder Touch</h4>
+              <p>Place your hand on your dog's shoulder, hold for 3 seconds, then lift. Mark and reward when you remove your hand.</p>
+            </div>
+            <div class="gp-timer">
+              <div class="gp-timer-num">1:00</div>
+              <div class="gp-timer-btn">Start</div>
+              <div class="gp-timer-phase">Phase 1 of 4</div>
+            </div>
+            <div class="gp-tip">
+              <div class="gp-tip-label">Pup Tip</div>
+              <p>Touch should be optional. If they lean away, pause and make the next touch easier.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -275,258 +257,44 @@ footer{padding:28px 0 36px;border-top:1px solid var(--border-light)}
   </div>
 </section>
 
-<section class="value-strip reveal">
-  <div class="container">
-    <div class="value-box">
-      <div class="value-item"><span>✦</span>One daily plan, ready each morning</div>
-      <div class="value-divider"></div>
-      <div class="value-item"><span>🍑</span>Guidance when you're unsure</div>
-      <div class="value-divider"></div>
-      <div class="value-item"><span>📋</span>Care that actually gets followed through</div>
-    </div>
+<!-- BOTTOM STRIP -->
+<div class="bottom-strip">
+  <div class="strip-card">
+    <div class="strip-icon"><svg width="48" height="48" viewBox="20 26 80 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M 26 72 A 34 34 0 1 1 94 72" fill="none" stroke="#4A7C6F" stroke-width="4" stroke-linecap="round" opacity="0.15"/><path d="M 26 72 A 34 34 0 0 1 82 42" fill="none" stroke="#4A7C6F" stroke-width="4" stroke-linecap="round"/><path d="M 82 42 A 34 34 0 0 1 92 60" fill="none" stroke="#C4785B" stroke-width="4" stroke-linecap="round"/><path d="M 60 72 L 79 47" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round"/><circle cx="60" cy="72" r="5" fill="#C4785B"/><circle cx="60" cy="72" r="2" fill="#F5F0E8"/></svg></div>
+    <h3>Care Score</h3>
+    <p>A simple gauge that shows how you're keeping up. Logging a symptom improves your score, because paying attention matters most.</p>
   </div>
+  <div class="strip-card">
+    <div class="strip-icon"><svg width="48" height="48" viewBox="28 28 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M 36 36 h 48 a 6 6 0 0 1 6 6 v 28 a 6 6 0 0 1 -6 6 h -32 l -10 10 v -10 h -6 a 6 6 0 0 1 -6 -6 v -28 a 6 6 0 0 1 6 -6 z" fill="#4A7C6F"/><circle cx="48" cy="56" r="3" fill="#F5F0E8"/><circle cx="60" cy="56" r="3" fill="#F5F0E8"/><circle cx="72" cy="56" r="3" fill="#C4785B"/></svg></div>
+    <h3>Peach Pup Pal</h3>
+    <p>Not sure if something's normal? Ask Peach. Calm, personalized guidance based on your dog's age and history.</p>
+  </div>
+  <div class="strip-card">
+    <div class="strip-icon"><svg width="48" height="48" viewBox="18 48 84 28" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="28" y1="64" x2="92" y2="64" stroke="#4A7C6F" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/><circle cx="32" cy="64" r="4" fill="#4A7C6F" opacity="0.35"/><circle cx="48" cy="64" r="6" fill="#4A7C6F" opacity="0.5"/><circle cx="66" cy="64" r="8" fill="#4A7C6F" opacity="0.7"/><circle cx="86" cy="64" r="10" fill="#C4785B"/></svg></div>
+    <h3>Every Life Stage</h3>
+    <p>Whether your dog is 8 weeks or 12 years old, their needs are different. Zenoomi adapts from puppyhood through the senior years.</p>
+  </div>
+</div>
+
+
+<!-- DOG ILLUSTRATION -->
+<div style="text-align:center;padding:20px 40px 0;">
+  <img src="dog-illustration.jpg" alt="Illustrated dog" style="max-width:280px;height:auto;opacity:0.9;">
+</div>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="join">
+  <h2>Your dog's care, <em>finally managed</em></h2>
+  <p>Be one of the first to try Zenoomi. Free during beta, no credit card required.</p>
+  <div class="email-form">
+    <input type="email" class="email-input" placeholder="Your email address">
+    <button class="btn-primary">Join the beta</button>
+  </div>
+  <p class="form-note">We'll email you when your spot opens.</p>
 </section>
 
-<section class="problem">
-  <div class="container">
-    <div class="problem-header reveal">
-      <div class="section-eyebrow">Sound familiar?</div>
-      <h2 class="section-headline">The internet has a thousand answers.<br>You need one plan.</h2>
-    </div>
-    <div class="problem-grid">
-      <div class="problem-card reveal">
-        <div class="problem-icon">🔎</div>
-        <div class="problem-title">Too many answers, no system</div>
-        <div class="problem-desc">You've read the threads, saved the posts, asked the question three different ways. Tomorrow morning still feels unclear.</div>
-      </div>
-      <div class="problem-card reveal reveal-delay-1">
-        <div class="problem-icon">⏰</div>
-        <div class="problem-title">Care lives in your head</div>
-        <div class="problem-desc">Meds, flea treatment, dental, next checkup. It works until it doesn't, and then you realize something slipped.</div>
-      </div>
-      <div class="problem-card reveal reveal-delay-2">
-        <div class="problem-icon">📈</div>
-        <div class="problem-title">No signal that you're on track</div>
-        <div class="problem-desc">You're doing a lot for your dog, but there's no way to know whether you're being consistent enough or missing something.</div>
-      </div>
-    </div>
-    <div class="problem-transition reveal">Zenoomi replaces all of that with <em>one daily system.</em></div>
-  </div>
-</section>
-
-<section class="system" id="system">
-  <div class="container">
-    <div class="system-header reveal">
-      <div class="section-eyebrow">How Zenoomi works</div>
-      <h2 class="section-headline">One system. Every day.</h2>
-      <p class="section-sub">Every morning, your plan is ready. Follow through, log what you notice, and see what's working over time.</p>
-    </div>
-    <div class="system-steps">
-      <div class="system-step reveal"><div class="system-num">1</div><div class="system-name">Plan</div><div class="system-desc">Tell us about your dog. Zenoomi builds a daily routine matched to age, energy, and care needs.</div><div class="system-tag">Takes 2 min</div></div>
-      <div class="system-step reveal reveal-delay-1"><div class="system-num">2</div><div class="system-name">Do</div><div class="system-desc">Follow today's plan. Activities, reminders, and quick care tasks are ready when you are.</div><div class="system-tag">Every morning</div></div>
-      <div class="system-step reveal reveal-delay-2"><div class="system-num">3</div><div class="system-name">Log</div><div class="system-desc">Notice something? Log mood, energy, or a symptom in seconds so you can spot patterns earlier.</div><div class="system-tag">10 seconds</div></div>
-      <div class="system-step reveal reveal-delay-3"><div class="system-num">4</div><div class="system-name">Learn</div><div class="system-desc">Your Care Score shows follow-through. Weekly reviews show what's working and what needs attention.</div><div class="system-tag">Every Sunday</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="peach">
-  <div class="container peach-grid">
-    <div class="peach-copy reveal">
-      <div class="section-eyebrow">Guidance when you're unsure</div>
-      <h2 class="section-headline">Calm answers, not more Googling.</h2>
-      <p class="section-sub">When something feels off, Peach gives you personalized next-step guidance based on your dog's age, routine, and recent history.</p>
-      <p class="peach-detail">Less late-night spiraling. A better sense of what's normal, what to watch, and when it's time to call your vet.</p>
-    </div>
-    <div class="reveal reveal-delay-1">
-      <div class="chat">
-        <div class="chat-head"><div class="chat-avatar">🍑</div><div><div class="chat-name">Peach</div><div class="chat-sub">Knows Kaspir · Puppy · Low energy</div></div></div>
-        <div class="chat-body">
-          <div class="chat-q">Kaspir keeps biting my hands when I try to pet her. Is this normal?</div>
-          <div class="chat-a"><div class="chat-tag">✓ Normal for age</div>Really common at this stage. Puppies explore everything with their mouths, and biting usually peaks around 4-5 months. Try redirecting to a tug toy and reward the moment she lets go. It gets better.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="features" id="features">
-  <div class="container">
-    <div class="features-header reveal">
-      <div class="section-eyebrow">What you get</div>
-      <h2 class="section-headline">A daily care system, not a feature pile.</h2>
-    </div>
-    <div class="feature-grid">
-      <div class="feature-card reveal">
-        <div class="feature-badge">Core</div>
-        <div class="feature-icon">📋</div>
-        <div class="feature-name">Personalized Daily Plan</div>
-        <div class="feature-desc">A clear plan built around your dog's life stage, routine, and care needs. Updated daily so you always know what to do next.</div>
-      </div>
-      <div class="feature-card reveal reveal-delay-1">
-        <div class="feature-badge">Support</div>
-        <div class="feature-icon">🍑</div>
-        <div class="feature-name">Calm Guidance</div>
-        <div class="feature-desc">Ask what's normal, what to try, and what to watch. Peach helps you respond with more confidence, not more guessing.</div>
-      </div>
-      <div class="feature-card reveal reveal-delay-2">
-        <div class="feature-badge">Follow-through</div>
-        <div class="feature-icon">🎯</div>
-        <div class="feature-name">Care Score</div>
-        <div class="feature-desc">Tracks what you're doing, not what's wrong. Log a symptom and your score holds steady, because paying attention is the point.</div>
-      </div>
-    </div>
-    <div class="sub-grid">
-      <div class="sub-card reveal"><div class="sub-icon">🛡️</div><div><div class="sub-name">Preventative Care</div><div class="sub-desc">Vaccines, flea and tick, dental, and checkups. Reminders before anything gets overdue.</div></div></div>
-      <div class="sub-card reveal reveal-delay-1"><div class="sub-icon">📅</div><div><div class="sub-name">Weekly Review</div><div class="sub-desc">A calmer Sunday view of what went well, what changed, and what needs attention next.</div></div></div>
-      <div class="sub-card reveal reveal-delay-2"><div class="sub-icon">🧩</div><div><div class="sub-name">Structured Activities</div><div class="sub-desc">Practical routines, confidence builders, and skills that fit real life. Not a noisy content library.</div></div></div>
-    </div>
-  </div>
-</section>
-
-<section class="for-you" id="for-you">
-  <div class="container">
-    <div class="for-you-header reveal">
-      <div class="section-eyebrow">Who it's for</div>
-      <h2 class="section-headline">A daily system for the moments that matter most</h2>
-    </div>
-    <div class="for-grid">
-      <div class="for-card reveal">
-        <div class="for-badge">New puppy or new dog</div>
-        <div class="for-pain">"Am I doing this right? What should I be working on this week? Is that behavior normal?"</div>
-        <div class="for-solve">A daily plan with Morning Settle, handling practice, and calm-building activities. Plus Peach for the questions nobody else can answer at 2am.</div>
-      </div>
-      <div class="for-card reveal reveal-delay-1">
-        <div class="for-badge">Dogs with extra care needs</div>
-        <div class="for-pain">"He's on meds, his routine keeps changing, and I can't afford to miss something."</div>
-        <div class="for-solve">Medication reminders, Weekly Body Scan, comfort check-ins, and a care log that catches patterns before they become problems.</div>
-      </div>
-      <div class="for-card reveal reveal-delay-2">
-        <div class="for-badge">Owners who want a system</div>
-        <div class="for-pain">"I know I could be more consistent. I just need something that helps me follow through."</div>
-        <div class="for-solve">Care Score, habit streaks, and a preventative calendar that turns good intentions into daily follow-through.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="first-week">
-  <div class="container">
-    <div class="fw-header reveal">
-      <div class="section-eyebrow">What to expect</div>
-      <h2 class="section-headline">Your first week with Zenoomi</h2>
-    </div>
-    <div class="fw-timeline">
-      <div class="fw-row reveal">
-        <div class="fw-day">Day 1</div>
-        <div class="fw-content"><div class="fw-activities">Morning Settle + Quick check-in</div><div class="fw-note">Set up your dog's profile in 2 minutes. Your first plan is waiting.</div></div>
-      </div>
-      <div class="fw-row reveal">
-        <div class="fw-day">Day 2</div>
-        <div class="fw-content"><div class="fw-activities">Decompression Walk + Handling Practice</div><div class="fw-note">Two activities, both under 15 minutes. Your streak starts.</div></div>
-      </div>
-      <div class="fw-row reveal">
-        <div class="fw-day">Day 3</div>
-        <div class="fw-content"><div class="fw-activities">Place Training + Mealtime Enrichment</div><div class="fw-note">The two activities with the highest repeat value in the library.</div></div>
-      </div>
-      <div class="fw-row reveal">
-        <div class="fw-day">Day 4</div>
-        <div class="fw-content"><div class="fw-activities">Rest Day Plan</div><div class="fw-note">Yes, rest is part of the plan. Low-key enrichment, no pressure.</div></div>
-      </div>
-      <div class="fw-row reveal">
-        <div class="fw-day">Day 5</div>
-        <div class="fw-content"><div class="fw-activities">Alone Time Practice + Indoor Scent Trail</div><div class="fw-note">Building independence and mental stimulation.</div></div>
-      </div>
-      <div class="fw-row reveal">
-        <div class="fw-day">Day 6</div>
-        <div class="fw-content"><div class="fw-activities">Loose-Leash Practice + Weekly Body Scan</div><div class="fw-note">Real-world skills plus your first cooperative care check.</div></div>
-      </div>
-      <div class="fw-row reveal">
-        <div class="fw-day">Day 7</div>
-        <div class="fw-content"><div class="fw-activities">Your first Weekly Review</div><div class="fw-note">See what you completed, what's trending, and what's coming next week.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="trust">
-  <div class="container">
-    <div class="trust-box reveal">
-      <div class="trust-icon">🩺</div>
-      <div>
-        <div class="trust-title">Zenoomi is not a veterinarian</div>
-        <div class="trust-text">Zenoomi helps you stay organized, notice patterns earlier, and know what to do next. When it looks like it's time to call your vet, we will tell you clearly.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="final" id="final">
-  <div class="container">
-    <div class="final-box reveal">
-      <div class="final-eyebrow">Join early access</div>
-      <div class="final-headline">Your dog's daily care,<br>finally organized</div>
-      <div class="final-sub">Be first to try Zenoomi when beta opens. Free to join, no credit card required.</div>
-      <form class="email-form" id="waitlist-form" action="https://formspree.io/f/mpqydloe" method="POST">
-        <input type="email" name="email" class="email-input" placeholder="Your email address" aria-label="Email address" required>
-        <input type="hidden" name="_subject" value="Zenoomi Waitlist Signup">
-        <input type="hidden" name="_next" value="https://zenoomi.com#thanks">
-        <button type="submit" class="btn-primary">Get Early Access</button>
-      </form>
-      <div class="final-note" id="form-note">Free to start. We'll email you when beta opens.</div>
-      <div class="final-note" id="form-success" style="display:none;color:var(--forest)">You're on the list. We'll be in touch soon.</div>
-    </div>
-  </div>
-</section>
-
+<!-- FOOTER -->
 <footer>
-  <div class="container footer-row">
-    <div class="footer-left"><span class="footer-name">Zenoomi</span><span class="footer-copy">© 2026</span></div>
-    <div class="footer-links"><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="mailto:support@zenoomi.com">Contact</a><a href="#">Instagram</a></div>
-  </div>
-</footer>
-
-<script>
-// Scroll-triggered reveal animations
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-// Waitlist form submission
-const form = document.getElementById('waitlist-form');
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const btn = form.querySelector('button');
-  const note = document.getElementById('form-note');
-  const success = document.getElementById('form-success');
-  btn.textContent = 'Joining...';
-  btn.disabled = true;
-  try {
-    const res = await fetch(form.action, {
-      method: 'POST',
-      body: new FormData(form),
-      headers: { 'Accept': 'application/json' }
-    });
-    if (res.ok) {
-      form.style.display = 'none';
-      note.style.display = 'none';
-      success.style.display = 'block';
-    } else {
-      btn.textContent = 'Try again';
-      btn.disabled = false;
-    }
-  } catch {
-    btn.textContent = 'Try again';
-    btn.disabled = false;
-  }
-});
-</script>
-
-</body>
-</html>
+  <div class="footer-left">Zenoomi &copy; 2026 · <a href="#" style="color:var(--text-muted);text-decoration:none">Privacy</a> · <a href="#" style="color:var(--text-muted);text-decoration:none">Terms</a> · <a href="/cdn-cgi/l/email-protection#4734323737283533073d222928282a2e6924282a" style="color:var(--text-muted);text-decoration:none">Contact</a></div>
+  <div class="footer-links">
+    <span style="font-size:12px;color:var(--text-muted)">Not a veterinarian. When it's time to call your vet, we'll tell you.</

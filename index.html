@@ -286,10 +286,10 @@ footer{border-top:1px solid var(--border);padding:32px 40px;display:flex;justify
 <section class="final-cta" id="join">
   <h2>Your dog's care, <em>finally managed</em></h2>
   <p>Be one of the first to try Zenoomi. Free during beta, no credit card required.</p>
-  <div class="email-form">
-    <input type="email" class="email-input" placeholder="Your email address">
-    <button class="btn-primary">Join the beta</button>
-  </div>
+  <form class="email-form" action="https://formspree.io/f/mpqydloe" method="POST">
+  <input type="email" name="email" class="email-input" placeholder="Your email address" required>
+  <button type="submit" class="btn-primary">Join the beta</button>
+</form>  
   <p class="form-note">We'll email you when your spot opens.</p>
 </section>
 

@@ -4,515 +4,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zenoomi — Your Dog's Daily Wellness Routine</title>
+<title>Zenoomi — Never Miss What Matters for Your Dog</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Bricolage+Grotesque:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --cream: #F4EFE6;
-    --cream-dark: #EDE6D9;
-    --teal: #4A8C7F;
-    --teal-dark: #3A7068;
-    --teal-deep: #1E3A34;
-    --terracotta: #C4785B;
-    --terracotta-light: #D4957A;
-    --olive: #7A6F54;
-    --olive-light: #A69B7B;
-    --text-primary: #2C2419;
-    --text-secondary: #5A4E3C;
-    --text-light: #8A7D6A;
-    --white: #FFFDF9;
-    --border: #D4CCBE;
-  }
-
-- { margin: 0; padding: 0; box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-font-family: ‘Bricolage Grotesque’, sans-serif;
-background: var(–cream);
-color: var(–text-primary);
--webkit-font-smoothing: antialiased;
-overflow-x: hidden;
+:root{
+  --cream:#F5F0E8;--cream-dark:#EDE7DB;--cream-light:#FAF8F4;
+  --teal:#4A7C6F;--teal-dark:#3A6358;--teal-light:#5A9484;--teal-pale:#E8F0ED;
+  --terracotta:#C4785B;--terracotta-light:#D4956E;
+  --olive:#8B7E56;
+  --text-primary:#2C2C2C;--text-secondary:#5A5A5A;--text-muted:#8A8577;
+  --border:#D8D0C4;--white:#FFFFFF;
+  --serif:'Newsreader',Georgia,serif;--sans:'Bricolage Grotesque',system-ui,sans-serif;
 }
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--cream);color:var(--text-primary);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
 /* NAV */
-nav {
-position: fixed;
-top: 0;
-width: 100%;
-z-index: 100;
-padding: 16px 32px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-background: rgba(244, 239, 230, 0.92);
-backdrop-filter: blur(12px);
-border-bottom: 1px solid var(–border);
-}
-.nav-logo {
-font-family: ‘Newsreader’, serif;
-font-size: 22px;
-font-weight: 600;
-color: var(–text-primary);
-letter-spacing: -0.3px;
-}
-.nav-logo span { color: var(–teal); }
-.nav-cta {
-background: var(–teal);
-color: var(–white);
-padding: 10px 22px;
-border-radius: 24px;
-text-decoration: none;
-font-size: 14px;
-font-weight: 600;
-transition: background 0.2s;
-}
-.nav-cta:hover { background: var(–teal-dark); }
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,240,232,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(–border);padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-weight:700;font-size:22px;letter-spacing:-0.5px;color:var(–teal-dark)}
+.nav-logo span{color:var(–terracotta)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:14px;font-weight:500;color:var(–text-secondary);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(–teal)}
+.nav-cta{background:var(–teal);color:var(–cream-light)!important;padding:10px 20px;border-radius:8px;font-weight:600!important;transition:background 0.2s!important}
+.nav-cta:hover{background:var(–teal-dark)!important}
 
 /* HERO */
-.hero {
-padding: 140px 32px 80px;
-max-width: 1100px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 60px;
-align-items: center;
-}
-.hero-text h1 {
-font-family: ‘Newsreader’, serif;
-font-size: 48px;
-font-weight: 500;
-line-height: 1.15;
-letter-spacing: -0.5px;
-color: var(–text-primary);
-margin-bottom: 20px;
-}
-.hero-text p {
-font-size: 18px;
-line-height: 1.6;
-color: var(–text-secondary);
-margin-bottom: 32px;
-max-width: 440px;
-}
-.hero-cta {
-display: inline-block;
-background: var(–teal);
-color: var(–white);
-padding: 16px 36px;
-border-radius: 32px;
-text-decoration: none;
-font-size: 16px;
-font-weight: 600;
-transition: all 0.25s;
-}
-.hero-cta:hover { background: var(–teal-dark); transform: translateY(-1px); }
-.hero-badge {
-display: inline-block;
-margin-top: 14px;
-font-size: 13px;
-color: var(–text-light);
-letter-spacing: 0.3px;
-}
+.hero{padding:140px 40px 60px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;min-height:85vh}
+.hero-content{max-width:520px}
+.hero h1{font-family:var(–serif);font-size:46px;font-weight:500;line-height:1.15;letter-spacing:-1px;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(–teal)}
+.hero-sub{font-size:17px;line-height:1.65;color:var(–text-secondary);margin-bottom:32px;max-width:440px}
+.hero-cta-row{display:flex;gap:16px;align-items:center;margin-bottom:36px}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(–teal);color:var(–cream-light);padding:16px 28px;border-radius:10px;font-family:var(–sans);font-size:16px;font-weight:600;text-decoration:none;transition:all 0.25s;border:none;cursor:pointer}
+.btn-primary:hover{background:var(–teal-dark);transform:translateY(-1px)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(–text-secondary);padding:16px 20px;font-size:15px;font-weight:500;text-decoration:none;transition:color 0.2s}
+.btn-secondary:hover{color:var(–teal)}
+.hero-proof{display:flex;gap:24px;padding-top:20px;border-top:1px solid var(–border)}
+.hero-proof-item{font-size:13px;color:var(–text-muted);display:flex;align-items:center;gap:6px}
+.hero-proof-item .check{width:18px;height:18px;background:var(–teal);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:10px}
 
-/* Phone mockup */
-.hero-phone {
-display: flex;
-justify-content: center;
-}
-.phone-wrapper {
-position: relative;
-width: 300px;
-}
-.phone-wrapper img {
-width: 100%;
-height: auto;
-border-radius: 28px;
-box-shadow: 0 20px 60px rgba(44, 36, 25, 0.15), 0 4px 16px rgba(44, 36, 25, 0.08);
-}
+/* Phone */
+.hero-visual{display:flex;justify-content:center;align-items:center}
+.phone-frame{width:290px;height:600px;background:var(–cream-light);border-radius:36px;border:2px solid var(–border);padding:12px;box-shadow:0 40px 80px rgba(0,0,0,0.08),0 8px 24px rgba(0,0,0,0.04);overflow:hidden}
+.phone-screen{width:100%;height:100%;border-radius:28px;overflow:hidden}
+.phone-screen img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 
-/* SECTION: HOW IT WORKS */
-.how-section {
-padding: 80px 32px;
-max-width: 1100px;
-margin: 0 auto;
-}
-.section-label {
-font-size: 12px;
-text-transform: uppercase;
-letter-spacing: 2px;
-color: var(–olive);
-font-weight: 600;
-margin-bottom: 12px;
-}
-.section-title {
-font-family: ‘Newsreader’, serif;
-font-size: 36px;
-font-weight: 500;
-line-height: 1.2;
-margin-bottom: 48px;
-max-width: 600px;
-}
-.features-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 20px;
-}
-.feature-card {
-background: var(–white);
-border: 1px solid var(–border);
-border-radius: 16px;
-padding: 28px 24px;
-transition: border-color 0.2s;
-}
-.feature-card:hover { border-color: var(–teal); }
-.feature-icon {
-width: 44px;
-height: 44px;
-background: var(–cream);
-border-radius: 12px;
-display: flex;
-align-items: center;
-justify-content: center;
-margin-bottom: 16px;
-font-size: 20px;
-}
-.feature-card h3 {
-font-size: 17px;
-font-weight: 600;
-margin-bottom: 8px;
-}
-.feature-card p {
-font-size: 14px;
-line-height: 1.55;
-color: var(–text-secondary);
-}
+/* WHAT IT DOES */
+.what-section{padding:60px 40px 80px;max-width:1200px;margin:0 auto;border-top:1px solid var(–border)}
+.what-section h2{font-family:var(–serif);font-size:34px;font-weight:500;line-height:1.2;letter-spacing:-0.5px;margin-bottom:12px;text-align:center}
+.what-section h2 em{font-style:italic;color:var(–teal)}
+.what-sub{font-size:16px;color:var(–text-secondary);text-align:center;max-width:520px;margin:0 auto 40px;line-height:1.6}
+.what-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.what-card{background:var(–cream-light);border:1px solid var(–border);border-radius:14px;padding:24px 20px;text-align:center;transition:transform 0.2s}
+.what-card:hover{transform:translateY(-3px)}
+.what-icon{margin-bottom:12px;display:flex;justify-content:center}
+.what-card h3{font-family:var(–serif);font-size:17px;font-weight:500;margin-bottom:6px}
+.what-card p{font-size:13px;line-height:1.5;color:var(–text-secondary)}
 
-/* COOPERATIVE CARE SECTION */
-.coop-section {
-background: var(–teal-deep);
-padding: 80px 32px;
-color: var(–white);
-}
-.coop-inner {
-max-width: 1100px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 60px;
-align-items: center;
-}
-.coop-text .section-label { color: var(–terracotta-light); }
-.coop-text h2 {
-font-family: ‘Newsreader’, serif;
-font-size: 36px;
-font-weight: 500;
-line-height: 1.2;
-margin-bottom: 20px;
-color: var(–white);
-}
-.coop-text p {
-font-size: 16px;
-line-height: 1.65;
-color: rgba(255,255,255,0.78);
-margin-bottom: 16px;
-}
-.coop-activities {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 12px;
-}
-.coop-activity {
-background: rgba(255,255,255,0.08);
-border: 1px solid rgba(255,255,255,0.12);
-border-radius: 12px;
-padding: 16px;
-transition: background 0.2s;
-}
-.coop-activity:hover { background: rgba(255,255,255,0.12); }
-.coop-activity-name {
-font-size: 14px;
-font-weight: 600;
-margin-bottom: 4px;
-}
-.coop-activity-desc {
-font-size: 12px;
-color: rgba(255,255,255,0.6);
-line-height: 1.4;
-}
+/* GUIDED CARE */
+.guided-section{background:var(–teal-dark);color:var(–cream-light);padding:80px 40px}
+.guided-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.guided-inner h2{font-family:var(–serif);font-size:34px;font-weight:500;line-height:1.2;margin-bottom:16px;color:var(–cream-light)}
+.guided-inner h2 em{font-style:italic;color:var(–terracotta-light)}
+.guided-sub{font-size:16px;line-height:1.6;color:rgba(245,240,232,0.75);margin-bottom:16px}
+.guided-outcome{font-size:14px;line-height:1.6;color:var(–cream-light);font-weight:500;margin-bottom:28px;padding-left:14px;border-left:3px solid var(–terracotta-light)}
+.guided-activities{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.guided-activity{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:10px;padding:12px 14px;transition:background 0.2s}
+.guided-activity:hover{background:rgba(255,255,255,0.12)}
+.guided-activity-name{font-size:13px;font-weight:600;color:var(–cream-light);margin-bottom:2px}
+.guided-activity-desc{font-size:11px;color:rgba(245,240,232,0.55);line-height:1.4}
 
-/* WHO IT’S FOR */
-.audience-section {
-padding: 80px 32px;
-max-width: 1100px;
-margin: 0 auto;
-}
-.audience-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 24px;
-margin-top: 48px;
-}
-.audience-card {
-border: 1px solid var(–border);
-border-radius: 16px;
-overflow: hidden;
-background: var(–white);
-}
-.audience-img {
-height: 200px;
-background: var(–cream-dark);
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 48px;
-}
-.audience-content {
-padding: 24px;
-}
-.audience-tag {
-font-size: 11px;
-text-transform: uppercase;
-letter-spacing: 1.5px;
-color: var(–teal);
-font-weight: 600;
-margin-bottom: 8px;
-}
-.audience-card h3 {
-font-family: ‘Newsreader’, serif;
-font-size: 20px;
-font-weight: 500;
-margin-bottom: 8px;
-}
-.audience-card p {
-font-size: 14px;
-line-height: 1.55;
-color: var(–text-secondary);
-}
+/* Guided phone */
+.guided-phone{display:flex;justify-content:center}
+.guided-phone-frame{width:260px;height:500px;background:var(–cream);border-radius:30px;padding:12px;box-shadow:0 40px 80px rgba(0,0,0,0.3);overflow:hidden}
+.guided-phone-screen{width:100%;height:100%;border-radius:22px;overflow:hidden}
+.guided-phone-screen img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 
-/* SMART REMINDERS HIGHLIGHT */
-.reminders-section {
-background: var(–cream-dark);
-padding: 80px 32px;
-}
-.reminders-inner {
-max-width: 1100px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 60px;
-align-items: center;
-}
-.reminder-examples {
-display: flex;
-flex-direction: column;
-gap: 12px;
-}
-.reminder-bubble {
-background: var(–white);
-border: 1px solid var(–border);
-border-radius: 16px;
-padding: 16px 20px;
-display: flex;
-align-items: flex-start;
-gap: 14px;
-max-width: 380px;
-opacity: 0;
-animation: slideUp 0.5s forwards;
-}
-.reminder-bubble:nth-child(1) { animation-delay: 0.2s; }
-.reminder-bubble:nth-child(2) { animation-delay: 0.5s; }
-.reminder-bubble:nth-child(3) { animation-delay: 0.8s; }
-@keyframes slideUp {
-from { opacity: 0; transform: translateY(16px); }
-to { opacity: 1; transform: translateY(0); }
-}
-.reminder-icon {
-width: 36px;
-height: 36px;
-border-radius: 10px;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-shrink: 0;
-font-size: 16px;
-}
-.reminder-icon.plan { background: #E8F4F1; }
-.reminder-icon.care { background: #FFF0E8; }
-.reminder-icon.streak { background: #F0EDE8; }
-.reminder-title {
-font-size: 14px;
-font-weight: 600;
-margin-bottom: 2px;
-}
-.reminder-body {
-font-size: 13px;
-color: var(–text-secondary);
-line-height: 1.4;
-}
-.reminders-text h2 {
-font-family: ‘Newsreader’, serif;
-font-size: 36px;
-font-weight: 500;
-line-height: 1.2;
-margin-bottom: 16px;
-}
-.reminders-text p {
-font-size: 16px;
-line-height: 1.65;
-color: var(–text-secondary);
-margin-bottom: 12px;
-}
+/* BOTTOM STRIP */
+.bottom-strip{padding:60px 40px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+.strip-card{text-align:center;padding:28px 20px}
+.strip-icon{margin-bottom:12px;display:flex;justify-content:center}
+.strip-card h3{font-family:var(–serif);font-size:18px;font-weight:500;margin-bottom:8px}
+.strip-card p{font-size:13px;line-height:1.55;color:var(–text-secondary)}
 
-/* PEACH SECTION */
-.peach-section {
-padding: 80px 32px;
-max-width: 1100px;
-margin: 0 auto;
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 60px;
-align-items: center;
-}
-.peach-text h2 {
-font-family: ‘Newsreader’, serif;
-font-size: 36px;
-font-weight: 500;
-line-height: 1.2;
-margin-bottom: 16px;
-}
-.peach-text p {
-font-size: 16px;
-line-height: 1.65;
-color: var(–text-secondary);
-margin-bottom: 12px;
-}
-.peach-chat {
-background: var(–white);
-border: 1px solid var(–border);
-border-radius: 20px;
-padding: 24px 20px;
-max-width: 360px;
-}
-.peach-header {
-display: flex;
-align-items: center;
-gap: 10px;
-margin-bottom: 20px;
-padding-bottom: 14px;
-border-bottom: 1px solid var(–cream-dark);
-}
-.peach-avatar {
-width: 36px;
-height: 36px;
-background: #FDEBD0;
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 18px;
-}
-.peach-name {
-font-weight: 600;
-font-size: 15px;
-}
-.peach-status {
-font-size: 11px;
-color: var(–teal);
-}
-.chat-msg {
-margin-bottom: 14px;
-max-width: 85%;
-}
-.chat-msg.user {
-margin-left: auto;
-background: var(–teal);
-color: white;
-padding: 10px 14px;
-border-radius: 14px 14px 4px 14px;
-font-size: 13px;
-line-height: 1.45;
-}
-.chat-msg.peach {
-background: var(–cream);
-padding: 10px 14px;
-border-radius: 14px 14px 14px 4px;
-font-size: 13px;
-line-height: 1.45;
-color: var(–text-primary);
-}
+/* DOG ILLUSTRATION */
+.dog-illustration{text-align:center;padding:20px 40px 0}
+.dog-illustration img{max-width:280px;height:auto;opacity:0.9}
 
-/* BOTTOM CTA */
-.cta-section {
-padding: 80px 32px;
-text-align: center;
-max-width: 650px;
-margin: 0 auto;
-}
-.cta-section h2 {
-font-family: ‘Newsreader’, serif;
-font-size: 40px;
-font-weight: 500;
-line-height: 1.2;
-margin-bottom: 16px;
-}
-.cta-section p {
-font-size: 17px;
-color: var(–text-secondary);
-line-height: 1.6;
-margin-bottom: 32px;
-}
-.cta-big {
-display: inline-block;
-background: var(–teal);
-color: var(–white);
-padding: 18px 44px;
-border-radius: 32px;
-text-decoration: none;
-font-size: 17px;
-font-weight: 600;
-transition: all 0.25s;
-}
-.cta-big:hover { background: var(–teal-dark); transform: translateY(-1px); }
-.cta-note {
-margin-top: 14px;
-font-size: 13px;
-color: var(–text-light);
-}
+/* FINAL CTA */
+.final-cta{text-align:center;padding:60px 40px;max-width:600px;margin:0 auto}
+.final-cta h2{font-family:var(–serif);font-size:36px;font-weight:500;line-height:1.15;letter-spacing:-0.5px;margin-bottom:14px}
+.final-cta h2 em{font-style:italic;color:var(–teal)}
+.final-cta p{font-size:16px;color:var(–text-secondary);margin-bottom:32px;line-height:1.6}
+.cta-note{font-size:13px;color:var(–text-muted);margin-top:14px}
 
 /* FOOTER */
-footer {
-padding: 32px;
-text-align: center;
-border-top: 1px solid var(–border);
-font-size: 13px;
-color: var(–text-light);
-}
-footer a {
-color: var(–text-secondary);
-text-decoration: none;
-margin: 0 12px;
-}
-footer a:hover { color: var(–teal); }
+footer{border-top:1px solid var(–border);padding:32px 40px;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto}
+.footer-left{font-size:13px;color:var(–text-muted)}
+.footer-left a{color:var(–text-muted);text-decoration:none}
+.footer-left a:hover{color:var(–teal)}
+.footer-right{font-size:12px;color:var(–text-muted)}
 
 /* RESPONSIVE */
-@media (max-width: 768px) {
-.hero { grid-template-columns: 1fr; padding: 120px 24px 60px; gap: 40px; text-align: center; }
-.hero-text h1 { font-size: 34px; }
-.hero-text p { max-width: 100%; }
-.features-grid { grid-template-columns: 1fr; }
-.coop-inner { grid-template-columns: 1fr; }
-.coop-activities { grid-template-columns: 1fr; }
-.audience-grid { grid-template-columns: 1fr; }
-.reminders-inner { grid-template-columns: 1fr; }
-.peach-section { grid-template-columns: 1fr; }
-.section-title { font-size: 28px; }
-.coop-text h2, .reminders-text h2, .peach-text h2 { font-size: 28px; }
-.cta-section h2 { font-size: 30px; }
-nav { padding: 14px 20px; }
-.phone-wrapper { width: 240px; }
+@media(max-width:900px){
+.hero{grid-template-columns:1fr;padding:120px 24px 40px;gap:32px;min-height:auto}
+.hero h1{font-size:32px}
+.hero-visual{order:-1}
+.phone-frame{width:240px;height:500px}
+.what-grid{grid-template-columns:repeat(2,1fr)}
+.guided-inner{grid-template-columns:1fr}
+.guided-phone{display:none}
+.guided-section{padding:60px 24px}
+.bottom-strip{grid-template-columns:1fr;padding:40px 24px}
+.what-section{padding:40px 24px 60px}
+nav{padding:0 20px}
+.nav-links a:not(.nav-cta){display:none}
+.what-section h2,.guided-inner h2{font-size:28px}
+.final-cta{padding:40px 24px}
+.final-cta h2{font-size:30px}
+footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
+.hero-proof{flex-direction:column;align-items:flex-start;gap:8px}
 }
 </style>
 
@@ -523,213 +137,136 @@ nav { padding: 14px 20px; }
 
 <nav>
   <div class="nav-logo">zen<span>oo</span>mi</div>
-  <a href="#join" class="nav-cta">Join the Beta</a>
+  <div class="nav-links">
+    <a href="#what">What It Does</a>
+    <a href="#guided">Guided Care</a>
+    <a href="#join" class="nav-cta">Join the Beta</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 
 <section class="hero">
-  <div class="hero-text">
-    <h1>You already do a lot for your dog. We help you never miss what matters.</h1>
-    <p>Zenoomi builds a personalized daily wellness plan for your dog based on their life stage, energy, and your goals. Guided activities, smart reminders, and a Care Score that rewards your consistency.</p>
-    <a href="#join" class="hero-cta">Join the Beta</a>
-    <div class="hero-badge">Free during beta · iOS only</div>
+  <div class="hero-content">
+    <h1>You already do a lot for your dog. We help you <em>never miss what matters.</em></h1>
+    <p class="hero-sub">Teeth, flea meds, body scans, enrichment, vet prep. Zenoomi plans it, reminds you, and walks you through it, from puppyhood through the senior years.</p>
+    <div class="hero-cta-row">
+      <a href="#join" class="btn-primary">Join the beta &#8594;</a>
+      <a href="#what" class="btn-secondary">See how it works &#8595;</a>
+    </div>
+    <div class="hero-proof">
+      <div class="hero-proof-item"><div class="check">&#10003;</div>Free during beta</div>
+      <div class="hero-proof-item"><div class="check">&#10003;</div>Set up in 2 minutes</div>
+      <div class="hero-proof-item"><div class="check">&#10003;</div>Not a vet replacement</div>
+    </div>
   </div>
-  <div class="hero-phone">
-    <div class="phone-wrapper">
-      <img src="app-home.png" alt="Zenoomi app showing daily wellness plan with Care Score and today's activities">
+  <div class="hero-visual">
+    <div class="phone-frame">
+      <div class="phone-screen">
+        <img src="app-home.png" alt="Zenoomi home screen showing Care Score, daily plan, and today's activities">
+      </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURES -->
+<!-- WHAT IT DOES -->
 
-<section class="how-section">
-  <div class="section-label">What Zenoomi Does</div>
-  <h2 class="section-title">A daily system for dog owners who want to do it right.</h2>
-  <div class="features-grid">
-    <div class="feature-card">
-      <div class="feature-icon">📋</div>
-      <h3>Personalized Daily Plan</h3>
-      <p>Activities chosen for your dog's life stage, energy level, and your wellness goal. A new plan every day, built to keep things fresh.</p>
+<section class="what-section" id="what">
+  <h2>One app. Everything your dog needs, <em>managed.</em></h2>
+  <p class="what-sub">Zenoomi builds a daily plan based on your dog's age, energy, and care needs. Then it helps you actually follow through.</p>
+  <div class="what-grid">
+    <div class="what-card">
+      <div class="what-icon"><svg width="44" height="44" viewBox="28 22 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="38" y="28" width="44" height="52" rx="4" fill="none" stroke="#4A7C6F" stroke-width="2.5"/><rect x="38" y="28" width="44" height="14" rx="4" fill="#4A7C6F"/><line x1="48" y1="52" x2="72" y2="52" stroke="#4A7C6F" stroke-width="2" stroke-linecap="round"/><line x1="48" y1="62" x2="72" y2="62" stroke="#4A7C6F" stroke-width="2" stroke-linecap="round"/><line x1="48" y1="72" x2="64" y2="72" stroke="#4A7C6F" stroke-width="2" stroke-linecap="round"/><circle cx="46" cy="52" r="2" fill="#C4785B"/><circle cx="46" cy="62" r="2" fill="#C4785B"/><circle cx="46" cy="72" r="2" fill="#C4785B"/></svg></div>
+      <h3>Daily Plan</h3>
+      <p>A personalized plan each day with activities, care tasks, and reasons for each one. Built around your dog's life stage and your goal.</p>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">🎯</div>
-      <h3>Guided Activity Flows</h3>
-      <p>Step-by-step instructions for 50 activities across 6 categories. Not videos to watch. Real guidance you follow along with your dog.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔔</div>
+    <div class="what-card">
+      <div class="what-icon"><svg width="44" height="44" viewBox="30 26 60 70" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="56" r="24" fill="none" stroke="#4A7C6F" stroke-width="2.5"/><line x1="60" y1="56" x2="60" y2="42" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round"/><line x1="60" y1="56" x2="72" y2="56" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round"/><circle cx="60" cy="56" r="3" fill="#C4785B"/><line x1="50" y1="84" x2="70" y2="84" stroke="#C4785B" stroke-width="2" stroke-linecap="round"/><line x1="54" y1="90" x2="66" y2="90" stroke="#C4785B" stroke-width="2" stroke-linecap="round"/></svg></div>
       <h3>Smart Reminders</h3>
-      <p>Daily plan nudges, care task alerts, and streak encouragement. Set up in 30 seconds during onboarding. Nothing falls through the cracks.</p>
+      <p>Daily plan nudges, care task alerts, streak encouragement, and flea med schedules. Set up once during onboarding, never miss a thing.</p>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">📊</div>
-      <h3>Care Score</h3>
-      <p>Tracks your consistency, not your dog's perfection. Complete activities, log observations, and watch your score reflect the effort you put in.</p>
+    <div class="what-card">
+      <div class="what-icon"><svg width="44" height="44" viewBox="18 28 84 58" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="24,60 40,60 46,44 54,76 60,38 68,72 74,52 80,60 96,60" fill="none" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="60" cy="38" r="3.5" fill="#C4785B"/></svg></div>
+      <h3>50 Guided Activities</h3>
+      <p>Step-by-step flows with timers and tips across 6 categories. Tooth checks, body scans, enrichment games. You do it with your dog, not watch a video.</p>
     </div>
-    <div class="feature-card">
-      <div class="feature-icon">🍑</div>
-      <h3>Peach, Your AI Co-Pilot</h3>
-      <p>An assistant that knows your dog's plan, score, care tasks, and goal. Ask anything. Get specific, context-aware guidance.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📈</div>
-      <h3>Weekly Review</h3>
-      <p>See what you accomplished, what worked, and what's next. A weekly reflection that helps you stay consistent over time.</p>
+    <div class="what-card">
+      <div class="what-icon"><svg width="44" height="44" viewBox="28 24 62 72" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="34" y="30" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="30" width="36" height="10" rx="3" fill="#4A7C6F"/><rect x="34" y="46" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="46" width="52" height="10" rx="3" fill="#4A7C6F"/><rect x="34" y="62" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="62" width="44" height="10" rx="3" fill="#4A7C6F"/><rect x="34" y="78" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="78" width="20" height="10" rx="3" fill="#C4785B"/></svg></div>
+      <h3>Weekly Check-in</h3>
+      <p>A personalized look at your dog's week. What you accomplished, what to keep doing, and what to try next.</p>
     </div>
   </div>
 </section>
 
-<!-- COOPERATIVE CARE -->
+<!-- GUIDED CARE -->
 
-<section class="coop-section">
-  <div class="coop-inner">
-    <div class="coop-text">
-      <div class="section-label">Only on Zenoomi</div>
-      <h2>The care routines your dog needs and no other app offers.</h2>
-      <p>Cooperative Care is an entire category of guided wellness activities built into Zenoomi. Prepare your dog for vet visits. Build comfort with handling. Make grooming stress-free. These aren't things you can Google. They're structured flows you do together.</p>
-    </div>
-    <div class="coop-activities">
-      <div class="coop-activity">
-        <div class="coop-activity-name">Handling Practice</div>
-        <div class="coop-activity-desc">Build comfort with ears, paws, mouth, and body touch</div>
-      </div>
-      <div class="coop-activity">
-        <div class="coop-activity-name">Tooth Check</div>
-        <div class="coop-activity-desc">A gentle 90-second dental routine your dog cooperates with</div>
-      </div>
-      <div class="coop-activity">
-        <div class="coop-activity-name">Nail & Paw Care</div>
-        <div class="coop-activity-desc">Gradual desensitization to nail trims and paw handling</div>
-      </div>
-      <div class="coop-activity">
-        <div class="coop-activity-name">Vet Visit Prep</div>
-        <div class="coop-activity-desc">Practice the exam experience so vet day is calm, not chaotic</div>
-      </div>
-      <div class="coop-activity">
-        <div class="coop-activity-name">Weekly Body Scan</div>
-        <div class="coop-activity-desc">A 2-minute check that catches things months before your vet visit</div>
-      </div>
-      <div class="coop-activity">
-        <div class="coop-activity-name">Medication Routine</div>
-        <div class="coop-activity-desc">Make meds and supplements a calm, cooperative part of the day</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SMART REMINDERS -->
-
-<section class="reminders-section">
-  <div class="reminders-inner">
-    <div class="reminders-text">
-      <div class="section-label">Stay Consistent</div>
-      <h2>Smart reminders that actually help.</h2>
-      <p>Your daily plan, care tasks, and streaks. Zenoomi sends the right nudge at the right time, personalized to your dog's name and today's activities.</p>
-      <p style="color: var(--text-light); font-size: 14px;">Set up during onboarding in 30 seconds. Adjust anytime from your dog's profile.</p>
-    </div>
-    <div class="reminder-examples">
-      <div class="reminder-bubble">
-        <div class="reminder-icon plan">📋</div>
-        <div>
-          <div class="reminder-title">Luna's plan is ready</div>
-          <div class="reminder-body">4 activities today, starting with Morning Settle. Let's go.</div>
-        </div>
-      </div>
-      <div class="reminder-bubble">
-        <div class="reminder-icon care">🩺</div>
-        <div>
-          <div class="reminder-title">Flea med due today</div>
-          <div class="reminder-body">Luna's monthly flea prevention is scheduled for today.</div>
-        </div>
-      </div>
-      <div class="reminder-bubble">
-        <div class="reminder-icon streak">🔥</div>
-        <div>
-          <div class="reminder-title">5-day streak with Luna</div>
-          <div class="reminder-body">You've been consistent all week. One activity keeps it going.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PEACH AI -->
-
-<section class="peach-section">
-  <div class="peach-chat">
-    <div class="peach-header">
-      <div class="peach-avatar">🍑</div>
+<section id="guided">
+  <div class="guided-section">
+    <div class="guided-inner">
       <div>
-        <div class="peach-name">Peach</div>
-        <div class="peach-status">Knows Luna's plan, score & care tasks</div>
+        <h2>The app walks you through it, <em>step by step</em></h2>
+        <p class="guided-sub">Each activity is a guided flow with phased timers, clear directions, and tips for reading your dog's signals. You don't need to know what to do ahead of time.</p>
+        <div class="guided-outcome">Tooth brushing your dog accepts. Nail trims without the struggle. Vet visits where everyone stays calm. These build through gentle, consistent practice.</div>
+        <div class="guided-activities">
+          <div class="guided-activity"><div class="guided-activity-name">Tooth Check</div><div class="guided-activity-desc">90-second dental routine</div></div>
+          <div class="guided-activity"><div class="guided-activity-name">Weekly Body Scan</div><div class="guided-activity-desc">Catch changes early</div></div>
+          <div class="guided-activity"><div class="guided-activity-name">Nail & Paw Care</div><div class="guided-activity-desc">Stress-free nail trims</div></div>
+          <div class="guided-activity"><div class="guided-activity-name">Vet Visit Prep</div><div class="guided-activity-desc">Practice the exam at home</div></div>
+          <div class="guided-activity"><div class="guided-activity-name">Handling & Touch</div><div class="guided-activity-desc">Comfort with being held</div></div>
+          <div class="guided-activity"><div class="guided-activity-name">Enrichment Games</div><div class="guided-activity-desc">Scent trails, puzzles, tug</div></div>
+        </div>
       </div>
-    </div>
-    <div class="chat-msg user">Luna keeps pulling toward other dogs on walks. What should I do?</div>
-    <div class="chat-msg peach">That's really common, especially at Luna's age. Since leash reactivity is on your radar, I'd suggest trying Structured Fetch in a low-distraction area first to build focus. It's already in tomorrow's plan. For walks, try increasing distance from other dogs and rewarding Luna for checking in with you.</div>
-    <div class="chat-msg user">Is that in my plan?</div>
-    <div class="chat-msg peach">Structured Fetch is in tomorrow's plan. I can also add Leash Manners to this week if you'd like. It pairs well with what you're working on.</div>
-  </div>
-  <div class="peach-text">
-    <div class="section-label">AI Co-Pilot</div>
-    <h2>An assistant that actually knows your dog.</h2>
-    <p>Peach has full context: your dog's life stage, today's plan, your Care Score, and your care tasks. No generic advice. Every answer is specific to your dog and what you're working on.</p>
-    <p>Ask about behavior, health observations, activity tips, or what to focus on next. Peach connects the dots across your entire wellness routine.</p>
-  </div>
-</section>
-
-<!-- WHO IT'S FOR -->
-
-<section class="audience-section">
-  <div class="section-label">Who It's For</div>
-  <h2 class="section-title">Every life stage. Every kind of owner who cares.</h2>
-  <div class="audience-grid">
-    <div class="audience-card">
-      <div class="audience-img">🐶</div>
-      <div class="audience-content">
-        <div class="audience-tag">New Dog Owners</div>
-        <h3>Build the right habits from day one.</h3>
-        <p>A daily plan that tells you exactly what to do with your new dog. Socialization, handling, enrichment, and settling routines, all structured and age-appropriate.</p>
-      </div>
-    </div>
-    <div class="audience-card">
-      <div class="audience-img">🐕‍🦺</div>
-      <div class="audience-content">
-        <div class="audience-tag">Senior Dog Owners</div>
-        <h3>Stay on top of the details that matter most.</h3>
-        <p>Medication reminders, weekly body scans, gentle movement, and comfort monitoring. The daily structure your senior dog deserves.</p>
-      </div>
-    </div>
-    <div class="audience-card">
-      <div class="audience-img">🐕</div>
-      <div class="audience-content">
-        <div class="audience-tag">Routine-Minded Owners</div>
-        <h3>A smart system for people who take this seriously.</h3>
-        <p>Preventative care tracking, wellness scoring, and a weekly review that shows your progress. Consistency made visible.</p>
+      <div class="guided-phone">
+        <div class="guided-phone-frame">
+          <div class="guided-phone-screen">
+            <img src="guided-care-screenshot.png" alt="Zenoomi guided activity flow showing phased timer and step-by-step directions">
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BOTTOM CTA -->
+<!-- BOTTOM STRIP -->
 
-<section class="cta-section" id="join">
-  <h2>Your dog's wellness routine starts here.</h2>
-  <p>Zenoomi is in open beta for iOS. Join now and help shape the app before launch. Free during beta.</p>
-  <a href="https://testflight.apple.com/join/XXXXXX" class="cta-big">Join the Beta on TestFlight</a>
-  <div class="cta-note">Requires iPhone with iOS 16 or later · Free during beta</div>
+<div class="bottom-strip">
+  <div class="strip-card">
+    <div class="strip-icon"><svg width="48" height="48" viewBox="20 26 80 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M 26 72 A 34 34 0 1 1 94 72" fill="none" stroke="#4A7C6F" stroke-width="4" stroke-linecap="round" opacity="0.15"/><path d="M 26 72 A 34 34 0 0 1 82 42" fill="none" stroke="#4A7C6F" stroke-width="4" stroke-linecap="round"/><path d="M 82 42 A 34 34 0 0 1 92 60" fill="none" stroke="#C4785B" stroke-width="4" stroke-linecap="round"/><path d="M 60 72 L 79 47" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round"/><circle cx="60" cy="72" r="5" fill="#C4785B"/><circle cx="60" cy="72" r="2" fill="#F5F0E8"/></svg></div>
+    <h3>Care Score</h3>
+    <p>A simple gauge that shows how you're keeping up. Logging a symptom improves your score, because paying attention matters most.</p>
+  </div>
+  <div class="strip-card">
+    <div class="strip-icon"><svg width="48" height="48" viewBox="28 28 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M 36 36 h 48 a 6 6 0 0 1 6 6 v 28 a 6 6 0 0 1 -6 6 h -32 l -10 10 v -10 h -6 a 6 6 0 0 1 -6 -6 v -28 a 6 6 0 0 1 6 -6 z" fill="#4A7C6F"/><circle cx="48" cy="56" r="3" fill="#F5F0E8"/><circle cx="60" cy="56" r="3" fill="#F5F0E8"/><circle cx="72" cy="56" r="3" fill="#C4785B"/></svg></div>
+    <h3>Peach Pup Pal</h3>
+    <p>An AI assistant that knows your dog's plan, score, and care tasks. Ask anything and get guidance specific to your dog, not generic advice.</p>
+  </div>
+  <div class="strip-card">
+    <div class="strip-icon"><svg width="48" height="48" viewBox="18 48 84 28" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="28" y1="64" x2="92" y2="64" stroke="#4A7C6F" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/><circle cx="32" cy="64" r="4" fill="#4A7C6F" opacity="0.35"/><circle cx="48" cy="64" r="6" fill="#4A7C6F" opacity="0.5"/><circle cx="66" cy="64" r="8" fill="#4A7C6F" opacity="0.7"/><circle cx="86" cy="64" r="10" fill="#C4785B"/></svg></div>
+    <h3>Every Life Stage</h3>
+    <p>Whether your dog is 8 weeks or 12 years old, their needs are different. Zenoomi adapts from puppyhood through the senior years.</p>
+  </div>
+</div>
+
+<!-- DOG ILLUSTRATION -->
+
+<div class="dog-illustration">
+  <img src="dog-illustration.jpg" alt="Illustrated dog">
+</div>
+
+<!-- FINAL CTA -->
+
+<section class="final-cta" id="join">
+  <h2>Your dog's care, <em>finally managed</em></h2>
+  <p>Zenoomi is in open beta for iOS. Join now and help shape the app before launch. Free during beta, no credit card required.</p>
+  <a href="https://testflight.apple.com/join/XXXXXX" class="btn-primary" style="font-size:17px;padding:18px 36px">Join the Beta on TestFlight &#8594;</a>
+  <div class="cta-note">Requires iPhone with iOS 16 or later</div>
 </section>
 
 <!-- FOOTER -->
 
 <footer>
-  <p style="margin-bottom: 8px;">
-    <a href="/privacy">Privacy Policy</a>
-    <a href="mailto:support@zenoomi.com">Contact</a>
-  </p>
-  <p>Not veterinary advice. When in doubt, contact your vet.</p>
-  <p style="margin-top: 8px;">© 2026 Zenoomi LLC</p>
+  <div class="footer-left">Zenoomi &copy; 2026 · <a href="/privacy">Privacy</a> · <a href="mailto:support@zenoomi.com">Contact</a></div>
+  <div class="footer-right">Not a veterinarian. When it's time to call your vet, we'll tell you.</div>
 </footer>
 
 </body>

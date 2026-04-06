@@ -11,7 +11,7 @@
 :root{
   --cream:#F5F0E8;--cream-dark:#EDE7DB;--cream-light:#FAF8F4;
   --teal:#4A7C6F;--teal-dark:#3A6358;--teal-light:#5A9484;--teal-pale:#E8F0ED;
-  --terracotta:#C4785B;--terracotta-light:#D4956E;
+  --terracotta:#C4785B;--terracotta-light:#D4956E;--terracotta-pale:#F5EBE4;
   --olive:#8B7E56;
   --text-primary:#2C2C2C;--text-secondary:#5A5A5A;--text-muted:#8A8577;
   --border:#D8D0C4;--white:#FFFFFF;
@@ -30,6 +30,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,240,232,
 .nav-cta{background:var(–teal);color:var(–cream-light)!important;padding:10px 20px;border-radius:8px;font-weight:600!important;transition:background 0.2s!important}
 .nav-cta:hover{background:var(–teal-dark)!important}
 
+/* HERO */
 .hero{padding:140px 40px 60px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;min-height:85vh}
 .hero-content{max-width:520px}
 .hero h1{font-family:var(–serif);font-size:46px;font-weight:500;line-height:1.15;letter-spacing:-1px;margin-bottom:20px}
@@ -49,17 +50,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,240,232,
 .phone-screen{width:100%;height:100%;border-radius:28px;overflow:hidden}
 .phone-screen img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 
+/* SECTIONS */
+.section{padding:80px 40px;max-width:1200px;margin:0 auto}
+.section-label{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(–olive);margin-bottom:16px}
+.section h2{font-family:var(–serif);font-size:36px;font-weight:500;line-height:1.15;letter-spacing:-0.5px;margin-bottom:16px;max-width:600px}
+.section h2 em{font-style:italic;color:var(–teal)}
+.section-sub{font-size:16px;line-height:1.6;color:var(–text-secondary);max-width:520px;margin-bottom:40px}
+
+/* WHAT IT DOES */
 .what-section{padding:60px 40px 80px;max-width:1200px;margin:0 auto;border-top:1px solid var(–border)}
 .what-section h2{font-family:var(–serif);font-size:34px;font-weight:500;line-height:1.2;letter-spacing:-0.5px;margin-bottom:12px;text-align:center}
 .what-section h2 em{font-style:italic;color:var(–teal)}
 .what-sub{font-size:16px;color:var(–text-secondary);text-align:center;max-width:520px;margin:0 auto 40px;line-height:1.6}
-.what-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.what-card{background:var(–cream-light);border:1px solid var(–border);border-radius:14px;padding:24px 20px;text-align:center;transition:transform 0.2s}
+.what-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.what-card{background:var(–cream-light);border:1px solid var(–border);border-radius:14px;padding:24px 20px;transition:transform 0.2s}
 .what-card:hover{transform:translateY(-3px)}
 .what-icon{margin-bottom:12px;display:flex;justify-content:center}
-.what-card h3{font-family:var(–serif);font-size:17px;font-weight:500;margin-bottom:6px}
-.what-card p{font-size:13px;line-height:1.5;color:var(–text-secondary)}
+.what-card h3{font-family:var(–serif);font-size:17px;font-weight:500;margin-bottom:6px;text-align:center}
+.what-card p{font-size:13px;line-height:1.5;color:var(–text-secondary);text-align:center}
 
+/* GUIDED CARE */
 .guided-section{background:var(–teal-dark);color:var(–cream-light);padding:80px 40px}
 .guided-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .guided-inner h2{font-family:var(–serif);font-size:34px;font-weight:500;line-height:1.2;margin-bottom:16px;color:var(–cream-light)}
@@ -71,43 +81,92 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,240,232,
 .guided-activity:hover{background:rgba(255,255,255,0.12)}
 .guided-activity-name{font-size:13px;font-weight:600;color:var(–cream-light);margin-bottom:2px}
 .guided-activity-desc{font-size:11px;color:rgba(245,240,232,0.55);line-height:1.4}
-
 .guided-phone{display:flex;justify-content:center}
-.guided-phone-frame{width:260px;height:500px;background:var(–cream);border-radius:30px;padding:12px;box-shadow:0 40px 80px rgba(0,0,0,0.3);overflow:hidden}
+.guided-phone-frame{width:260px;height:500px;background:var(–cream);border-radius:30px;padding:12px;box-shadow:0 40px 80px rgba(0,0,0,0.3)}
 .guided-phone-screen{width:100%;height:100%;border-radius:22px;overflow:hidden}
 .guided-phone-screen img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 
-.bottom-strip{padding:60px 40px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
-.strip-card{text-align:center;padding:28px 20px}
+/* REMINDERS */
+.reminders-section{padding:80px 40px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.reminders-content{max-width:460px}
+.reminders-content h2{font-family:var(–serif);font-size:34px;font-weight:500;line-height:1.2;margin-bottom:12px}
+.reminders-content h2 em{font-style:italic;color:var(–teal)}
+.reminders-desc{font-size:16px;line-height:1.6;color:var(–text-secondary);margin-bottom:8px}
+.reminders-note{font-size:13px;color:var(–text-muted);margin-bottom:0}
+.notif-stack{display:flex;flex-direction:column;gap:14px}
+.notif-card{background:var(–cream-light);border:1px solid var(–border);border-radius:14px;padding:16px 20px;display:flex;gap:14px;align-items:flex-start}
+.notif-icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.notif-icon.plan{background:var(–teal-pale)}
+.notif-icon.care{background:var(–terracotta-pale)}
+.notif-icon.streak{background:#FDF6ED}
+.notif-title{font-size:14px;font-weight:600;margin-bottom:2px}
+.notif-body{font-size:12px;color:var(–text-secondary);line-height:1.45}
+
+/* PEACH */
+.peach-section{padding:80px 40px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;border-top:1px solid var(–border)}
+.peach-content{max-width:460px}
+.peach-content h2{font-family:var(–serif);font-size:34px;font-weight:500;line-height:1.2;margin-bottom:12px}
+.peach-content h2 em{font-style:italic;color:var(–teal)}
+.peach-desc{font-size:16px;line-height:1.6;color:var(–text-secondary);margin-bottom:8px}
+.peach-detail{font-size:14px;line-height:1.6;color:var(–text-muted)}
+.chat-window{background:var(–cream-light);border:1px solid var(–border);border-radius:16px;padding:20px;max-width:360px}
+.chat-header{display:flex;align-items:center;gap:8px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(–border)}
+.chat-avatar{width:28px;height:28px;background:var(–terracotta-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px}
+.chat-name{font-size:13px;font-weight:600;color:var(–text-primary)}
+.chat-context{font-size:10px;color:var(–text-muted)}
+.chat-msg{margin-bottom:12px}
+.chat-msg.user{background:var(–teal-pale);border-radius:12px 12px 4px 12px;padding:10px 14px;margin-left:40px}
+.chat-msg.bot{background:var(–cream);border:1px solid var(–border);border-radius:12px 12px 12px 4px;padding:10px 14px;margin-right:20px}
+.chat-msg p{font-size:12px;line-height:1.5;color:var(–text-primary)}
+.chat-msg.user p{color:var(–teal-dark)}
+
+/* WHO IT’S FOR */
+.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.audience-card{background:var(–cream-light);border:1px solid var(–border);border-radius:14px;padding:24px;transition:transform 0.25s}
+.audience-card:hover{transform:translateY(-3px)}
+.audience-icon{font-size:28px;margin-bottom:12px}
+.audience-tag{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(–terracotta);margin-bottom:8px}
+.audience-card h3{font-family:var(–serif);font-size:19px;font-weight:500;margin-bottom:8px;line-height:1.25}
+.audience-card p{font-size:13px;line-height:1.55;color:var(–text-secondary)}
+
+/* BOTTOM STRIP */
+.bottom-strip{padding:40px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;border-top:1px solid var(–border)}
+.strip-card{text-align:center;padding:20px}
 .strip-icon{margin-bottom:12px;display:flex;justify-content:center}
-.strip-card h3{font-family:var(–serif);font-size:18px;font-weight:500;margin-bottom:8px}
+.strip-card h3{font-family:var(–serif);font-size:17px;font-weight:500;margin-bottom:6px}
 .strip-card p{font-size:13px;line-height:1.55;color:var(–text-secondary)}
 
+/* CTA */
 .final-cta{text-align:center;padding:60px 40px;max-width:600px;margin:0 auto}
 .final-cta h2{font-family:var(–serif);font-size:36px;font-weight:500;line-height:1.15;letter-spacing:-0.5px;margin-bottom:14px}
 .final-cta h2 em{font-style:italic;color:var(–teal)}
-.final-cta p{font-size:16px;color:var(–text-secondary);margin-bottom:32px;line-height:1.6}
-.cta-note{font-size:13px;color:var(–text-muted);margin-top:14px}
+.final-cta p{font-size:16px;color:var(–text-secondary);margin-bottom:28px;line-height:1.6}
+.final-cta .btn-primary{padding:18px 36px;font-size:17px}
+.cta-note{font-size:12px;color:var(–text-muted);margin-top:12px}
 
 footer{border-top:1px solid var(–border);padding:32px 40px;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto}
-.footer-left{font-size:13px;color:var(–text-muted)}
+.footer-left{font-size:12px;color:var(–text-muted)}
 .footer-left a{color:var(–text-muted);text-decoration:none}
 .footer-left a:hover{color:var(–teal)}
+.footer-right{font-size:11px;color:var(–text-muted)}
 
 @media(max-width:900px){
 .hero{grid-template-columns:1fr;padding:120px 24px 40px;gap:32px;min-height:auto}
 .hero h1{font-size:32px}
 .hero-visual{order:-1}
 .phone-frame{width:240px;height:500px}
-.what-grid{grid-template-columns:repeat(2,1fr)}
+.what-grid{grid-template-columns:1fr}
 .guided-inner{grid-template-columns:1fr}
 .guided-phone{display:none}
 .guided-section{padding:60px 24px}
+.reminders-section{grid-template-columns:1fr;padding:60px 24px}
+.peach-section{grid-template-columns:1fr;padding:60px 24px}
+.audience-grid{grid-template-columns:1fr}
 .bottom-strip{grid-template-columns:1fr;padding:40px 24px}
-.what-section{padding:40px 24px 60px}
+.section,.what-section{padding:60px 24px}
 nav{padding:0 20px}
 .nav-links a:not(.nav-cta){display:none}
-.what-section h2,.guided-inner h2{font-size:28px}
+.section h2,.what-section h2,.guided-inner h2,.reminders-content h2,.peach-content h2{font-size:28px}
 .final-cta{padding:40px 24px}
 .final-cta h2{font-size:30px}
 footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
@@ -123,9 +182,12 @@ footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
   <div class="nav-links">
     <a href="#what">What It Does</a>
     <a href="#guided">Guided Care</a>
+    <a href="#who">Who It's For</a>
     <a href="#join" class="nav-cta">Join the Beta</a>
   </div>
 </nav>
+
+<!-- HERO -->
 
 <section class="hero">
   <div class="hero-content">
@@ -150,37 +212,52 @@ footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
   </div>
 </section>
 
+<!-- WHAT IT DOES -->
+
 <section class="what-section" id="what">
   <h2>One app. Everything your dog needs, <em>managed.</em></h2>
-  <p class="what-sub">Zenoomi builds a daily plan based on your dog's age, energy, and care needs. Then it helps you actually follow through.</p>
+  <p class="what-sub">A personalized daily plan based on your dog's age, energy, and care needs. 50 guided activities across 6 categories. Reminders that make sure nothing slips.</p>
   <div class="what-grid">
     <div class="what-card">
-      <div class="what-icon"><svg width="44" height="44" viewBox="28 22 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="38" y="28" width="44" height="52" rx="4" fill="none" stroke="#4A7C6F" stroke-width="2.5"/><rect x="38" y="28" width="44" height="14" rx="4" fill="#4A7C6F"/><line x1="48" y1="52" x2="72" y2="52" stroke="#4A7C6F" stroke-width="2" stroke-linecap="round"/><line x1="48" y1="62" x2="72" y2="62" stroke="#4A7C6F" stroke-width="2" stroke-linecap="round"/><line x1="48" y1="72" x2="64" y2="72" stroke="#4A7C6F" stroke-width="2" stroke-linecap="round"/><circle cx="46" cy="52" r="2" fill="#C4785B"/><circle cx="46" cy="62" r="2" fill="#C4785B"/><circle cx="46" cy="72" r="2" fill="#C4785B"/></svg></div>
+      <div class="what-icon"><svg width="44" height="44" viewBox="28 22 64 64" fill="none"><rect x="38" y="28" width="44" height="52" rx="4" fill="none" stroke="#4A7C6F" stroke-width="2.5"/><rect x="38" y="28" width="44" height="14" rx="4" fill="#4A7C6F"/><line x1="48" y1="52" x2="72" y2="52" stroke="#4A7C6F" stroke-width="2" stroke-linecap="round"/><line x1="48" y1="62" x2="72" y2="62" stroke="#4A7C6F" stroke-width="2" stroke-linecap="round"/><line x1="48" y1="72" x2="64" y2="72" stroke="#4A7C6F" stroke-width="2" stroke-linecap="round"/><circle cx="46" cy="52" r="2" fill="#C4785B"/><circle cx="46" cy="62" r="2" fill="#C4785B"/><circle cx="46" cy="72" r="2" fill="#C4785B"/></svg></div>
       <h3>Daily Plan</h3>
-      <p>A personalized plan each day with activities, care tasks, and reasons for each one. Built around your dog's life stage and your goal.</p>
+      <p>Activities and care tasks chosen for your dog. Every item tells you why it's there.</p>
     </div>
     <div class="what-card">
-      <div class="what-icon"><svg width="44" height="44" viewBox="30 26 60 70" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="56" r="24" fill="none" stroke="#4A7C6F" stroke-width="2.5"/><line x1="60" y1="56" x2="60" y2="42" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round"/><line x1="60" y1="56" x2="72" y2="56" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round"/><circle cx="60" cy="56" r="3" fill="#C4785B"/><line x1="50" y1="84" x2="70" y2="84" stroke="#C4785B" stroke-width="2" stroke-linecap="round"/><line x1="54" y1="90" x2="66" y2="90" stroke="#C4785B" stroke-width="2" stroke-linecap="round"/></svg></div>
+      <div class="what-icon"><svg width="44" height="44" viewBox="30 26 60 70" fill="none"><circle cx="60" cy="56" r="24" fill="none" stroke="#4A7C6F" stroke-width="2.5"/><line x1="60" y1="56" x2="60" y2="42" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round"/><line x1="60" y1="56" x2="72" y2="56" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round"/><circle cx="60" cy="56" r="3" fill="#C4785B"/><line x1="50" y1="84" x2="70" y2="84" stroke="#C4785B" stroke-width="2" stroke-linecap="round"/><line x1="54" y1="90" x2="66" y2="90" stroke="#C4785B" stroke-width="2" stroke-linecap="round"/></svg></div>
       <h3>Smart Reminders</h3>
-      <p>Daily plan nudges, care task alerts, streak encouragement, and med schedules. Set up once during onboarding, never miss a thing.</p>
+      <p>Flea meds, vet visits, grooming, streaks. Set up in 30 seconds, never forget again.</p>
     </div>
     <div class="what-card">
-      <div class="what-icon"><svg width="44" height="44" viewBox="18 28 84 58" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="24,60 40,60 46,44 54,76 60,38 68,72 74,52 80,60 96,60" fill="none" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="60" cy="38" r="3.5" fill="#C4785B"/></svg></div>
-      <h3>50 Guided Activities</h3>
-      <p>Step-by-step flows with timers and tips across 6 categories. Tooth checks, body scans, enrichment games. You do it with your dog, not watch a video.</p>
+      <div class="what-icon"><svg width="44" height="44" viewBox="18 28 84 58" fill="none"><polyline points="24,60 40,60 46,44 54,76 60,38 68,72 74,52 80,60 96,60" fill="none" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="60" cy="38" r="3.5" fill="#C4785B"/></svg></div>
+      <h3>Guided Activities</h3>
+      <p>Step-by-step flows with timers and tips. You practice with your dog, not watch a video.</p>
     </div>
     <div class="what-card">
-      <div class="what-icon"><svg width="44" height="44" viewBox="28 24 62 72" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="34" y="30" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="30" width="36" height="10" rx="3" fill="#4A7C6F"/><rect x="34" y="46" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="46" width="52" height="10" rx="3" fill="#4A7C6F"/><rect x="34" y="62" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="62" width="44" height="10" rx="3" fill="#4A7C6F"/><rect x="34" y="78" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="78" width="20" height="10" rx="3" fill="#C4785B"/></svg></div>
+      <div class="what-icon"><svg width="44" height="44" viewBox="28 24 62 72" fill="none"><rect x="34" y="30" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="30" width="36" height="10" rx="3" fill="#4A7C6F"/><rect x="34" y="46" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="46" width="52" height="10" rx="3" fill="#4A7C6F"/><rect x="34" y="62" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="62" width="44" height="10" rx="3" fill="#4A7C6F"/><rect x="34" y="78" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="78" width="20" height="10" rx="3" fill="#C4785B"/></svg></div>
       <h3>Weekly Check-in</h3>
-      <p>A personalized look at your dog's week. What you accomplished, what to keep doing, and what to try next.</p>
+      <p>What you accomplished, what to keep doing, and what to try next week.</p>
+    </div>
+    <div class="what-card">
+      <div class="what-icon"><svg width="44" height="44" viewBox="20 26 80 52" fill="none"><path d="M 26 72 A 34 34 0 1 1 94 72" fill="none" stroke="#4A7C6F" stroke-width="4" stroke-linecap="round" opacity="0.15"/><path d="M 26 72 A 34 34 0 0 1 82 42" fill="none" stroke="#4A7C6F" stroke-width="4" stroke-linecap="round"/><path d="M 82 42 A 34 34 0 0 1 92 60" fill="none" stroke="#C4785B" stroke-width="4" stroke-linecap="round"/><path d="M 60 72 L 79 47" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round"/><circle cx="60" cy="72" r="5" fill="#C4785B"/><circle cx="60" cy="72" r="2" fill="#F5F0E8"/></svg></div>
+      <h3>Care Score</h3>
+      <p>A gauge that tracks your consistency. Logging a symptom helps your score, because paying attention matters.</p>
+    </div>
+    <div class="what-card">
+      <div class="what-icon"><svg width="44" height="44" viewBox="28 28 64 64" fill="none"><path d="M 36 36 h 48 a 6 6 0 0 1 6 6 v 28 a 6 6 0 0 1 -6 6 h -32 l -10 10 v -10 h -6 a 6 6 0 0 1 -6 -6 v -28 a 6 6 0 0 1 6 -6 z" fill="#4A7C6F"/><circle cx="48" cy="56" r="3" fill="#F5F0E8"/><circle cx="60" cy="56" r="3" fill="#F5F0E8"/><circle cx="72" cy="56" r="3" fill="#C4785B"/></svg></div>
+      <h3>Peach Pup Pal</h3>
+      <p>An AI assistant that knows your dog's plan, score, and history. Ask anything.</p>
     </div>
   </div>
 </section>
+
+<!-- GUIDED CARE -->
 
 <section id="guided">
   <div class="guided-section">
     <div class="guided-inner">
       <div>
+        <div class="section-label" style="color:var(--teal-light)">Guided Care</div>
         <h2>The app walks you through it, <em>step by step</em></h2>
         <p class="guided-sub">Each activity is a guided flow with phased timers, clear directions, and tips for reading your dog's signals. You don't need to know what to do ahead of time.</p>
         <div class="guided-outcome">Tooth brushing your dog accepts. Nail trims without the struggle. Vet visits where everyone stays calm. These build through gentle, consistent practice.</div>
@@ -190,13 +267,13 @@ footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
           <div class="guided-activity"><div class="guided-activity-name">Nail & Paw Care</div><div class="guided-activity-desc">Stress-free nail trims</div></div>
           <div class="guided-activity"><div class="guided-activity-name">Vet Visit Prep</div><div class="guided-activity-desc">Practice the exam at home</div></div>
           <div class="guided-activity"><div class="guided-activity-name">Handling & Touch</div><div class="guided-activity-desc">Comfort with being held</div></div>
-          <div class="guided-activity"><div class="guided-activity-name">Enrichment Games</div><div class="guided-activity-desc">Scent trails, puzzles, tug</div></div>
+          <div class="guided-activity"><div class="guided-activity-name">Muzzle Training</div><div class="guided-activity-desc">Calm, cooperative introduction</div></div>
         </div>
       </div>
       <div class="guided-phone">
         <div class="guided-phone-frame">
           <div class="guided-phone-screen">
-            <img src="guided-care-screenshot.png" alt="Zenoomi guided activity flow showing phased timer and step-by-step directions">
+            <img src="guided-care-screenshot.png" alt="Zenoomi guided activity flow showing phased timer, step-by-step directions, and pup tips">
           </div>
         </div>
       </div>
@@ -204,38 +281,118 @@ footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
   </div>
 </section>
 
+<!-- REMINDERS -->
+
+<section class="reminders-section">
+  <div class="reminders-content">
+    <div class="section-label">Stay on Track</div>
+    <h2>Reminders that <em>actually help</em></h2>
+    <p class="reminders-desc">Your daily plan, care tasks, and streaks. Zenoomi sends the right nudge at the right time, personalized to your dog's name and today's activities.</p>
+    <p class="reminders-note">Set up during onboarding in 30 seconds. Adjust anytime.</p>
+  </div>
+  <div class="notif-stack">
+    <div class="notif-card">
+      <div class="notif-icon plan"><svg width="18" height="18" viewBox="28 22 64 64" fill="none"><rect x="38" y="28" width="44" height="52" rx="4" fill="none" stroke="#4A7C6F" stroke-width="2.5"/><rect x="38" y="28" width="44" height="14" rx="4" fill="#4A7C6F"/><line x1="48" y1="52" x2="72" y2="52" stroke="#4A7C6F" stroke-width="2" stroke-linecap="round"/><line x1="48" y1="62" x2="72" y2="62" stroke="#4A7C6F" stroke-width="2" stroke-linecap="round"/></svg></div>
+      <div><div class="notif-title">Luna's plan is ready</div><div class="notif-body">4 activities today, starting with Morning Settle. Let's go.</div></div>
+    </div>
+    <div class="notif-card">
+      <div class="notif-icon care"><svg width="18" height="18" viewBox="30 26 60 70" fill="none"><circle cx="60" cy="56" r="24" fill="none" stroke="#C4785B" stroke-width="2.5"/><line x1="60" y1="56" x2="60" y2="42" stroke="#C4785B" stroke-width="2.5" stroke-linecap="round"/><circle cx="60" cy="56" r="3" fill="#C4785B"/></svg></div>
+      <div><div class="notif-title">Flea med due today</div><div class="notif-body">Luna's monthly flea prevention is scheduled for today.</div></div>
+    </div>
+    <div class="notif-card">
+      <div class="notif-icon streak"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C12 2 5 10 5 14C5 18 8.5 22 12 22C15.5 22 19 18 19 14C19 10 12 2 12 2Z" fill="#C4785B" opacity="0.6"/></svg></div>
+      <div><div class="notif-title">5-day streak with Luna</div><div class="notif-body">You've been consistent all week. One activity keeps it going.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PEACH -->
+
+<section class="peach-section">
+  <div class="chat-window">
+    <div class="chat-header">
+      <div class="chat-avatar">&#127825;</div>
+      <div><div class="chat-name">Peach</div><div class="chat-context">Knows Luna's plan, score & care tasks</div></div>
+    </div>
+    <div class="chat-msg user"><p>Luna keeps pulling toward other dogs on walks. What should I do?</p></div>
+    <div class="chat-msg bot"><p>Really common, especially at Luna's age. Since leash reactivity is on your radar, I'd suggest trying Structured Fetch in a low-distraction area first to build focus. It's already in tomorrow's plan.</p></div>
+    <div class="chat-msg user"><p>Is that in my plan?</p></div>
+    <div class="chat-msg bot"><p>Structured Fetch is in tomorrow's plan. I can also add Leash Manners to this week if you'd like.</p></div>
+  </div>
+  <div class="peach-content">
+    <div class="section-label">AI Assistant</div>
+    <h2>An assistant that <em>actually knows your dog</em></h2>
+    <p class="peach-desc">Peach has full context: your dog's life stage, today's plan, your Care Score, and your care tasks. Every answer is specific to your dog and what you're working on.</p>
+    <p class="peach-detail">Ask about behavior, health observations, activity tips, or what to focus on next.</p>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+
+<section class="section" id="who">
+  <div class="section-label">Who It's For</div>
+  <h2>Whether your dog is 8 weeks or 12 years old</h2>
+  <p class="section-sub">Your dog's needs change as they grow. Zenoomi adapts with them.</p>
+  <div class="audience-grid">
+    <div class="audience-card">
+      <div class="audience-icon">&#128054;</div>
+      <div class="audience-tag">New Dogs</div>
+      <h3>Build the right habits from day one</h3>
+      <p>Settling exercises, handling practice, first vet prep, and a daily plan that tells you what to focus on each day so you're not guessing.</p>
+    </div>
+    <div class="audience-card">
+      <div class="audience-icon">&#128021;</div>
+      <div class="audience-tag">Senior Dogs</div>
+      <h3>Stay on top of what they need most</h3>
+      <p>Medication reminders, weekly body scans, gentle movement, comfort monitoring. The daily structure your senior dog deserves.</p>
+    </div>
+    <div class="audience-card">
+      <div class="audience-icon">&#128062;</div>
+      <div class="audience-tag">Everyday Dogs</div>
+      <h3>A system for owners who take this seriously</h3>
+      <p>Preventative care tracking, wellness scoring, and a weekly review that shows your progress. Consistency made visible.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM STRIP -->
+
 <div class="bottom-strip">
   <div class="strip-card">
-    <div class="strip-icon"><svg width="48" height="48" viewBox="20 26 80 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M 26 72 A 34 34 0 1 1 94 72" fill="none" stroke="#4A7C6F" stroke-width="4" stroke-linecap="round" opacity="0.15"/><path d="M 26 72 A 34 34 0 0 1 82 42" fill="none" stroke="#4A7C6F" stroke-width="4" stroke-linecap="round"/><path d="M 82 42 A 34 34 0 0 1 92 60" fill="none" stroke="#C4785B" stroke-width="4" stroke-linecap="round"/><path d="M 60 72 L 79 47" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round"/><circle cx="60" cy="72" r="5" fill="#C4785B"/><circle cx="60" cy="72" r="2" fill="#F5F0E8"/></svg></div>
-    <h3>Care Score</h3>
-    <p>A simple gauge that shows how you're keeping up. Logging a symptom improves your score, because paying attention matters most.</p>
-  </div>
-  <div class="strip-card">
-    <div class="strip-icon"><svg width="48" height="48" viewBox="28 28 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M 36 36 h 48 a 6 6 0 0 1 6 6 v 28 a 6 6 0 0 1 -6 6 h -32 l -10 10 v -10 h -6 a 6 6 0 0 1 -6 -6 v -28 a 6 6 0 0 1 6 -6 z" fill="#4A7C6F"/><circle cx="48" cy="56" r="3" fill="#F5F0E8"/><circle cx="60" cy="56" r="3" fill="#F5F0E8"/><circle cx="72" cy="56" r="3" fill="#C4785B"/></svg></div>
-    <h3>Peach Pup Pal</h3>
-    <p>An AI assistant that knows your dog's plan, score, and care tasks. Ask anything and get guidance specific to your dog, not generic advice.</p>
-  </div>
-  <div class="strip-card">
-    <div class="strip-icon"><svg width="48" height="48" viewBox="18 48 84 28" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="28" y1="64" x2="92" y2="64" stroke="#4A7C6F" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/><circle cx="32" cy="64" r="4" fill="#4A7C6F" opacity="0.35"/><circle cx="48" cy="64" r="6" fill="#4A7C6F" opacity="0.5"/><circle cx="66" cy="64" r="8" fill="#4A7C6F" opacity="0.7"/><circle cx="86" cy="64" r="10" fill="#C4785B"/></svg></div>
+    <div class="strip-icon"><svg width="44" height="44" viewBox="18 48 84 28" fill="none"><line x1="28" y1="64" x2="92" y2="64" stroke="#4A7C6F" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/><circle cx="32" cy="64" r="4" fill="#4A7C6F" opacity="0.35"/><circle cx="48" cy="64" r="6" fill="#4A7C6F" opacity="0.5"/><circle cx="66" cy="64" r="8" fill="#4A7C6F" opacity="0.7"/><circle cx="86" cy="64" r="10" fill="#C4785B"/></svg></div>
     <h3>Every Life Stage</h3>
-    <p>Whether your dog is 8 weeks or 12 years old, their needs are different. Zenoomi adapts from puppyhood through the senior years.</p>
+    <p>Puppy, adult, or senior. Your plan adapts as their needs change.</p>
+  </div>
+  <div class="strip-card">
+    <div class="strip-icon"><svg width="44" height="44" viewBox="18 28 84 58" fill="none"><polyline points="24,60 40,60 46,44 54,76 60,38 68,72 74,52 80,60 96,60" fill="none" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="60" cy="38" r="3.5" fill="#C4785B"/></svg></div>
+    <h3>50 Guided Activities</h3>
+    <p>Daily routines, cooperative care, enrichment, confidence, calm, and real-world skills.</p>
+  </div>
+  <div class="strip-card">
+    <div class="strip-icon"><svg width="44" height="44" viewBox="28 24 62 72" fill="none"><rect x="34" y="30" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="30" width="36" height="10" rx="3" fill="#4A7C6F"/><rect x="34" y="46" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="46" width="52" height="10" rx="3" fill="#4A7C6F"/><rect x="34" y="62" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="62" width="44" height="10" rx="3" fill="#4A7C6F"/><rect x="34" y="78" width="52" height="10" rx="3" fill="#4A7C6F" opacity="0.2"/><rect x="34" y="78" width="20" height="10" rx="3" fill="#C4785B"/></svg></div>
+    <h3>Weekly Progress</h3>
+    <p>See what you did, what's working, and what to try next.</p>
   </div>
 </div>
+
+<!-- DOG ILLUSTRATION -->
 
 <div style="text-align:center;padding:20px 40px 0;">
   <img src="dog-illustration.jpg" alt="Illustrated dog" style="max-width:280px;height:auto;opacity:0.9;">
 </div>
 
+<!-- FINAL CTA -->
+
 <section class="final-cta" id="join">
   <h2>Your dog's care, <em>finally managed</em></h2>
-  <p>Zenoomi is in open beta for iOS. Join now and help shape the app before launch. Free during beta, no credit card required.</p>
-  <a href="https://testflight.apple.com/join/XXXXXX" class="btn-primary" style="font-size:17px;padding:18px 36px">Join the Beta on TestFlight &#8594;</a>
-  <div class="cta-note">Requires iPhone with iOS 16 or later</div>
+  <p>Zenoomi is in open beta for iOS. Join now and help shape the app before launch.</p>
+  <a href="https://testflight.apple.com/join/XXXXXX" class="btn-primary">Join the Beta on TestFlight</a>
+  <p class="cta-note">Requires iPhone with iOS 16 or later. Free during beta.</p>
 </section>
 
 <footer>
-  <div class="footer-left">Zenoomi &copy; 2026 &middot; <a href="/privacy">Privacy</a> &middot; <a href="mailto:support@zenoomi.com">Contact</a></div>
-  <div style="font-size:12px;color:var(--text-muted)">Not a veterinarian. When it's time to call your vet, we'll tell you.</div>
+  <div class="footer-left">&copy; 2026 Zenoomi LLC &middot; <a href="privacy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="mailto:support@zenoomi.com">Contact</a></div>
+  <div class="footer-right">Not veterinary advice. When in doubt, contact your vet.</div>
 </footer>
 
 </body>

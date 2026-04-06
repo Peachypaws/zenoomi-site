@@ -122,99 +122,15 @@ letter-spacing: 0.3px;
 display: flex;
 justify-content: center;
 }
-.phone-frame {
-width: 280px;
-background: var(–white);
-border-radius: 32px;
-border: 2px solid var(–border);
-padding: 20px 16px;
+.phone-wrapper {
 position: relative;
+width: 300px;
 }
-.phone-notch {
-width: 100px;
-height: 6px;
-background: var(–cream-dark);
-border-radius: 3px;
-margin: 0 auto 20px;
-}
-.phone-greeting {
-font-family: ‘Newsreader’, serif;
-font-size: 20px;
-font-weight: 500;
-margin-bottom: 4px;
-}
-.phone-sub {
-font-size: 12px;
-color: var(–text-light);
-margin-bottom: 16px;
-}
-.phone-score {
-background: var(–cream);
-border: 1px solid var(–border);
-border-radius: 16px;
-padding: 16px;
-margin-bottom: 14px;
-text-align: center;
-}
-.score-number {
-font-family: ‘Newsreader’, serif;
-font-size: 44px;
-font-weight: 600;
-color: var(–teal);
-line-height: 1;
-}
-.score-label {
-font-size: 11px;
-text-transform: uppercase;
-letter-spacing: 1.2px;
-color: var(–olive);
-margin-top: 4px;
-}
-.phone-plan-label {
-font-size: 11px;
-text-transform: uppercase;
-letter-spacing: 1.2px;
-color: var(–olive);
-margin-bottom: 8px;
-font-weight: 600;
-}
-.phone-activity {
-background: var(–white);
-border: 1px solid var(–border);
-border-radius: 12px;
-padding: 12px 14px;
-margin-bottom: 8px;
-display: flex;
-align-items: center;
-gap: 10px;
-}
-.activity-check {
-width: 20px;
-height: 20px;
-border-radius: 50%;
-border: 2px solid var(–teal);
-flex-shrink: 0;
-}
-.activity-check.done {
-background: var(–teal);
-position: relative;
-}
-.activity-check.done::after {
-content: ‘✓’;
-color: white;
-font-size: 12px;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-}
-.activity-name {
-font-size: 13px;
-font-weight: 500;
-}
-.activity-meta {
-font-size: 10px;
-color: var(–text-light);
+.phone-wrapper img {
+width: 100%;
+height: auto;
+border-radius: 28px;
+box-shadow: 0 20px 60px rgba(44, 36, 25, 0.15), 0 4px 16px rgba(44, 36, 25, 0.08);
 }
 
 /* SECTION: HOW IT WORKS */
@@ -596,7 +512,7 @@ footer a:hover { color: var(–teal); }
 .coop-text h2, .reminders-text h2, .peach-text h2 { font-size: 28px; }
 .cta-section h2 { font-size: 30px; }
 nav { padding: 14px 20px; }
-.phone-frame { width: 240px; }
+.phone-wrapper { width: 240px; }
 }
 </style>
 
@@ -620,43 +536,8 @@ nav { padding: 14px 20px; }
     <div class="hero-badge">Free during beta · iOS only</div>
   </div>
   <div class="hero-phone">
-    <div class="phone-frame">
-      <div class="phone-notch"></div>
-      <div class="phone-greeting">Good morning, Mitch</div>
-      <div class="phone-sub">Here's Luna's plan for today</div>
-      <div class="phone-score">
-        <div class="score-number">74</div>
-        <div class="score-label">Care Score · On Track</div>
-      </div>
-      <div class="phone-plan-label">Today's Plan</div>
-      <div class="phone-activity">
-        <div class="activity-check done"></div>
-        <div>
-          <div class="activity-name">Morning Settle</div>
-          <div class="activity-meta">5 min · Calm & Regulation</div>
-        </div>
-      </div>
-      <div class="phone-activity">
-        <div class="activity-check done"></div>
-        <div>
-          <div class="activity-name">Handling Practice</div>
-          <div class="activity-meta">3 min · Cooperative Care</div>
-        </div>
-      </div>
-      <div class="phone-activity">
-        <div class="activity-check"></div>
-        <div>
-          <div class="activity-name">Structured Fetch</div>
-          <div class="activity-meta">10 min · Enrichment & Play</div>
-        </div>
-      </div>
-      <div class="phone-activity">
-        <div class="activity-check"></div>
-        <div>
-          <div class="activity-name">Tooth Check</div>
-          <div class="activity-meta">2 min · Cooperative Care</div>
-        </div>
-      </div>
+    <div class="phone-wrapper">
+      <img src="app-home.png" alt="Zenoomi app showing daily wellness plan with Care Score and today's activities">
     </div>
   </div>
 </section>

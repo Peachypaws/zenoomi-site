@@ -21,7 +21,6 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--sans);background:var(--cream);color:var(--text-primary);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,240,232,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(–border);padding:0 40px;height:64px;display:flex;align-items:center;justify-content:space-between}
 .nav-logo{font-weight:700;font-size:22px;letter-spacing:-0.5px;color:var(–teal-dark)}
 .nav-logo span{color:var(–terracotta)}
@@ -31,7 +30,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,240,232,
 .nav-cta{background:var(–teal);color:var(–cream-light)!important;padding:10px 20px;border-radius:8px;font-weight:600!important;transition:background 0.2s!important}
 .nav-cta:hover{background:var(–teal-dark)!important}
 
-/* HERO */
 .hero{padding:140px 40px 60px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;min-height:85vh}
 .hero-content{max-width:520px}
 .hero h1{font-family:var(–serif);font-size:46px;font-weight:500;line-height:1.15;letter-spacing:-1px;margin-bottom:20px}
@@ -46,13 +44,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,240,232,
 .hero-proof-item{font-size:13px;color:var(–text-muted);display:flex;align-items:center;gap:6px}
 .hero-proof-item .check{width:18px;height:18px;background:var(–teal);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:10px}
 
-/* Phone */
 .hero-visual{display:flex;justify-content:center;align-items:center}
 .phone-frame{width:290px;height:600px;background:var(–cream-light);border-radius:36px;border:2px solid var(–border);padding:12px;box-shadow:0 40px 80px rgba(0,0,0,0.08),0 8px 24px rgba(0,0,0,0.04);overflow:hidden}
 .phone-screen{width:100%;height:100%;border-radius:28px;overflow:hidden}
 .phone-screen img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 
-/* WHAT IT DOES */
 .what-section{padding:60px 40px 80px;max-width:1200px;margin:0 auto;border-top:1px solid var(–border)}
 .what-section h2{font-family:var(–serif);font-size:34px;font-weight:500;line-height:1.2;letter-spacing:-0.5px;margin-bottom:12px;text-align:center}
 .what-section h2 em{font-style:italic;color:var(–teal)}
@@ -64,7 +60,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,240,232,
 .what-card h3{font-family:var(–serif);font-size:17px;font-weight:500;margin-bottom:6px}
 .what-card p{font-size:13px;line-height:1.5;color:var(–text-secondary)}
 
-/* GUIDED CARE */
 .guided-section{background:var(–teal-dark);color:var(–cream-light);padding:80px 40px}
 .guided-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
 .guided-inner h2{font-family:var(–serif);font-size:34px;font-weight:500;line-height:1.2;margin-bottom:16px;color:var(–cream-light)}
@@ -77,38 +72,28 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(245,240,232,
 .guided-activity-name{font-size:13px;font-weight:600;color:var(–cream-light);margin-bottom:2px}
 .guided-activity-desc{font-size:11px;color:rgba(245,240,232,0.55);line-height:1.4}
 
-/* Guided phone */
 .guided-phone{display:flex;justify-content:center}
 .guided-phone-frame{width:260px;height:500px;background:var(–cream);border-radius:30px;padding:12px;box-shadow:0 40px 80px rgba(0,0,0,0.3);overflow:hidden}
 .guided-phone-screen{width:100%;height:100%;border-radius:22px;overflow:hidden}
 .guided-phone-screen img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 
-/* BOTTOM STRIP */
 .bottom-strip{padding:60px 40px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
 .strip-card{text-align:center;padding:28px 20px}
 .strip-icon{margin-bottom:12px;display:flex;justify-content:center}
 .strip-card h3{font-family:var(–serif);font-size:18px;font-weight:500;margin-bottom:8px}
 .strip-card p{font-size:13px;line-height:1.55;color:var(–text-secondary)}
 
-/* DOG ILLUSTRATION */
-.dog-illustration{text-align:center;padding:20px 40px 0}
-.dog-illustration img{max-width:280px;height:auto;opacity:0.9}
-
-/* FINAL CTA */
 .final-cta{text-align:center;padding:60px 40px;max-width:600px;margin:0 auto}
 .final-cta h2{font-family:var(–serif);font-size:36px;font-weight:500;line-height:1.15;letter-spacing:-0.5px;margin-bottom:14px}
 .final-cta h2 em{font-style:italic;color:var(–teal)}
 .final-cta p{font-size:16px;color:var(–text-secondary);margin-bottom:32px;line-height:1.6}
 .cta-note{font-size:13px;color:var(–text-muted);margin-top:14px}
 
-/* FOOTER */
 footer{border-top:1px solid var(–border);padding:32px 40px;display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto}
 .footer-left{font-size:13px;color:var(–text-muted)}
 .footer-left a{color:var(–text-muted);text-decoration:none}
 .footer-left a:hover{color:var(–teal)}
-.footer-right{font-size:12px;color:var(–text-muted)}
 
-/* RESPONSIVE */
 @media(max-width:900px){
 .hero{grid-template-columns:1fr;padding:120px 24px 40px;gap:32px;min-height:auto}
 .hero h1{font-size:32px}
@@ -133,8 +118,6 @@ footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
 </head>
 <body>
 
-<!-- NAV -->
-
 <nav>
   <div class="nav-logo">zen<span>oo</span>mi</div>
   <div class="nav-links">
@@ -143,8 +126,6 @@ footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
     <a href="#join" class="nav-cta">Join the Beta</a>
   </div>
 </nav>
-
-<!-- HERO -->
 
 <section class="hero">
   <div class="hero-content">
@@ -169,8 +150,6 @@ footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
   </div>
 </section>
 
-<!-- WHAT IT DOES -->
-
 <section class="what-section" id="what">
   <h2>One app. Everything your dog needs, <em>managed.</em></h2>
   <p class="what-sub">Zenoomi builds a daily plan based on your dog's age, energy, and care needs. Then it helps you actually follow through.</p>
@@ -183,7 +162,7 @@ footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
     <div class="what-card">
       <div class="what-icon"><svg width="44" height="44" viewBox="30 26 60 70" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="60" cy="56" r="24" fill="none" stroke="#4A7C6F" stroke-width="2.5"/><line x1="60" y1="56" x2="60" y2="42" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round"/><line x1="60" y1="56" x2="72" y2="56" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round"/><circle cx="60" cy="56" r="3" fill="#C4785B"/><line x1="50" y1="84" x2="70" y2="84" stroke="#C4785B" stroke-width="2" stroke-linecap="round"/><line x1="54" y1="90" x2="66" y2="90" stroke="#C4785B" stroke-width="2" stroke-linecap="round"/></svg></div>
       <h3>Smart Reminders</h3>
-      <p>Daily plan nudges, care task alerts, streak encouragement, and flea med schedules. Set up once during onboarding, never miss a thing.</p>
+      <p>Daily plan nudges, care task alerts, streak encouragement, and med schedules. Set up once during onboarding, never miss a thing.</p>
     </div>
     <div class="what-card">
       <div class="what-icon"><svg width="44" height="44" viewBox="18 28 84 58" fill="none" xmlns="http://www.w3.org/2000/svg"><polyline points="24,60 40,60 46,44 54,76 60,38 68,72 74,52 80,60 96,60" fill="none" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="60" cy="38" r="3.5" fill="#C4785B"/></svg></div>
@@ -197,8 +176,6 @@ footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
     </div>
   </div>
 </section>
-
-<!-- GUIDED CARE -->
 
 <section id="guided">
   <div class="guided-section">
@@ -227,8 +204,6 @@ footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
   </div>
 </section>
 
-<!-- BOTTOM STRIP -->
-
 <div class="bottom-strip">
   <div class="strip-card">
     <div class="strip-icon"><svg width="48" height="48" viewBox="20 26 80 52" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M 26 72 A 34 34 0 1 1 94 72" fill="none" stroke="#4A7C6F" stroke-width="4" stroke-linecap="round" opacity="0.15"/><path d="M 26 72 A 34 34 0 0 1 82 42" fill="none" stroke="#4A7C6F" stroke-width="4" stroke-linecap="round"/><path d="M 82 42 A 34 34 0 0 1 92 60" fill="none" stroke="#C4785B" stroke-width="4" stroke-linecap="round"/><path d="M 60 72 L 79 47" stroke="#4A7C6F" stroke-width="2.5" stroke-linecap="round"/><circle cx="60" cy="72" r="5" fill="#C4785B"/><circle cx="60" cy="72" r="2" fill="#F5F0E8"/></svg></div>
@@ -247,13 +222,9 @@ footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
   </div>
 </div>
 
-<!-- DOG ILLUSTRATION -->
-
-<div class="dog-illustration">
-  <img src="dog-illustration.jpg" alt="Illustrated dog">
+<div style="text-align:center;padding:20px 40px 0;">
+  <img src="dog-illustration.jpg" alt="Illustrated dog" style="max-width:280px;height:auto;opacity:0.9;">
 </div>
-
-<!-- FINAL CTA -->
 
 <section class="final-cta" id="join">
   <h2>Your dog's care, <em>finally managed</em></h2>
@@ -262,11 +233,9 @@ footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
   <div class="cta-note">Requires iPhone with iOS 16 or later</div>
 </section>
 
-<!-- FOOTER -->
-
 <footer>
-  <div class="footer-left">Zenoomi &copy; 2026 · <a href="/privacy">Privacy</a> · <a href="mailto:support@zenoomi.com">Contact</a></div>
-  <div class="footer-right">Not a veterinarian. When it's time to call your vet, we'll tell you.</div>
+  <div class="footer-left">Zenoomi &copy; 2026 &middot; <a href="/privacy">Privacy</a> &middot; <a href="mailto:support@zenoomi.com">Contact</a></div>
+  <div style="font-size:12px;color:var(--text-muted)">Not a veterinarian. When it's time to call your vet, we'll tell you.</div>
 </footer>
 
 </body>
